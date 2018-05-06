@@ -23,7 +23,6 @@
             }, function (response) {
                 // This is for test purposes, change it later to a nice error message to the CLIENT...
                 FlashService.Error(response.data);
-                //FlashService.Error("Kutya fasza.....");
                 vm.dataLoading = false;
             });
         };
