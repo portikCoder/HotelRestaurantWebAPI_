@@ -22,5 +22,6 @@ namespace DAL
 
         public DbSet<User> Users { get; set; }
         public DbSet<Room> Rooms { get; set; }
+        public DbSet<User> userke { get; set; }
     }
 }
