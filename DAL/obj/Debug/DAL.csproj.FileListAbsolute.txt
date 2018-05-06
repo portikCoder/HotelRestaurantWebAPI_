@@ -10,3 +10,15 @@ C:\Users\Dell5548\Documents\Visual Studio 2017\Projects\HotelRestaurant\DAL\obj\
 C:\Users\Dell5548\Documents\Visual Studio 2017\Projects\HotelRestaurant\DAL\obj\Debug\DAL.csproj.CopyComplete
 C:\Users\Dell5548\Documents\Visual Studio 2017\Projects\HotelRestaurant\DAL\obj\Debug\DAL.dll
 C:\Users\Dell5548\Documents\Visual Studio 2017\Projects\HotelRestaurant\DAL\obj\Debug\DAL.pdb
+C:\Users\Elod\Source\Repos\HotelRestaurantWebAPI_\DAL\bin\Debug\DAL.dll.config
+C:\Users\Elod\Source\Repos\HotelRestaurantWebAPI_\DAL\bin\Debug\DAL.dll
+C:\Users\Elod\Source\Repos\HotelRestaurantWebAPI_\DAL\bin\Debug\DAL.pdb
+C:\Users\Elod\Source\Repos\HotelRestaurantWebAPI_\DAL\bin\Debug\EntityFramework.dll
+C:\Users\Elod\Source\Repos\HotelRestaurantWebAPI_\DAL\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Elod\Source\Repos\HotelRestaurantWebAPI_\DAL\bin\Debug\EntityFramework.xml
+C:\Users\Elod\Source\Repos\HotelRestaurantWebAPI_\DAL\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Elod\Source\Repos\HotelRestaurantWebAPI_\DAL\obj\Debug\DAL.csprojResolveAssemblyReference.cache
+C:\Users\Elod\Source\Repos\HotelRestaurantWebAPI_\DAL\obj\Debug\DAL.csproj.CoreCompileInputs.cache
+C:\Users\Elod\Source\Repos\HotelRestaurantWebAPI_\DAL\obj\Debug\DAL.csproj.CopyComplete
+C:\Users\Elod\Source\Repos\HotelRestaurantWebAPI_\DAL\obj\Debug\DAL.dll
+C:\Users\Elod\Source\Repos\HotelRestaurantWebAPI_\DAL\obj\Debug\DAL.pdb
