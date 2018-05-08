@@ -1,10 +1,6 @@
 ﻿using DAL.Entities;
-using System;
-using System.Collections.Generic;
 using System.Data.Entity;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Configuration;
 
 namespace DAL
 {
@@ -12,9 +8,12 @@ namespace DAL
     {
         public HotelRestaurantDBContext() : base("HotelRestaurantDB")
         {
-            //Database.SetInitializer(strategy: new MigrateDatabaseToLatestVersion<HotelRestaurantDBContext, DAL.Migrations.Configuration>());
-            MigrateDatabaseToLatestVersion<HotelRestaurantDBContext, Migrations.Configuration> strategy = new MigrateDatabaseToLatestVersion<HotelRestaurantDBContext, DAL.Migrations.Configuration>();
-            Database.SetInitializer(strategy);
+            Database.SetInitializer(strategy: new MigrateDatabaseToLatestVersion<HotelRestaurantDBContext, DAL.Migrations.Configuration>());
+            //MigrateDatabaseToLatestVersion<HotelRestaurantDBContext, Migrations.Configuration> strategy = new MigrateDatabaseToLatestVersion<HotelRestaurantDBContext, DAL.Migrations.Configuration>();
+            //Database.SetInitializer(strategy);
+
+            //var connectionString = ConfigurationManager.ConnectionStrings["HotelRestaurantDB"].ConnectionString;
+            //System.Console.WriteLine(connectionString);
         }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
