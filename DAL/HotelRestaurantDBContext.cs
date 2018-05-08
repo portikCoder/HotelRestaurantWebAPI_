@@ -10,9 +10,11 @@ namespace DAL
 {
     public class HotelRestaurantDBContext : DbContext
     {
-        public HotelRestaurantDBContext() : base("HotelRestaurant")
+        public HotelRestaurantDBContext() : base("HotelRestaurantDB")
         {
-            Database.SetInitializer(strategy: new MigrateDatabaseToLatestVersion<HotelRestaurantDBContext, DAL.Migrations.Configuration>());
+            //Database.SetInitializer(strategy: new MigrateDatabaseToLatestVersion<HotelRestaurantDBContext, DAL.Migrations.Configuration>());
+            MigrateDatabaseToLatestVersion<HotelRestaurantDBContext, Migrations.Configuration> strategy = new MigrateDatabaseToLatestVersion<HotelRestaurantDBContext, DAL.Migrations.Configuration>();
+            Database.SetInitializer(strategy);
         }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
@@ -22,6 +24,6 @@ namespace DAL
 
         public DbSet<User> Users { get; set; }
         public DbSet<Room> Rooms { get; set; }
-        public DbSet<User> userke { get; set; }
+        //public DbSet<User> userke { get; set; }
     }
 }
