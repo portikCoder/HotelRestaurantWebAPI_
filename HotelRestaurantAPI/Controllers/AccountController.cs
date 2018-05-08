@@ -67,9 +67,10 @@ namespace HotelRestaurantAPI.Controllers
             try
             {
                 user = AccountManager.CreateUser(registrationData, DBContext);
-                room = RoomManager.FirstConfigureRoom();
-                DBContext.Rooms.Add(room);
+                //room = RoomManager.FirstConfigureRoom();
+                //DBContext.Rooms.Add(room);
                 user.Room = room;
+                DBContext.Users.Add(user);
                 DBContext.SaveChanges();
             }
             catch (Exception ex)

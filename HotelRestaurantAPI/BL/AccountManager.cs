@@ -20,8 +20,8 @@ namespace HotelRestaurantAPI.BL
             user.UserName = registerDTO.UserName;
             user.Salt = salt;
             user.Password = EncryptPassword(registerDTO.Password, salt);
-            dBContext.Users.Add(user);
-            dBContext.SaveChanges();
+            //dBContext.Users.Add(user);
+            //dBContext.SaveChanges();
 
             return user;
         }

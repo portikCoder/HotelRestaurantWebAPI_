@@ -15,17 +15,17 @@
             vm.dataLoading = true;
             if (vm.user.confrimPassword != vm.user.password) {
                 FlashService.Error("Passwords doesn`t matches");
-                vm.user = {};
+                vm.user.confrimPassword = '';
                 vm.dataLoading = false;
             }
             else {
                 UserService.Register(vm.user)
                     .then(function (response) {
-                        if (response.success) {
+                        if (response.statusText === "OK") {
                             FlashService.Success('Registration successful', true);
                             $location.path('/login');
                         } else {
-                            FlashService.Error(response.message);
+                            FlashService.Error(response.data);
                             vm.dataLoading = false;
                         }
                     });

@@ -18,6 +18,7 @@
                 if (token) {
                     localStorage.setItem('jsgametoken', token);
                     $location.path('/home');
+                    $route.reload();
                     vm.dataLoading = false;
                 }
             }, function (response) {
