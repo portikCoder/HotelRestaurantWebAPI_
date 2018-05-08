@@ -15,6 +15,8 @@ namespace HotelRestaurantAPI.Controllers
 {
     public class AccountController : ApiController
     {
+        private readonly bool C_DEBUG = true;
+
         private HotelRestaurantDBContext DBContext = new HotelRestaurantDBContext();
         [HttpPost]
         [Route("api2/login")]
@@ -27,6 +29,23 @@ namespace HotelRestaurantAPI.Controllers
             }
             catch (Exception e)
             {
+                if (C_DEBUG)
+                {
+                    return BadRequest(e.Message);
+                }
+                if (new[] { typeof(UserNotExistsException) }.Any(t => t.IsAssignableFrom(e.GetType())))
+                {
+                    // it is a known EXEPTION then:
+                    return BadRequest(e.Message);
+                }
+                else
+                {
+                    return BadRequest("Uknown Request+Error, so sorry maaan...");
+                }
+                if (e.GetType().IsAssignableToAnyOf(typeof(UserNotExistsException)))
+                {
+                    return BadRequest(e.Message);
+                }
                 return BadRequest(e.Message);
             }
 
@@ -34,6 +53,8 @@ namespace HotelRestaurantAPI.Controllers
             string token = Utility.TokenManager.CreateToken(user);
             return Ok(token);
         }
+
+
 
         [HttpPost]
         [Route("api2/signup")]
