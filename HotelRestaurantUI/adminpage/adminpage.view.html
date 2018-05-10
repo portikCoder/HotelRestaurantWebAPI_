@@ -1,0 +1,10 @@
+﻿<div>
+	<h3>Hi {{ vm.user.username }}!</h3>
+	<p>Please choose one of these actions:</p>
+	<p>
+		<a href="#!/admin/add_room" class="btn btn-primary">Add New Room</a>
+		<a href="#!/admin/list_rooms" class="btn btn-primary">Show Rooms</a>
+		<a href="#!/login" class="btn btn-primary">Logout</a>
+	</p>
+	<div ng-view id="ngView_admin"></div>
+</div>

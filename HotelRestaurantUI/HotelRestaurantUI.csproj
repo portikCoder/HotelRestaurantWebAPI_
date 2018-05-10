@@ -206,6 +206,8 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="adminpage\adminpage.controller.js" />
+    <Content Include="adminpage\adminpage.view.html" />
     <Content Include="app-services\user.service.js" />
     <Content Include="app.js" />
     <Content Include="home\home.controller.js" />

@@ -48,7 +48,12 @@
                     controller: 'RoomController',
                     templateUrl: 'room/room.view.html',
                     controllerAs: 'vm'
-                })
+				})
+				.when('/admin', {
+					controller: 'AdminPageController',
+					templateUrl: 'adminpage/adminpage.view.html',
+					controllerAs: 'vm'
+				})
                 .otherwise({ redirectTo: '/login' });
 
         })
@@ -57,7 +62,7 @@
     run.$inject = ['$rootScope', '$location', '$cookies', '$http'];
     function run($rootScope, $location, $cookies, $http) {
         //Base page URL
-        $rootScope.baseUrl = "http://localhost/JSGameAPI/";
+        $rootScope.baseUrl = "http://localhost/HotelRestaurantUI/index.html";
     }
 
 })();
