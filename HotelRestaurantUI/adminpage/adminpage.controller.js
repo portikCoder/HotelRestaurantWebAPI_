@@ -2,31 +2,25 @@
 	'use strict';
 
 	angular
-		.module('app', ['ngRoute', 'ngCookies'])
-		.config(function ($routeProvider) {
-			$routeProvider
-				.when('/add_room', {
-					controller: 'AddRoomController',
-					templateUrl: 'adminpage/add_room/add_room.view.html',
-					controllerAs: 'vm'
-				})
-				.when('/list', {
-					controller: 'ListRoomsController',
-					templateUrl: 'adminpage/list_rooms/list_rooms.view.html',
-					controllerAs: 'vm'
-				});
-		})
+		.module('app')
 		.controller('AdminPageController', AdminPageController);
 
-	AdminPageController.$inject = ['$location', '$rootScope', 'UserService', 'FlashService'];
-	function AdminPageController($location, $rootScope, UserService, FlashService) {
+	AdminPageController.$inject = ['$scope', '$location', '$rootScope', 'AccountService', 'FlashService'];
+	function AdminPageController($scope, $location, $rootScope, AccountService, FlashService) {
 		var vm = this;
+		$scope.langs = [
+			{ name: 'Hungarian', abbr: 'HU' },
+			{ name: 'Romanian', abbr: 'RO' },
+			{ name: 'English (United Kingdom)', abbr: 'EN(GB)' },
+		];
+
+		$scope.servs = [
+			{ id: 'LNGE', name: 'Shared Lounge' },
+			{ id: 'PARK', name: 'Free Parking' },
+			{ id: 'REST', name: 'Restaurant' }
+		];
 
 		vm.check = check;
-		UserService.GetByUsername($rootScope.globals.currentUser.username)
-			.then(function (user) {
-				vm.user = user;
-			});
 
 		function check() {
 			FlashService.Error('Flash Service error on Admin Page!');

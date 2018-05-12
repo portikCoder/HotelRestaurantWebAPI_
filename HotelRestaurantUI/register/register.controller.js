@@ -14,7 +14,7 @@
         function register() {
             vm.dataLoading = true;
             if (vm.user.confrimPassword != vm.user.password) {
-                FlashService.Error("Passwords doesn`t matches");
+                FlashService.Error("Passwords don`t match");
                 vm.user.confrimPassword = '';
                 vm.dataLoading = false;
             }
