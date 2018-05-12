@@ -1,9 +1,3 @@
-C:\Users\Dell5548\Documents\Visual Studio 2017\Projects\HotelRestaurant\HotelRestaurantAPI\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
-C:\Users\Dell5548\Documents\Visual Studio 2017\Projects\HotelRestaurant\HotelRestaurantAPI\bin\roslyn\Microsoft.CodeAnalysis.dll
-C:\Users\Dell5548\Documents\Visual Studio 2017\Projects\HotelRestaurant\HotelRestaurantAPI\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
-C:\Users\Dell5548\Documents\Visual Studio 2017\Projects\HotelRestaurant\HotelRestaurantAPI\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
-C:\Users\Dell5548\Documents\Visual Studio 2017\Projects\HotelRestaurant\HotelRestaurantAPI\bin\roslyn\System.IO.Compression.dll
-C:\Users\Dell5548\Documents\Visual Studio 2017\Projects\HotelRestaurant\HotelRestaurantAPI\bin\roslyn\VBCSCompiler.exe
 C:\Users\Dell5548\Documents\Visual Studio 2017\Projects\HotelRestaurant\HotelRestaurantAPI\bin\HotelRestaurantAPI.dll.config
 C:\Users\Dell5548\Documents\Visual Studio 2017\Projects\HotelRestaurant\HotelRestaurantAPI\bin\HotelRestaurantAPI.dll
 C:\Users\Dell5548\Documents\Visual Studio 2017\Projects\HotelRestaurant\HotelRestaurantAPI\bin\HotelRestaurantAPI.pdb
@@ -14,9 +8,13 @@ C:\Users\Dell5548\Documents\Visual Studio 2017\Projects\HotelRestaurant\HotelRes
 C:\Users\Dell5548\Documents\Visual Studio 2017\Projects\HotelRestaurant\HotelRestaurantAPI\bin\roslyn\csi.exe.config
 C:\Users\Dell5548\Documents\Visual Studio 2017\Projects\HotelRestaurant\HotelRestaurantAPI\bin\roslyn\csi.rsp
 C:\Users\Dell5548\Documents\Visual Studio 2017\Projects\HotelRestaurant\HotelRestaurantAPI\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\Dell5548\Documents\Visual Studio 2017\Projects\HotelRestaurant\HotelRestaurantAPI\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
 C:\Users\Dell5548\Documents\Visual Studio 2017\Projects\HotelRestaurant\HotelRestaurantAPI\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+C:\Users\Dell5548\Documents\Visual Studio 2017\Projects\HotelRestaurant\HotelRestaurantAPI\bin\roslyn\Microsoft.CodeAnalysis.dll
 C:\Users\Dell5548\Documents\Visual Studio 2017\Projects\HotelRestaurant\HotelRestaurantAPI\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+C:\Users\Dell5548\Documents\Visual Studio 2017\Projects\HotelRestaurant\HotelRestaurantAPI\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
 C:\Users\Dell5548\Documents\Visual Studio 2017\Projects\HotelRestaurant\HotelRestaurantAPI\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\Dell5548\Documents\Visual Studio 2017\Projects\HotelRestaurant\HotelRestaurantAPI\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
 C:\Users\Dell5548\Documents\Visual Studio 2017\Projects\HotelRestaurant\HotelRestaurantAPI\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
 C:\Users\Dell5548\Documents\Visual Studio 2017\Projects\HotelRestaurant\HotelRestaurantAPI\bin\roslyn\Microsoft.VisualBasic.Core.targets
 C:\Users\Dell5548\Documents\Visual Studio 2017\Projects\HotelRestaurant\HotelRestaurantAPI\bin\roslyn\Microsoft.Win32.Primitives.dll
@@ -26,6 +24,7 @@ C:\Users\Dell5548\Documents\Visual Studio 2017\Projects\HotelRestaurant\HotelRes
 C:\Users\Dell5548\Documents\Visual Studio 2017\Projects\HotelRestaurant\HotelRestaurantAPI\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
 C:\Users\Dell5548\Documents\Visual Studio 2017\Projects\HotelRestaurant\HotelRestaurantAPI\bin\roslyn\System.Diagnostics.Process.dll
 C:\Users\Dell5548\Documents\Visual Studio 2017\Projects\HotelRestaurant\HotelRestaurantAPI\bin\roslyn\System.Diagnostics.StackTrace.dll
+C:\Users\Dell5548\Documents\Visual Studio 2017\Projects\HotelRestaurant\HotelRestaurantAPI\bin\roslyn\System.IO.Compression.dll
 C:\Users\Dell5548\Documents\Visual Studio 2017\Projects\HotelRestaurant\HotelRestaurantAPI\bin\roslyn\System.IO.FileSystem.dll
 C:\Users\Dell5548\Documents\Visual Studio 2017\Projects\HotelRestaurant\HotelRestaurantAPI\bin\roslyn\System.IO.FileSystem.DriveInfo.dll
 C:\Users\Dell5548\Documents\Visual Studio 2017\Projects\HotelRestaurant\HotelRestaurantAPI\bin\roslyn\System.IO.FileSystem.Primitives.dll
@@ -48,6 +47,7 @@ C:\Users\Dell5548\Documents\Visual Studio 2017\Projects\HotelRestaurant\HotelRes
 C:\Users\Dell5548\Documents\Visual Studio 2017\Projects\HotelRestaurant\HotelRestaurantAPI\bin\roslyn\vbc.exe
 C:\Users\Dell5548\Documents\Visual Studio 2017\Projects\HotelRestaurant\HotelRestaurantAPI\bin\roslyn\vbc.exe.config
 C:\Users\Dell5548\Documents\Visual Studio 2017\Projects\HotelRestaurant\HotelRestaurantAPI\bin\roslyn\vbc.rsp
+C:\Users\Dell5548\Documents\Visual Studio 2017\Projects\HotelRestaurant\HotelRestaurantAPI\bin\roslyn\VBCSCompiler.exe
 C:\Users\Dell5548\Documents\Visual Studio 2017\Projects\HotelRestaurant\HotelRestaurantAPI\bin\roslyn\VBCSCompiler.exe.config
 C:\Users\Dell5548\Documents\Visual Studio 2017\Projects\HotelRestaurant\HotelRestaurantAPI\bin\x86\sqlcese40.dll
 C:\Users\Dell5548\Documents\Visual Studio 2017\Projects\HotelRestaurant\HotelRestaurantAPI\bin\x86\sqlceqp40.dll
@@ -82,6 +82,7 @@ C:\Users\Dell5548\Documents\Visual Studio 2017\Projects\HotelRestaurant\HotelRes
 C:\Users\Dell5548\Documents\Visual Studio 2017\Projects\HotelRestaurant\HotelRestaurantAPI\bin\System.IO.FileSystem.dll
 C:\Users\Dell5548\Documents\Visual Studio 2017\Projects\HotelRestaurant\HotelRestaurantAPI\bin\System.IO.FileSystem.Primitives.dll
 C:\Users\Dell5548\Documents\Visual Studio 2017\Projects\HotelRestaurant\HotelRestaurantAPI\bin\System.Net.Http.Formatting.dll
+C:\Users\Dell5548\Documents\Visual Studio 2017\Projects\HotelRestaurant\HotelRestaurantAPI\bin\System.ValueTuple.dll
 C:\Users\Dell5548\Documents\Visual Studio 2017\Projects\HotelRestaurant\HotelRestaurantAPI\bin\System.Web.Http.dll
 C:\Users\Dell5548\Documents\Visual Studio 2017\Projects\HotelRestaurant\HotelRestaurantAPI\bin\System.Web.Http.WebHost.dll
 C:\Users\Dell5548\Documents\Visual Studio 2017\Projects\HotelRestaurant\HotelRestaurantAPI\bin\System.Xml.ReaderWriter.dll
@@ -93,6 +94,7 @@ C:\Users\Dell5548\Documents\Visual Studio 2017\Projects\HotelRestaurant\HotelRes
 C:\Users\Dell5548\Documents\Visual Studio 2017\Projects\HotelRestaurant\HotelRestaurantAPI\bin\JWT.xml
 C:\Users\Dell5548\Documents\Visual Studio 2017\Projects\HotelRestaurant\HotelRestaurantAPI\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
 C:\Users\Dell5548\Documents\Visual Studio 2017\Projects\HotelRestaurant\HotelRestaurantAPI\bin\Newtonsoft.Json.xml
+C:\Users\Dell5548\Documents\Visual Studio 2017\Projects\HotelRestaurant\HotelRestaurantAPI\bin\System.ValueTuple.xml
 C:\Users\Dell5548\Documents\Visual Studio 2017\Projects\HotelRestaurant\HotelRestaurantAPI\bin\System.Net.Http.Formatting.xml
 C:\Users\Dell5548\Documents\Visual Studio 2017\Projects\HotelRestaurant\HotelRestaurantAPI\bin\System.Web.Http.xml
 C:\Users\Dell5548\Documents\Visual Studio 2017\Projects\HotelRestaurant\HotelRestaurantAPI\bin\System.Web.Http.WebHost.xml

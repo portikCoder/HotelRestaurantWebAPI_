@@ -1,7 +1,10 @@
 ﻿<div>
     <h1>Hi {{vm.username}}!</h1>
+    <!--  TEST PURPOSES  -->
+    <a class="btn btn-primary" href='' ng-click="vm.GetRooms()" ng-show="hastoken()">Get Rooms</a>
+
     <p>
-<!--        <a href="#!/login" class="btn btn-primary">Logout</a>-->
+        <!--        <a href="#!/login" class="btn btn-primary">Logout</a>-->
         <a class="btn btn-primary" href='#!/login' ng-click="logout()" ng-show="hastoken()">Log out</a>
     </p>
     <form class="help" style="margin-top:5px;">
