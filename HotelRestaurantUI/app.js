@@ -5,6 +5,7 @@
         .module('app', ['ngRoute', 'ngCookies'])
         .config(function ($provide, $httpProvider, $routeProvider, $locationProvider, $qProvider) {
 
+            //$locationProvider.html5Mode(true);
             // Intercept http calls.
             $provide.factory('MyHttpInterceptor', function () {
                 return {
@@ -13,7 +14,7 @@
                             return config;
                         } else if (config.url.indexOf('api') > -1) {
                             config.headers = config.headers || {};
-                            var token = localStorage.getItem('jsgametoken');
+                            var token = localStorage.getItem('userlogintoken');
                             if (token) {
                                 config.headers.Authorization = 'Bearer ' + token;
                             }
@@ -49,6 +50,9 @@
                     templateUrl: 'room/room.view.html',
                     controllerAs: 'vm'
                 })
+                //.when("/", {
+                //    templateUrl: "index.html"
+                //})
                 .otherwise({ redirectTo: '/login' });
 
         })
@@ -57,7 +61,7 @@
     run.$inject = ['$rootScope', '$location', '$cookies', '$http'];
     function run($rootScope, $location, $cookies, $http) {
         //Base page URL
-        $rootScope.baseUrl = "http://localhost/JSGameAPI/";
+        $rootScope.baseUrl = "http://localhost/HotelRestaurantAPI/";
     }
 
 })();

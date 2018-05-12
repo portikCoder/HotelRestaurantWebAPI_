@@ -1,13 +1,19 @@
 ﻿<div>
-    <h1>Hi {{vm.user.username}}!</h1>
-    <p><a href="#!/login" class="btn btn-primary">Logout</a></p>
+    <h1>Hi {{vm.username}}!</h1>
+    <!--  TEST PURPOSES  -->
+    <a class="btn btn-primary" href='' ng-click="vm.GetRooms()" ng-show="hastoken()">Get Rooms</a>
+
+    <p>
+        <!--        <a href="#!/login" class="btn btn-primary">Logout</a>-->
+        <a class="btn btn-primary" href='#!/login' ng-click="logout()" ng-show="hastoken()">Log out</a>
+    </p>
     <form class="help" style="margin-top:5px;">
         <fieldset>
-            <span style="color:gold">▇</span> gold mine
-            <span style="color:#525252"> ▇</span> rock
-            <span style="color:#cc3300"> ▇</span> building
-            <span style="color:darkgreen"> 🞉</span> unit
-            <span style="color:orangered">  🞉</span> enemy unit
+            <span style="color:gold">▇</span> wc
+            <span style="color:#525252"> ▇</span> budi
+            <span style="color:#cc3300"> ▇</span> build
+            <span style="color:darkgreen"> 🞉</span> room
+            <span style="color:orangered">  🞉</span> user
         </fieldset>
     </form>
 </div>

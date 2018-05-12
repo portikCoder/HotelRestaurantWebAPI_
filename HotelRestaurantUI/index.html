@@ -2,18 +2,25 @@
 <html ng-app="app">
 <head>
     <meta charset="utf-8" />
-    <title>AngularJS User Registration and Login Example</title>
+    <title>Hotel App DEMO, For c# EXAM</title>
     <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" />
-    <link href="app-content/app.css" rel="stylesheet" />
+    <!--<link href="app-content/app.css" rel="stylesheet" />-->
     <link href="style/index.css" rel="stylesheet" />
 </head>
 <body>
 
     <div style="" class="jumbotron">
-        <div id="topBar" class="text-right" style="border:">
+        <!--<div id="topBar" class="text-right" style="border:">
             <a class="topBarElement" href='#!/login'>Login</a>
             <a class="topBarElement" href='#!/register' ng-click="register">Signup</a>
+        </div>-->
+
+        <div id="topBar" class="text-right" ng-controller="TopBarController" ng-show="hastoken()">
+            <span class="welcomeMessage">Hello, te szarjancsi: <span class="name_color" ng-bind=" accountService.GetUsername()"> </span>!</span>
+            <span class="statusMessage">Status: <span class="name_color" ng-bind="accountService.GetStatus()"> </span>!</span>
+            <a class="topBarElement" href='#!/login' ng-click="logout()">Log out</a>
         </div>
+
         <div class="container">
             <div class="col-sm-8 col-sm-offset-2">
                 <div ng-class="{ 'alert': flash, 'alert-success': flash.type === 'success', 'alert-danger': flash.type === 'error' }" ng-if="flash" ng-bind="flash.message"></div>
@@ -38,6 +45,8 @@
 
     <script src="app.js"></script>
     <script src="app-services/user.service.js"></script>
+    <script src="app-services/account.service.js"></script>
+    <script src="app-services/top.bar.controller.js"></script>
     <script src="app-services/flash.service.js"></script>
 
     <script src="home/home.controller.js"></script>

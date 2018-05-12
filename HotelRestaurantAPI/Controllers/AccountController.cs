@@ -48,10 +48,10 @@ namespace HotelRestaurantAPI.Controllers
                 }
                 return BadRequest(e.Message);
             }
-
-
             string token = Utility.TokenManager.CreateToken(user);
-            return Ok(token);
+            var userTuple = new System.Tuple<string,string,string>(user.UserName,user.Status,token);
+
+            return Ok(new { username = user.UserName, status = user.Status, token = token });
         }
 
 

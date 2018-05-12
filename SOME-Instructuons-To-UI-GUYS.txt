@@ -1,0 +1,7 @@
+Modifications:
+
+	1. No userService, here is the AccountService for its tasks
+	2. jsgametoken => userlogintoken
+	3. here is a top.bar.controller for =>
+		s
+	4. wrote some comments, begginning with // so just search for them with the VS [all] search to //

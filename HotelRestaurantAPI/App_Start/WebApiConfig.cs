@@ -1,4 +1,5 @@
 ﻿using HotelRestaurantAPI.MessageHandlers;
+using Newtonsoft.Json.Serialization;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,22 +13,43 @@ namespace HotelRestaurantAPI
         {
             // Web API configuration and services
 
+            config.Formatters.JsonFormatter.SerializerSettings.ContractResolver = new CamelCasePropertyNamesContractResolver();
+            config.Formatters.JsonFormatter.UseDataContractJsonSerializer = false;
             // Web API routes
             config.MapHttpAttributeRoutes();
 
             config.Routes.MapHttpRoute(
-                name: "DefaultApi",
-                routeTemplate: "api/{controller}/{id}",
+                name: "AccountApi",
+                routeTemplate: "api2/{controller}/{action}",
                 defaults: new { id = RouteParameter.Optional }
             );
 
             config.Routes.MapHttpRoute(
                 name: "HotelRestaurantAPI",
-                routeTemplate: "api/{controller}/{id}",
-                defaults: new { id = RouteParameter.Optional },
+                routeTemplate: "api/{controller}/{action}",
+                defaults: null,
                 constraints: null,
                 handler: new AuthenticationHandler(config)
             );
+
+            //// Web API configuration and services
+
+            //// Web API routes
+            //config.MapHttpAttributeRoutes();
+
+            //config.Routes.MapHttpRoute(
+            //    name: "DefaultApi",
+            //    routeTemplate: "api/{controller}/{id}",
+            //    defaults: new { id = RouteParameter.Optional }
+            //);
+
+            //config.Routes.MapHttpRoute(
+            //    name: "HotelRestaurantAPI",
+            //    routeTemplate: "api/{controller}/{id}",
+            //    defaults: new { id = RouteParameter.Optional },
+            //    constraints: null,
+            //    handler: new AuthenticationHandler(config)
+            //);
         }
     }
 }

@@ -5,21 +5,28 @@
         .module('app')
         .controller('LoginController', LoginController);
 
-    LoginController.$inject = ['$location', 'UserService', 'FlashService'];
-    function LoginController($location, UserService, FlashService) {
+    LoginController.$inject = ['$location', 'AccountService', 'FlashService'];
+    function LoginController($location, AccountService, FlashService) {
         var vm = this;
 
         vm.login = login;
 
         function login() {
             vm.dataLoading = true;
-            UserService.Login({ username: vm.username, password: vm.password }).then(function (response) {
-                var token = response.data;
+
+            AccountService.SetUsername(vm.username);
+            AccountService.Login({ username: vm.username, password: vm.password }).then(function (response) {
+                var token = response.data.token;
+                var userstatus = response.data.status;
+                var username = response.data.username;
                 if (token) {
-                    localStorage.setItem('jsgametoken', token);
-                    $location.path('/home');
-                    $route.reload();
+                    localStorage.setItem('userlogintoken', token);
+
+                    AccountService.SetUserStatus(userstatus);
+                    AccountService.LoadUserInterface(userstatus);
+
                     vm.dataLoading = false;
+                    $location.path('/home');
                 }
             }, function (response) {
                 // This is for test purposes, change it later to a nice error message to the CLIENT...
