@@ -9,11 +9,14 @@
 .topBarElement {
     padding-right: 25px;
     font-size: 25px;
+    /*float: right;*/
 }
 
 #topBar {
-    border: groove 5px;
-    border-radius: 5px;
+    height: 40px;
+    border: groove 0px;
+    border-radius: 15px;
+    background-color: lightsteelblue;
 }
 
 .container {

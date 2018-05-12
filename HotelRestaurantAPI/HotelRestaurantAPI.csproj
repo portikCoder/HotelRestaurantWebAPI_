@@ -146,6 +146,7 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="DTO\LoginDTO.cs" />
     <Compile Include="DTO\RegisterDTO.cs" />
+    <Compile Include="DTO\UserDTO.cs" />
     <Compile Include="Exceptions\IncorrectPwdConfirmationException.cs" />
     <Compile Include="Exceptions\InvalidPasswordException.cs" />
     <Compile Include="Exceptions\UserNotExistsException.cs" />

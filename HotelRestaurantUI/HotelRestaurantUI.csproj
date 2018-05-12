@@ -17,7 +17,7 @@
     <AssemblyName>HotelRestaurantUI</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <MvcBuildViews>false</MvcBuildViews>
-    <UseIISExpress>false</UseIISExpress>
+    <UseIISExpress>true</UseIISExpress>
     <Use64BitIISExpress />
     <IISExpressSSLPort />
     <IISExpressAnonymousAuthentication />
@@ -206,6 +206,8 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="app-services\account.service.js" />
+    <Content Include="app-services\top.bar.controller.js" />
     <Content Include="app-services\user.service.js" />
     <Content Include="app.js" />
     <Content Include="home\home.controller.js" />
@@ -1033,7 +1035,7 @@
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>58322</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost/HotelRestaurantUI</IISUrl>
+          <IISUrl>http://localhost:58322/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>
