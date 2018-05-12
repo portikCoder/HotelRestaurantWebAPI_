@@ -5,15 +5,12 @@
         .module('app')
         .controller('HomeController', HomeController);
 
-    HomeController.$inject = ['$location', '$rootScope','UserService', 'FlashService'];
-    function HomeController($location, $rootScope, UserService, FlashService) {
+	HomeController.$inject = ['$location', '$rootScope','AccountService', 'FlashService'];
+    function HomeController($location, $rootScope, AccountService, FlashService) {
         var vm = this;
 
-        vm.check = check;
-        UserService.GetByUsername($rootScope.globals.currentUser.username)
-            .then(function (user) {
-                vm.user = user;
-            });
+		vm.check = check;
+		vm.username = AccountService.GetUsername();
 
         function check() {
             FlashService.Error('Kukra fel...');

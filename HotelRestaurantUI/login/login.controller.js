@@ -1,33 +1,38 @@
 ﻿(function () {
-    'use strict';
+	'use strict';
 
-    angular
-        .module('app')
-        .controller('LoginController', LoginController);
+	angular
+		.module('app')
+		.controller('LoginController', LoginController);
 
-    LoginController.$inject = ['$location', 'UserService', 'FlashService'];
-    function LoginController($location, UserService, FlashService) {
-        var vm = this;
+	LoginController.$inject = ['$location', 'AccountService', 'FlashService'];
+	function LoginController($location, AccountService, FlashService) {
+		var vm = this;
 
-        vm.login = login;
+		vm.login = login;
 
-        function login() {
-            vm.dataLoading = true;
-            UserService.Login({ username: vm.username, password: vm.password }).then(function (response) {
-                var token = response.data;
-                if (token) {
-                    localStorage.setItem('jsgametoken', token);
-                    $location.path('/home');
-                    $route.reload();
-                    vm.dataLoading = false;
-                }
-            }, function (response) {
-                // This is for test purposes, change it later to a nice error message to the CLIENT...
-                FlashService.Error(response.data);
-                //FlashService.Error("Kutya fasza.....");
-                vm.dataLoading = false;
-            });
-        };
-    }
+		function login() {
+			vm.dataLoading = true;
+			AccountService.SetUsername(vm.username);
+			AccountService.Login({ username: vm.username, password: vm.password }).then(function (response) {
+				var token = response.data.token; //Put breakpoint here for json verification
+				var userstatus = response.data.status;
+				var username = response.data.username;
+				if (token) {
+					localStorage.setItem('userlogintoken', token);
+
+					AccountService.SetUserStatus(userstatus);
+					AccountService.LoadUserInterface(userstatus);
+					vm.dataLoading = false;
+
+					$location.path('/home');
+				}
+			}, function (response) {
+				// This is for test purposes, change it later to a nice error message to the CLIENT...
+				FlashService.Error(response.data);
+				vm.dataLoading = false;
+			});
+		};
+	}
 
 })();

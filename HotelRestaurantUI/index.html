@@ -2,17 +2,17 @@
 <html ng-app="app">
 <head>
     <meta charset="utf-8" />
-    <title>AngularJS User Registration and Login Example</title>
-    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" />
-    <link href="app-content/app.css" rel="stylesheet" />
+	<title>Hotel App DEMO, For c# EXAM</title>
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
     <link href="style/index.css" rel="stylesheet" />
 </head>
 <body>
 
 	<div style="" class="jumbotron">
-		<div id="topBar" class="text-right" style="border:">
-			<a class="topBarElement" href='#!/login'>Login</a>
-			<a class="topBarElement" href='#!/register' ng-click="register">Signup</a>
+		<div id="topBar" class="text-right" ng-controller="TopBarController" ng-show="hastoken()">
+			<span class="welcomeMessage">Hello, <span class="name_color" ng-bind="accountService.GetUsername()"> </span>!</span>
+			<span class="statusMessage">Status: <span class="name_color" ng-bind="accountService.GetStatus()"> </span>!</span>
+			<a class="topBarElement" href='#!/login' ng-click="logout()" ng-show="hastoken()">Log out</a>
 		</div>
 		<div class="container">
 			<div class="col-sm-8 col-sm-offset-2">
@@ -31,14 +31,17 @@
 		</p>
 	</div>
 
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 	<script src="//code.jquery.com/jquery-3.1.1.min.js"></script>
 	<script src="//code.angularjs.org/1.6.0/angular.min.js"></script>
 	<script src="//code.angularjs.org/1.6.0/angular-route.min.js"></script>
 	<script src="//code.angularjs.org/1.6.0/angular-cookies.min.js"></script>
-	<script src="//unpkg.com/@uirouter/angularjs/release/angular-ui-router.min.js"></script>
 
 	<script src="app.js"></script>
 	<script src="app-services/user.service.js"></script>
+	<script src="app-services/account.service.js"></script>
+	<script src="app-services/top.bar.controller.js"></script>
 	<script src="app-services/flash.service.js"></script>
 
 	<script src="home/home.controller.js"></script>
@@ -48,5 +51,9 @@
 	<script src="register/register.view.html"></script>
 	<script src="adminpage/adminpage.controller.js"></script>
 	<script src="adminpage/adminpage.view.html"></script>
+	<script src="add_room/add_room.controller.js"></script>
+	<script src="add_room/add_room.view.html"></script>
+	<script src="list_rooms/list_rooms.controller.js"></script>
+	<script src="list_rooms/list_rooms.view.html"></script>
 </body>
 </html>

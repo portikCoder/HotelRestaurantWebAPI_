@@ -1,10 +1,26 @@
 ﻿<div>
-	<h3>Hi {{ vm.user.username }}!</h3>
-	<p>Please choose one of these actions:</p>
+	<h1>Hi {{ vm.user.username }}!</h1>
+	<button class="btn btn-info" data-toggle="collapse" data-target="#lang">Available languages:</button>
+	<div id="lang" class="collapse">
+		<ul>
+			<li ng-repeat="lang in langs">
+				{{lang.name}} - {{lang.abbr}}
+			</li>
+		</ul>
+	</div>
+	<br />
+	<button class="btn btn-info" data-toggle="collapse" data-target="#serv">Provided services: </button>
+	<div id="serv" class="collapse">
+		<ul>
+			<li ng-repeat="serv in servs">
+				{{serv.name}}
+			</li>
+		</ul>
+	</div>
+	<br />
 	<p>
-		<a href="#!/admin/add_room" class="btn btn-primary">Add New Room</a>
-		<a href="#!/admin/list_rooms" class="btn btn-primary">Show Rooms</a>
+		<a href="#!/add_room" class="btn btn-primary">Add New Room</a>
+		<a href="#!/list" class="btn btn-primary">Show Rooms</a>
 		<a href="#!/login" class="btn btn-primary">Logout</a>
 	</p>
-	<div ng-view id="ngView_admin"></div>
 </div>

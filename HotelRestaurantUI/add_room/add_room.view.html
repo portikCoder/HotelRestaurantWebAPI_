@@ -1,0 +1,41 @@
+﻿<div class="col-md-6 col-md-offset-3">
+	<h3>Add a new Room...</h3>
+	<form name="form" ng-submit="vm.add_room()" role="form">
+		<div class="form-group" ng-class="{ 'has-error': form.roomNo.$dirty && form.roomNo.$error.required }">
+			<label for="roomNo">Room Number <strong>(Required)</strong>:</label>
+			<input type="number" name="roomNo" id="roomNo" class="form-control" ng-model="vm.room.roomNo" required/>
+			<span ng-show="form.roomNo.$dirty && form.roomNo.$error.required" class="help-block">Room Number is required!</span>
+		</div>
+		<div class="form-group" ng-class="{ 'has-error': form.noOfBeds.$dirty && form.noOfBeds.$error.required }">
+			<label for="roomNo">Number of Beds <strong>(Required, value must be greater than 0)</strong>:</label>
+			<input type="number" name="noOfBeds" id="noOfBeds" class="form-control" ng-model="vm.room.noOfBeds" required dir-greaterthanzero/>
+			<span ng-show="form.roomNo.$dirty && form.roomNo.$error.required" class="help-block">Total number of beds in the room must be provided!</span>
+		</div>
+	</form>
+	<p>
+		<a href="#!/admin" class="btn btn-primary">Add Room</a>
+		<a href="#!/admin">Back</a>
+	</p>
+	<div ng-view id="ngView_admin"></div>
+</div>
+
+<script>
+	angular
+		.module('app')
+		.directive('dir-greaterthanzero', function () {
+			return {
+				require: 'ngModel',
+				link: function (scope, element, attr, mCtrl) {
+					function myValidation(value) {
+						if (value > 0) {
+							mCtrl.$setValidity('greaterThanZero', true);
+						} else {
+							mCtrl.$setValidity('greaterThanZero', false);
+						}
+						return value;
+					}
+					mCtrl.$parsers.push(myValidation);
+				}
+			};
+		});
+</script>
