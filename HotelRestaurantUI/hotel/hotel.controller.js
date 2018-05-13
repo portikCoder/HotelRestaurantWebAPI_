@@ -116,6 +116,7 @@
             console.log("loadRooms");
             var result = vm.GetRooms().then(function (data) {
                 var target = document.getElementById(targetDiv);
+                localStorage.setItem("rooms", data);
                 var result = "";
                 addNewCollepsable(targetDiv, "Rooms");
                 for (var i = 0; i < data.data.length; ++i) {

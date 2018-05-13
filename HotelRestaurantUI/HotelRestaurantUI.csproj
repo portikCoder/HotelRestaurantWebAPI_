@@ -212,7 +212,9 @@
     <Content Include="app.js" />
     <Content Include="home\home.controller.js" />
     <Content Include="home\home.view.html" />
+    <Content Include="room\room.controller.js" />
     <Content Include="hotel\hotel.controller.js" />
+    <Content Include="room\room.view.html" />
     <Content Include="hotel\hotel.view.html" />
     <Content Include="index.html" />
     <Content Include="login\login.controller.js" />
