@@ -31,7 +31,7 @@ namespace HotelRestaurantAPI.Controllers
             };
             /*test data*/
 
-            return Ok(rooms_t);
+            return Ok(new[] { ("room_404", "bedroom", "doubled penetratin", new string[] { "extra-large", "XXL" }, new string[] { "mini-skirt", "ammm wardrobe", "mini refrigerator" }) }.ToList());
+        }
     }
-}
 }
