@@ -65,7 +65,8 @@
         }
 
         function Register(user) {
-            return $http.post($rootScope.baseUrl + 'api2/Account/Register', { Email: user.email, FirstName: user.firstName, LastName: user.lastName, UserName: user.username, Password: user.password, ConfirmPassword: user.confirmPassword });
+            //return $http.post($rootScope.baseUrl + 'api2/Account/Register', { Email: user.email, FirstName: user.firstName, LastName: user.lastName, UserName: user.username, Password: user.password, ConfirmPassword: user.confirmPassword });
+            return $http.post($rootScope.baseUrl + 'api2/signup', { Email: user.email, FirstName: user.firstName, LastName: user.lastName, UserName: user.username, Password: user.password, ConfirmPassword: user.confirmPassword });
         }
 
     }
