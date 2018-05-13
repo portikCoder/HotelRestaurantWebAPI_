@@ -52,6 +52,7 @@
   <ItemGroup>
     <Compile Include="Entities\Area.cs" />
     <Compile Include="Entities\Mine.cs" />
+    <Compile Include="Entities\Objects.cs" />
     <Compile Include="Entities\Room.cs" />
     <Compile Include="Entities\User.cs" />
     <Compile Include="HotelRestaurantDBContext.cs" />
