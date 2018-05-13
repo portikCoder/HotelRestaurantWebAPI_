@@ -5,16 +5,24 @@
         .module('app')
         .controller('HomeController', HomeController);
 
-	HomeController.$inject = ['$location', '$rootScope','AccountService', 'FlashService'];
-    function HomeController($location, $rootScope, AccountService, FlashService) {
+    HomeController.$inject = ['$http', '$location', '$rootScope','AccountService', 'FlashService'];
+    function HomeController($http, $location, $rootScope, AccountService, FlashService) {
         var vm = this;
 
-		vm.check = check;
-		vm.username = AccountService.GetUsername();
+        vm.check = check;
+        vm.username = AccountService.GetUsername();
+
+        vm.GetRooms = function () {
+            var response = $http.post($rootScope.baseUrl + 'api2/rooms', { UserName: vm.username });
+            console.log(response)
+        }
 
         function check() {
             FlashService.Error('Kukra fel...');
         };
+
+        /* Setting up the Global`s global user service scope */
+        //$scope.userService = UserService;
     }
 
 })();

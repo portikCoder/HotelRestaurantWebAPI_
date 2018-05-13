@@ -1,26 +1,26 @@
 ﻿(function () {
-	'use strict';
+    'use strict';
 
-	angular
-		.module('app')
-		.controller('TopBarController', TopBarController);
+    angular
+        .module('app')
+        .controller('TopBarController', TopBarController);
 
-	TopBarController.$inject = ['$rootScope', 'AccountService'];
-	function TopBarController($rootScope, AccountService) {
+    TopBarController.$inject = ['$rootScope', 'AccountService'];
+    function TopBarController($rootScope, AccountService) {
 
-		$rootScope.accountService = AccountService;
+        $rootScope.accountService = AccountService;
 
-		$rootScope.logout = function () {
+        $rootScope.logout = function () {
 
-			localStorage.clear();
-		}
+            localStorage.clear();
+        }
 
-		$rootScope.hastoken = function () {
+        $rootScope.hastoken = function () {
 
-			if (localStorage.getItem("userlogintoken") !== null) {
-				return true;
-			}
-		}
-	}
+            if (localStorage.getItem("userlogintoken") !== null) {
+                return true;
+            }
+        }
+    }
 
 })();

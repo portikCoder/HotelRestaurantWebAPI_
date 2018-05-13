@@ -82,6 +82,7 @@ C:\Users\Dell5548\Documents\Visual Studio 2017\Projects\HotelRestaurant\HotelRes
 C:\Users\Dell5548\Documents\Visual Studio 2017\Projects\HotelRestaurant\HotelRestaurantAPI\bin\System.IO.FileSystem.dll
 C:\Users\Dell5548\Documents\Visual Studio 2017\Projects\HotelRestaurant\HotelRestaurantAPI\bin\System.IO.FileSystem.Primitives.dll
 C:\Users\Dell5548\Documents\Visual Studio 2017\Projects\HotelRestaurant\HotelRestaurantAPI\bin\System.Net.Http.Formatting.dll
+C:\Users\Dell5548\Documents\Visual Studio 2017\Projects\HotelRestaurant\HotelRestaurantAPI\bin\System.ValueTuple.dll
 C:\Users\Dell5548\Documents\Visual Studio 2017\Projects\HotelRestaurant\HotelRestaurantAPI\bin\System.Web.Http.dll
 C:\Users\Dell5548\Documents\Visual Studio 2017\Projects\HotelRestaurant\HotelRestaurantAPI\bin\System.Web.Http.WebHost.dll
 C:\Users\Dell5548\Documents\Visual Studio 2017\Projects\HotelRestaurant\HotelRestaurantAPI\bin\System.Xml.ReaderWriter.dll
@@ -93,6 +94,7 @@ C:\Users\Dell5548\Documents\Visual Studio 2017\Projects\HotelRestaurant\HotelRes
 C:\Users\Dell5548\Documents\Visual Studio 2017\Projects\HotelRestaurant\HotelRestaurantAPI\bin\JWT.xml
 C:\Users\Dell5548\Documents\Visual Studio 2017\Projects\HotelRestaurant\HotelRestaurantAPI\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
 C:\Users\Dell5548\Documents\Visual Studio 2017\Projects\HotelRestaurant\HotelRestaurantAPI\bin\Newtonsoft.Json.xml
+C:\Users\Dell5548\Documents\Visual Studio 2017\Projects\HotelRestaurant\HotelRestaurantAPI\bin\System.ValueTuple.xml
 C:\Users\Dell5548\Documents\Visual Studio 2017\Projects\HotelRestaurant\HotelRestaurantAPI\bin\System.Net.Http.Formatting.xml
 C:\Users\Dell5548\Documents\Visual Studio 2017\Projects\HotelRestaurant\HotelRestaurantAPI\bin\System.Web.Http.xml
 C:\Users\Dell5548\Documents\Visual Studio 2017\Projects\HotelRestaurant\HotelRestaurantAPI\bin\System.Web.Http.WebHost.xml
