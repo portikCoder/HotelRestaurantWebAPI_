@@ -72,7 +72,7 @@
 	run.$inject = ['$rootScope', '$location', '$cookies', '$http'];
 	function run($rootScope, $location, $cookies, $http) {
 		//Base page URL
-		$rootScope.baseUrl = "http://localhost/HotelRestaurantUI";
+		$rootScope.baseUrl = "http://localhost/HotelRestaurantAPI/";
 	}
 
 })();
