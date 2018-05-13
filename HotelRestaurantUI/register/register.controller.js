@@ -5,8 +5,8 @@
         .module('app')
         .controller('RegisterController', RegisterController);
 
-    RegisterController.$inject = ['UserService', '$location', '$rootScope', 'FlashService'];
-    function RegisterController(UserService, $location, $rootScope, FlashService) {
+    RegisterController.$inject = ['AccountService', '$location', '$rootScope', 'FlashService'];
+    function RegisterController(AccountService, $location, $rootScope, FlashService) {
         var vm = this;
 
         vm.register = register;
@@ -19,7 +19,7 @@
                 vm.dataLoading = false;
             }
             else {
-                UserService.Register(vm.user)
+                AccountService.Register(vm.user)
                     .then(function (response) {
                         if (response.statusText === "OK") {
                             FlashService.Success('Registration successful', true);
@@ -28,6 +28,11 @@
                             FlashService.Error(response.data);
                             vm.dataLoading = false;
                         }
+                    }, function (response) {
+                        // This is for test purposes, change it later to a nice error message to the CLIENT...
+                        FlashService.Error(response.data);
+                        //FlashService.Error("Kutya fasza.....");
+                        vm.dataLoading = false;
                     });
             }
         }
