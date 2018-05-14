@@ -1,41 +1,110 @@
 ﻿<div class="col-md-6 col-md-offset-3">
 	<h3>Add a new Room...</h3>
-	<form name="form" ng-submit="vm.add_room()" role="form">
-		<div class="form-group" ng-class="{ 'has-error': form.roomNo.$dirty && form.roomNo.$error.required }">
-			<label for="roomNo">Room Number <strong>(Required)</strong>:</label>
-			<input type="number" name="roomNo" id="roomNo" class="form-control" ng-model="vm.room.roomNo" required/>
-			<span ng-show="form.roomNo.$dirty && form.roomNo.$error.required" class="help-block">Room Number is required!</span>
+	<form name="form"
+		  ng-submit="add_room()"
+		  role="form">
+		<div class="form-group"
+			 ng-class="{ 'has-error': form.roomName.$dirty && form.roomName.$error.required }">
+			<label for="roomName">
+				Room Name <strong>(Required)</strong>:
+			</label>
+			<input type="text"
+				   name="roomName"
+				   id="roomName"
+				   class="form-control"
+				   ng-model="vm.room.roomName"
+				   required />
+			<span ng-show="form.roomName.$dirty && form.roomName.$error.required"
+				  class="help-block">
+				Room Name is required!
+			</span>
 		</div>
-		<div class="form-group" ng-class="{ 'has-error': form.noOfBeds.$dirty && form.noOfBeds.$error.required }">
-			<label for="roomNo">Number of Beds <strong>(Required, value must be greater than 0)</strong>:</label>
-			<input type="number" name="noOfBeds" id="noOfBeds" class="form-control" ng-model="vm.room.noOfBeds" required dir-greaterthanzero/>
-			<span ng-show="form.roomNo.$dirty && form.roomNo.$error.required" class="help-block">Total number of beds in the room must be provided!</span>
+		<div class="form-group"
+			 ng-class="{ 'has-error': form.roomType.$dirty && form.roomType.$error.required }">
+			<label for="roomType">
+				Room Type
+			</label>
+			<select name="roomType"
+					ng-model="vm.room.roomType"
+					ng-options="t.name for t in rTypes track by t.val">
+				<option ng-if="!vm.room.roomType"
+						value="">
+					Select Room Type
+				</option>
+			</select>
+		</div>
+		<div class="form-group"
+			 ng-class="{ 'has-error': form.roomSubtype.$dirty && form.roomSubtype.$error.required }">
+			<label for="bedType">
+				Bed Type:
+			</label>
+			<select name="bedType"
+					ng-model="vm.room.roomSubtype"
+					ng-options="st.name for st in rSubtypes[vm.room.roomType.val] track by st.val">
+				<option ng-if="!vm.room.roomType"
+						value="">
+					Select Room Type
+				</option>
+			</select>
+			<div>
+				<input style="display:inline"
+					   type="text"
+					   id="newconfval"
+					   placeholder="Other..."
+					   ng-model="vm.newVal" />
+				<input style="display:inline"
+					   type="text"
+					   id="newconfname"
+					   placeholder="Other..."
+					   ng-model="vm.newText" />
+				<button type="button"
+						ng-click="add_conf(rSubtypes[vm.room.roomType.val])"
+						ng-disabled="!vm.newText">
+					Add New Configuration
+				</button>
+			</div>
+		</div>
+		<div class="form-group"
+			 ng-class="{ 'has-error': form.roomSize.$dirty && form.roomSize.$error.required }">
+			<label for="roomSize">
+				Room Size:
+			</label>
+			<select name="roomSize"
+					ng-model="vm.room.roomSize"
+					ng-options="s.name for s in rSizes track by s.val">
+				<option ng-if="!vm.room.roomSize"
+						value="">
+					Select Room Size
+				</option>
+			</select>
+		</div>
+		<div class="form-group"
+			 ng-class="{ 'has-error': form.roomSize.$dirty }">
+			<label>
+				Extras:
+			</label>
+			<div class="grid-container">
+				<div ng-repeat="e in rExtras[vm.room.roomType.val]">
+					<input type="checkbox"
+						   name="{{e.val}}"
+						   id="{{e.val}}"
+						   ng-model="vm.room.roomExtras[e.val]" />
+					<label for="{{e.val}}">
+						{{e.name}}
+					</label>
+				</div>
+			</div>
+		</div>
+		<div class="from-actions">
+			<button type="submit"
+					ng-disabled="form.$invalid || vm.dataLoading"
+					class="btn btn-primary">
+				Add Room
+			</button>
+			<img ng-if="vm.dataLoading"
+				 src="data:image/gif;base64,R0lGODlhEAAQAPIAAP///wAAAMLCwkJCQgAAAGJiYoKCgpKSkiH/C05FVFNDQVBFMi4wAwEAAAAh/hpDcmVhdGVkIHdpdGggYWpheGxvYWQuaW5mbwAh+QQJCgAAACwAAAAAEAAQAAADMwi63P4wyklrE2MIOggZnAdOmGYJRbExwroUmcG2LmDEwnHQLVsYOd2mBzkYDAdKa+dIAAAh+QQJCgAAACwAAAAAEAAQAAADNAi63P5OjCEgG4QMu7DmikRxQlFUYDEZIGBMRVsaqHwctXXf7WEYB4Ag1xjihkMZsiUkKhIAIfkECQoAAAAsAAAAABAAEAAAAzYIujIjK8pByJDMlFYvBoVjHA70GU7xSUJhmKtwHPAKzLO9HMaoKwJZ7Rf8AYPDDzKpZBqfvwQAIfkECQoAAAAsAAAAABAAEAAAAzMIumIlK8oyhpHsnFZfhYumCYUhDAQxRIdhHBGqRoKw0R8DYlJd8z0fMDgsGo/IpHI5TAAAIfkECQoAAAAsAAAAABAAEAAAAzIIunInK0rnZBTwGPNMgQwmdsNgXGJUlIWEuR5oWUIpz8pAEAMe6TwfwyYsGo/IpFKSAAAh+QQJCgAAACwAAAAAEAAQAAADMwi6IMKQORfjdOe82p4wGccc4CEuQradylesojEMBgsUc2G7sDX3lQGBMLAJibufbSlKAAAh+QQJCgAAACwAAAAAEAAQAAADMgi63P7wCRHZnFVdmgHu2nFwlWCI3WGc3TSWhUFGxTAUkGCbtgENBMJAEJsxgMLWzpEAACH5BAkKAAAALAAAAAAQABAAAAMyCLrc/jDKSatlQtScKdceCAjDII7HcQ4EMTCpyrCuUBjCYRgHVtqlAiB1YhiCnlsRkAAAOwAAAAAAAAAAAA==" />
+			<!--<a href="#!/admin" class="btn btn-primary">Add Room</a>-->
+			<a href="#!/admin">Back</a>
 		</div>
 	</form>
-	<p>
-		<a href="#!/admin" class="btn btn-primary">Add Room</a>
-		<a href="#!/admin">Back</a>
-	</p>
-	<div ng-view id="ngView_admin"></div>
 </div>
-
-<script>
-	angular
-		.module('app')
-		.directive('dir-greaterthanzero', function () {
-			return {
-				require: 'ngModel',
-				link: function (scope, element, attr, mCtrl) {
-					function myValidation(value) {
-						if (value > 0) {
-							mCtrl.$setValidity('greaterThanZero', true);
-						} else {
-							mCtrl.$setValidity('greaterThanZero', false);
-						}
-						return value;
-					}
-					mCtrl.$parsers.push(myValidation);
-				}
-			};
-		});
-</script>

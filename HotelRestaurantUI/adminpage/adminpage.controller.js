@@ -8,6 +8,7 @@
 	AdminPageController.$inject = ['$scope', '$location', '$rootScope', 'AccountService', 'FlashService'];
 	function AdminPageController($scope, $location, $rootScope, AccountService, FlashService) {
 		var vm = this;
+
 		$scope.langs = [
 			{ name: 'Hungarian', abbr: 'HU' },
 			{ name: 'Romanian', abbr: 'RO' },
@@ -21,6 +22,7 @@
 		];
 
 		vm.check = check;
+		vm.username = AccountService.GetUsername();
 
 		function check() {
 			FlashService.Error('Flash Service error on Admin Page!');

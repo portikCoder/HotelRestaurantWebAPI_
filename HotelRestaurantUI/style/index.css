@@ -1,33 +1,38 @@
 ﻿body {
-    background-image: url("stuff-and-things-random-things.jpg");
-    background-repeat: repeat;
-    opacity: 0.8;
-    background-color: #cccccc;
-    /* background-image: url("angularjs.PNG"); */
+	background-image: url("stuff-and-things-random-things.jpg");
+	background-repeat: repeat;
+	opacity: 0.8;
+	background-color: #cccccc;
+	/* background-image: url("angularjs.PNG"); */
 }
 
 .topBarElement {
-    padding-right: 25px;
-    font-size: 25px;
-    /*float: right;*/
+	padding-right: 25px;
+	font-size: 25px;
+	/*float: right;*/
 }
 
 #topBar {
-    height: 40px;
-    border: groove 0px;
-    border-radius: 15px;
-    background-color: lightsteelblue;
+	height: 40px;
+	border: groove 0px;
+	border-radius: 15px;
+	background-color: lightsteelblue;
 }
 
 .container {
-    background-color: lightsteelblue;
-    border: groove 5px;
-    border-radius: 5px;
-    margin-top: 5.9em;
-    /* opacity: 0.6; */
+	background-color: lightsteelblue;
+	border: groove 5px;
+	border-radius: 5px;
+	margin-top: 5.9em;
+	/* opacity: 0.6; */
 }
 
 .jumbotron {
-    background-image: inherit;
-    background-repeat: no-repeat;
+	background-image: inherit;
+	background-repeat: no-repeat;
+}
+
+.grid-container {
+	display: grid;
+	grid-template-columns: auto auto auto;
 }

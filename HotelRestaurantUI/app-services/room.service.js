@@ -5,33 +5,61 @@
 		.module('app')
 		.factory('RoomService', RoomService);
 
-	RoomService.$inject = ['$http', '$rootscope'];
-	function RoomService($http, $rootscope) {
+	RoomService.$inject = ['$http', '$rootScope'];
+	function RoomService($http, $rootScope) {
 		var service = {};
-		var roomNo = -1;
-		var noOfBeds = -1;
+		var roomName = "";
+		var roomType = "";
+		var roomSubtype = "";
+		var roomSize = "";
 
-		service.GetRoomNumber = GetRoomNumber;
-		service.SetRoomNumber = SetRoomNumber;
-		service.GetNumberOfBeds = GetNumberOfBeds;
-		service.SetNumberOfBeds = SetNumberOfBeds;
+		service.GetRoomName = GetRoomName;
+		service.SetRoomName = SetRoomName;
+		service.GetRoomType = GetRoomType;
+		service.SetRoomType = SetRoomType;
+		service.GetRoomSubtype = GetRoomSubtype;
+		service.SetRoomSubtype = SetRoomSubtype;
+		service.GetRoomSize = GetRoomSize;
+		service.SetRoomSize = SetRoomSize;
+
+		service.AddRoom = AddRoom;
 
 		return service;
 
-		function GetRoomNumber() {
-			return this.roomNo;
+		function GetRoomName() {
+			return this.roomName;
 		}
 
-		function SetRoomNumber(roomNo) {
-			this.roomNo = roomNo;
+		function SetRoomName(roomName) {
+			this.roomName = roomName;
 		}
 
-		function GetNumberOfBeds() {
-			return this.noOfBeds;
+		function GetRoomType() {
+			return this.roomType;
 		}
 
-		function SetNumberOfBeds(noOfBeds) {
-			this.noOfBeds = noOfBeds;
+		function SetRoomType(roomType) {
+			this.roomType = roomType;
+		}
+
+		function GetRoomSubtype() {
+			return this.roomType;
+		}
+
+		function SetRoomSubtype(roomSubtype) {
+			this.roomSubtype = roomSubtype;
+		}
+
+		function GetRoomSize() {
+			return this.roomSize;
+		}
+
+		function SetRoomSize(roomSize) {
+			this.roomSize = roomSize;
+		}
+
+		function AddRoom(room) {
+			//TODO: get http post address
 		}
 	}
 
