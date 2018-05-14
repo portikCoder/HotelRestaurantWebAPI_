@@ -40,6 +40,11 @@
                     templateUrl: 'register/register.view.html',
                     controllerAs: 'vm'
                 })
+                .when('/hotelroom', {
+                    controller: 'HotelRoomController',
+                    templateUrl: 'hotelroom/hotelroom.view.html',
+                    controllerAs: 'vm'
+                })
                 .when('/home', {
                     controller: 'HomeController',
                     templateUrl: 'home/home.view.html',
@@ -50,11 +55,7 @@
                     templateUrl: 'hotel/hotel.view.html',
                     controllerAs: 'vm'
                 })
-                .when('/room', {
-                    controller: 'RoomController',
-                    templateUrl: 'room/room.view.html',
-                    controllerAs: 'vm'
-                })
+
                 //.when("/", {
                 //    templateUrl: "index.html"
                 //})
