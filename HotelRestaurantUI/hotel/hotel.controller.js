@@ -31,7 +31,7 @@
                 var target = document.getElementById(targetDiv);
                 var result = "";
             result += `
-                <button ng-click="vm.teszt()">God why</button>
+               <button type="button" ng-click="vm.teszt()">God why</button>
                 <div class="panel-group">
                     <div class="panel panel-default">
                         <div class="panel-heading">
