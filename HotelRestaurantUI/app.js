@@ -64,7 +64,17 @@
 					templateUrl: 'list_rooms/list_rooms.view.html',
 					controllerAs: 'vm'
 				})
-				.otherwise({ redirectTo: '/login' });
+                .when('/hotelroom', {
+                    controller: 'HotelRoomController',
+                    templateUrl: 'hotelroom/hotelroom.view.html',
+                    controllerAs: 'vm'
+                })
+                .when('/hotel', {
+                    controller: 'HotelController',
+                    templateUrl: 'hotel/hotel.view.html',
+                    controllerAs: 'vm'
+                })
+                .otherwise({ redirectTo: '/login' });
 
 		})
 		.run(run);

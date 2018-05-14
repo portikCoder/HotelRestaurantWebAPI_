@@ -31,7 +31,13 @@ namespace HotelRestaurantAPI.Controllers
             };
             /*test data*/
 
-            return Ok(rooms_t);
+            //return Ok(new[] { "room_404", "bedroom", "doubled penetratin", new string[] { "extra-large", "XXL" }, new string[] { "mini-skirt", "ammm wardrobe", "mini refrigerator" } }.ToList());
+            //return Ok( new { "data" = 1, "data2" = 2, "data3" = 3 } );
+            return Ok(new[] { 
+                new { Id = "room_404", Type = "bedroom", Subtype = "doubled penetratin", Properties = new string[] { "extra-large", "XXL" }, Others = new string[] { "mini-skirt", "ammm wardrobe", "mini refrigerator" }},
+                new { Id = "room_406", Type = "bedroom", Subtype = "doubled penetratin", Properties = new string[] { "extra-large", "XXL" }, Others = new string[] { "mini-skirt", "ammm wardrobe", "mini refrigerator" }},
+                new { Id = "room_408", Type = "bedroom", Subtype = "doubled penetratin", Properties = new string[] { "extra-large", "XXL" }, Others = new string[] { "mini-skirt", "ammm wardrobe", "mini refrigerator" }},
+            });
+        }
     }
-}
 }
