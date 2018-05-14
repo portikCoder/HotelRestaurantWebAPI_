@@ -26,7 +26,7 @@
 			</label>
 			<select name="roomType"
 					ng-model="vm.room.roomType"
-					ng-options="t.name for t in rTypes track by t.val">
+					ng-options="t for t in vm.rTypes">
 				<option ng-if="!vm.room.roomType"
 						value="">
 					Select Room Type
@@ -40,7 +40,7 @@
 			</label>
 			<select name="bedType"
 					ng-model="vm.room.roomSubtype"
-					ng-options="st.name for st in rSubtypes[vm.room.roomType.val] track by st.val">
+					ng-options="st for st in vm.rSubtypes[vm.room.roomType]">
 				<option ng-if="!vm.room.roomType"
 						value="">
 					Select Room Type
@@ -49,16 +49,11 @@
 			<div>
 				<input style="display:inline"
 					   type="text"
-					   id="newconfval"
-					   placeholder="Other..."
-					   ng-model="vm.newVal" />
-				<input style="display:inline"
-					   type="text"
 					   id="newconfname"
 					   placeholder="Other..."
 					   ng-model="vm.newText" />
 				<button type="button"
-						ng-click="add_conf(rSubtypes[vm.room.roomType.val])"
+						ng-click="vm.add_conf(vm.rSubtypes[vm.room.roomType])"
 						ng-disabled="!vm.newText">
 					Add New Configuration
 				</button>
@@ -71,7 +66,7 @@
 			</label>
 			<select name="roomSize"
 					ng-model="vm.room.roomSize"
-					ng-options="s.name for s in rSizes track by s.val">
+					ng-options="s for s in rSizes">
 				<option ng-if="!vm.room.roomSize"
 						value="">
 					Select Room Size
@@ -84,15 +79,28 @@
 				Extras:
 			</label>
 			<div class="grid-container">
-				<div ng-repeat="e in rExtras[vm.room.roomType.val]">
+				<div ng-repeat="e in vm.rExtras[vm.room.roomType]">
 					<input type="checkbox"
-						   name="{{e.val}}"
-						   id="{{e.val}}"
-						   ng-model="vm.room.roomExtras[e.val]" />
-					<label for="{{e.val}}">
-						{{e.name}}
+						   name="{{e}}"
+						   id="{{e}}"
+						   ng-model="vm.room.roomExtras[e]" />
+					<label for="{{e}}">
+						{{e}}
 					</label>
 				</div>
+
+			</div>
+			<div>
+				<input style="display:inline"
+					   type="text"
+					   id="newextra"
+					   placeholder="Other..."
+					   ng-model="vm.newExtra" />
+				<button type="button"
+						ng-click="vm.add_extra(vm.rExtras[vm.room.roomType])"
+						ng-disabled="!vm.newExtra">
+					Add New Configuration
+				</button>
 			</div>
 		</div>
 		<div class="from-actions">
