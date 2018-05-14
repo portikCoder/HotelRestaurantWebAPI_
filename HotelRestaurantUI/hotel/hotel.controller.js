@@ -7,6 +7,7 @@
 
     HotelController.$inject = ['$http', '$location', '$rootScope', 'AccountService', 'FlashService'];
     function HotelController($http, $location, $rootScope, AccountService, FlashService) {
+        
         var vm = this;
         //
         vm.username = AccountService.GetUsername();
@@ -18,7 +19,10 @@
         vm.addRoom = addRoom;
         vm.roomNumber = 0;
         vm.loadRoooms = loadRoooms;
-        
+        vm.teszt = teszt;
+        function teszt() {
+            console.log("TESZT");
+        }
 
         function addRoom(room) {
 
