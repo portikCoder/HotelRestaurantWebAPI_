@@ -18,18 +18,20 @@
         vm.addRoom = addRoom;
         vm.roomNumber = 0;
         vm.loadRoooms = loadRoooms;
-        vm.teszt = teszt;
+        
         function teszt() {
-            console.log("TESZT");
+            console.log("tesztem");
+            window.alert();
         }
-
+        vm.teszt = teszt;
         function addRoom(room) {
 
         }
         function addNewCollepsable(targetDiv,collepsableName) {
                 var target = document.getElementById(targetDiv);
                 var result = "";
-                result += `
+            result += `
+                <button ng-click="vm.teszt()">God why</button>
                 <div class="panel-group">
                     <div class="panel panel-default">
                         <div class="panel-heading">
@@ -117,7 +119,7 @@
         }
         function loadRoooms(targetDiv) {
             console.log("loadRooms");
-            console.log("wtffmannn");
+            console.log("Bugos szar");
             var result = vm.GetRooms().then(function (data) {
                 var target = document.getElementById(targetDiv);
                 localStorage.setItem("rooms", data);
