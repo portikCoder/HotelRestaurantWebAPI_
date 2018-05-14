@@ -5,8 +5,8 @@
         .module('app')
         .controller('HotelController', HotelController);
 
-    HotelController.$inject = ['$http', '$location', '$rootScope', 'AccountService', 'FlashService'];
-    function HotelController($http, $location, $rootScope, AccountService, FlashService) {
+    HotelController.$inject = ['$http', '$location', '$scope','$compile','$rootScope', 'AccountService', 'FlashService'];
+    function HotelController($http, $location, $scope,$compile,$rootScope, AccountService, FlashService) {
         var vm = this;
         //
         vm.username = AccountService.GetUsername();
@@ -31,7 +31,6 @@
                 var target = document.getElementById(targetDiv);
                 var result = "";
             result += `
-               <button type="button" ng-click="vm.teszt()">God why</button>
                 <div class="panel-group">
                     <div class="panel panel-default">
                         <div class="panel-heading">
@@ -43,7 +42,7 @@
                         </div>
                     </div>
                 </div>`;
-                angular.element(target).append(result);
+            angular.element(target).append($compile(result)($scope));
         }
         function addNewRoomToCollepsable(collepsableName,room) {
             var target = document.getElementById(collepsableName);
@@ -53,10 +52,11 @@
                 <div class="panel-body">
                     <div class="panel-group">
                         <div class="panel panel-default">
-                            <div class="panel-heading">
+                            <div class="panel-heading" ng-click="vm.teszt()">
                                 <h4 class="panel-title">
                                     <a data-toggle="collapse" data-target="#`+ room.id + `">` + room.id + `</a>
                                 </h4>
+                                <button type="button">View Room</button>
                             </div>
                             <div id="`+ room.id + `" class="panel-collapse collapse">
                                 <div class="panel-body">type:`+ room.type + `</div>
@@ -93,7 +93,7 @@
                         </div>
                     </div>
                 </div>`;
-            angular.element(target).append(result);
+            angular.element(target).append($compile(result)($scope));
             addNewPropertiesToRoom(room.id, room.properties);
             addNewOthersToRoom(room.id, room.others);
         }
@@ -105,7 +105,7 @@
         function addNewPropertieToRoom(roomId, propertie) {
             var target = document.getElementById(roomId + "_properties");
             var result = `<div class="panel-body">` + propertie+`</div>`;
-            angular.element(target).append(result);
+            angular.element(target).append($compile(result)($scope));
         }
         function addNewOthersToRoom(roomId, others) {
             for (var i = 0; i < others.length; ++i) {
@@ -115,11 +115,12 @@
         function addNewOtherToRoom(roomId, other) {
             var target = document.getElementById(roomId + "_others");
             var result = `<div class="panel-body">` + other + `</div>`;
-            angular.element(target).append(result);
+            angular.element(target).append($compile(result)($scope));
         }
         function loadRoooms(targetDiv) {
             console.log("loadRooms");
             console.log("Bugos szar");
+            console.log("foss");
             var result = vm.GetRooms().then(function (data) {
                 var target = document.getElementById(targetDiv);
                 localStorage.setItem("rooms", data);

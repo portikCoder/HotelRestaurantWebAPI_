@@ -98,8 +98,8 @@ C:\Users\Szabi\source\repos\HotelRestaurantWebAPI_\HotelRestaurantAPI\bin\System
 C:\Users\Szabi\source\repos\HotelRestaurantWebAPI_\HotelRestaurantAPI\bin\System.Net.Http.Formatting.xml
 C:\Users\Szabi\source\repos\HotelRestaurantWebAPI_\HotelRestaurantAPI\bin\System.Web.Http.xml
 C:\Users\Szabi\source\repos\HotelRestaurantWebAPI_\HotelRestaurantAPI\bin\System.Web.Http.WebHost.xml
-C:\Users\Szabi\source\repos\HotelRestaurantWebAPI_\HotelRestaurantAPI\obj\Debug\HotelRestaurantAPI.csprojResolveAssemblyReference.cache
 C:\Users\Szabi\source\repos\HotelRestaurantWebAPI_\HotelRestaurantAPI\obj\Debug\HotelRestaurantAPI.csproj.CoreCompileInputs.cache
 C:\Users\Szabi\source\repos\HotelRestaurantWebAPI_\HotelRestaurantAPI\obj\Debug\HotelRestaurantAPI.csproj.CopyComplete
 C:\Users\Szabi\source\repos\HotelRestaurantWebAPI_\HotelRestaurantAPI\obj\Debug\HotelRestaurantAPI.dll
 C:\Users\Szabi\source\repos\HotelRestaurantWebAPI_\HotelRestaurantAPI\obj\Debug\HotelRestaurantAPI.pdb
+C:\Users\Szabi\source\repos\HotelRestaurantWebAPI_\HotelRestaurantAPI\obj\Debug\HotelRestaurantAPI.csprojAssemblyReference.cache

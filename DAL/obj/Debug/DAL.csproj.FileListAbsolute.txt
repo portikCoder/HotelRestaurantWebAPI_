@@ -5,8 +5,8 @@ C:\Users\Szabi\source\repos\HotelRestaurantWebAPI_\DAL\bin\Debug\EntityFramework
 C:\Users\Szabi\source\repos\HotelRestaurantWebAPI_\DAL\bin\Debug\EntityFramework.SqlServer.dll
 C:\Users\Szabi\source\repos\HotelRestaurantWebAPI_\DAL\bin\Debug\EntityFramework.xml
 C:\Users\Szabi\source\repos\HotelRestaurantWebAPI_\DAL\bin\Debug\EntityFramework.SqlServer.xml
-C:\Users\Szabi\source\repos\HotelRestaurantWebAPI_\DAL\obj\Debug\DAL.csprojResolveAssemblyReference.cache
 C:\Users\Szabi\source\repos\HotelRestaurantWebAPI_\DAL\obj\Debug\DAL.csproj.CoreCompileInputs.cache
 C:\Users\Szabi\source\repos\HotelRestaurantWebAPI_\DAL\obj\Debug\DAL.csproj.CopyComplete
 C:\Users\Szabi\source\repos\HotelRestaurantWebAPI_\DAL\obj\Debug\DAL.dll
 C:\Users\Szabi\source\repos\HotelRestaurantWebAPI_\DAL\obj\Debug\DAL.pdb
+C:\Users\Szabi\source\repos\HotelRestaurantWebAPI_\DAL\obj\Debug\DAL.csprojAssemblyReference.cache
