@@ -7,7 +7,6 @@
 
     HotelController.$inject = ['$http', '$location', '$rootScope', 'AccountService', 'FlashService'];
     function HotelController($http, $location, $rootScope, AccountService, FlashService) {
-        
         var vm = this;
         //
         vm.username = AccountService.GetUsername();
@@ -30,8 +29,7 @@
         function addNewCollepsable(targetDiv,collepsableName) {
                 var target = document.getElementById(targetDiv);
                 var result = "";
-            result += `
-                            <button type="button" ng-click="teszt()">Click Me!</button>
+                result += `
                 <div class="panel-group">
                     <div class="panel panel-default">
                         <div class="panel-heading">
@@ -119,6 +117,7 @@
         }
         function loadRoooms(targetDiv) {
             console.log("loadRooms");
+            console.log("wtffmannn");
             var result = vm.GetRooms().then(function (data) {
                 var target = document.getElementById(targetDiv);
                 localStorage.setItem("rooms", data);
