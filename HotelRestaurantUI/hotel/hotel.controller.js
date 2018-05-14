@@ -30,7 +30,8 @@
         function addNewCollepsable(targetDiv,collepsableName) {
                 var target = document.getElementById(targetDiv);
                 var result = "";
-                result += `
+            result += `
+                            <button type="button" ng-click="teszt()">Click Me!</button>
                 <div class="panel-group">
                     <div class="panel panel-default">
                         <div class="panel-heading">
