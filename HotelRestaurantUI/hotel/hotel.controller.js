@@ -5,8 +5,8 @@
         .module('app')
         .controller('HotelController', HotelController);
 
-    HotelController.$inject = ['$http', '$location', '$scope','$compile','$rootScope', 'AccountService', 'FlashService'];
-    function HotelController($http, $location, $scope,$compile,$rootScope, AccountService, FlashService) {
+    HotelController.$inject = ['$http', '$location', '$scope', '$compile', '$rootScope', 'AccountService', 'FlashService'];
+    function HotelController($http, $location, $scope, $compile, $rootScope, AccountService, FlashService) {
         var vm = this;
         //
         vm.username = AccountService.GetUsername();
@@ -18,12 +18,33 @@
         vm.addRoom = addRoom;
         vm.roomNumber = 0;
         vm.loadRoooms = loadRoooms;
-        
-        function teszt() {
-            console.log("tesztem");
-            window.alert();
+        vm.booking = {};
+        vm.isBooked = isBooked;
+        function isBooked(roomId) {
+            console.log(roomId);
+            if (vm.booking.hasOwnProperty(roomId)) {
+                return true;
+            }
+            return false;
         }
-        vm.teszt = teszt;
+        vm.book = book;
+        vm.unBook = unBook;
+        function unBook(roomId) {
+            console.log(roomId);
+            delete vm.booking[roomId];
+            console.log(vm.booking);
+        }
+        function book(roomId) {
+            console.log(roomId);
+            vm.booking[roomId] = "S";
+            console.log(vm.booking);
+
+
+        }
+        vm.sendBookings = sendBookings;
+        function sendBookings() {
+            $http.post($rootScope.baseUrl + 'api2/rooms', vm.booking);
+        }
         function addRoom(room) {
 
         }
@@ -37,6 +58,7 @@
                             <h4 class="panel-title">
                                 <a data-toggle="collapse" data-target="#`+ collepsableName + `">`+collepsableName+`</a>
                             </h4>
+                                <button type="button" ng-click="vm.sendBookings()">Send Bookings</button>
                         </div>
                         <div id="`+ collepsableName+`" class="panel-collapse collapse"> 
                         </div>
@@ -52,15 +74,18 @@
                 <div class="panel-body">
                     <div class="panel-group">
                         <div class="panel panel-default">
-                            <div class="panel-heading" ng-click="vm.teszt()">
+                            <div class="panel-heading">
                                 <h4 class="panel-title">
                                     <a data-toggle="collapse" data-target="#`+ room.id + `">` + room.id + `</a>
                                 </h4>
-                                <button type="button">View Room</button>
+
+                                <button type="button" ng-click="vm.book(`+ '\'' + room.id + '\'' + `)" ng-if="vm.isBooked(` + '\'' + room.id + '\'' +`)==false">Book</button>
+                                <button type="button" ng-click="vm.unBook(`+ '\'' + room.id + '\'' + `)" ng-if="vm.isBooked(` + '\'' + room.id + '\'' +`)==true">Unbook</button>
                             </div>
                             <div id="`+ room.id + `" class="panel-collapse collapse">
                                 <div class="panel-body">type:`+ room.type + `</div>
                                 <div class="panel-body">subtype:`+ room.subtype + `</div>
+                                <div class="panel-body">price:`+ room.room_price + `</div>
                                 <div class="panel-body">
                            
                                   <div class="panel-group">
@@ -121,6 +146,8 @@
             console.log("loadRooms");
             console.log("Bugos szar");
             console.log("foss");
+
+
             var result = vm.GetRooms().then(function (data) {
                 var target = document.getElementById(targetDiv);
                 localStorage.setItem("rooms", data);
@@ -133,6 +160,7 @@
             });
         }
         vm.loadRoooms("container");
+        return vm;
        // vm.loadRoooms();
         /*
         vm.register = register;
