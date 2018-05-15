@@ -20,17 +20,29 @@
 
 		vm.rTypes = ['Bedroom' ,'Bathroom' ,'Kitchen'];
 
+		//vm.rSubtypes = [];
+		//vm.rSubtypes.Bedroom = ['1 Single Bed', '1 Double Bed', '1 Bunk Bed', '2 Single Beds', '1 Double Bed + 1 Single Bed', '1 Double Bed + 2 Single Beds', '2 Double Beds', '2 Bunk Beds'];
+		//vm.rSubtypes.Bathroom = ['Toilet' ,'Shower Room'];
+		//vm.rSubtypes.Kitchen = ['Cookery', 'Diner'];
+
 		vm.rSubtypes = [];
-		vm.rSubtypes.Bedroom = ['1 Single Bed', '1 Double Bed', '1 Bunk Bed', '2 Single Beds', '1 Double Bed + 1 Single Bed', '1 Double Bed + 2 Single Beds', '2 Double Beds', '2 Bunk Beds'];
-		vm.rSubtypes.Bathroom = ['Toilet' ,'Shower Room'];
-		vm.rSubtypes.Kitchen = ['Cookery', 'Diner'];
+
+		vm.rTypes.forEach(function (t) {
+			vm.rTypes[t] = RoomService.AddSubtype(t);
+		});
 
 		vm.rSizes = ['Small', 'Medium', 'Large', 'Very Large', 'Extra Large'];
 
+		//vm.rExtras = [];
+		//vm.rExtras.Bedroom = ['Mini Fridge', 'Television', 'Air Conditioning', 'Balcony', 'Wardrobe', 'Coffee Machine'];
+		//vm.rExtras.Bathroom = ['Toilet', 'Shower Cabin', 'Sink', 'Bathtub', 'Bidet'];
+		//vm.rExtras.Kitchen = ['Oven', 'Microwave', 'Sink', 'Refrigerator'];
+
 		vm.rExtras = [];
-		vm.rExtras.Bedroom = ['Mini Fridge', 'Television', 'Air Conditioning', 'Balcony', 'Wardrobe', 'Coffee Machine'];
-		vm.rExtras.Bathroom = ['Toilet', 'Shower Cabin', 'Sink', 'Bathtub', 'Bidet'];
-		vm.rExtras.Kitchen = ['Oven', 'Microwave', 'Sink', 'Refrigerator'];
+
+		vm.rExtras.forEach(function (t) {
+			vm.rExtras[t] = RoomService.AddExtra(t);
+		});
 
 		function check() {
 			FlashService.Error('Well... this is awkward...');

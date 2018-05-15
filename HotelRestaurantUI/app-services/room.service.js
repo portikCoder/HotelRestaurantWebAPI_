@@ -23,6 +23,8 @@
 		service.SetRoomSize = SetRoomSize;
 
 		service.AddRoom = AddRoom;
+		service.AddSubtype = AddSubtype;
+		service.AddExtra = AddExtra;
 
 		return service;
 
@@ -60,6 +62,14 @@
 
 		function AddRoom(room) {
 			//TODO: get http post address
+		}
+
+		function AddSubtype(type) {
+			return $http.get($rootScope.baseUrl + "api2/subtypes");
+		}
+
+		function AddExtra(type) {
+			return $http.get($rootScope.baseUrl + "api2/extras");
 		}
 	}
 
