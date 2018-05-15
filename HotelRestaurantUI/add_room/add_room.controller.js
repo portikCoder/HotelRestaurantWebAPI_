@@ -11,38 +11,63 @@
 
 		vm.check = check;
 		vm.newText = "";
+		vm.newProp = "";
 		vm.newExtra = "";
 		vm.dataLoading = false;
 
 		vm.add_conf = add_conf;
 		vm.add_extra = add_extra;
+		vm.add_prop = add_prop;
 		vm.add_room = add_room;
 
-		vm.rTypes = ['Bedroom' ,'Bathroom' ,'Kitchen'];
+		//vm.rTypes = ['Bedroom', 'Bathroom', 'Kitchen'];
+
+		vm.rTypes = [];
+		vm.rSubtypes = [];
+		vm.rExtras = [];
+
+		RoomService.AddSubtype(null).then(function (response) {
+			vm.rTypes = response.data.subtype;
+			vm.rTypes.forEach(function (t) {
+				RoomService.AddSubtype(t).then(function (response) {
+					vm.rSubtypes[t] = response.data.subtype;
+				}, function (response) {
+					FlashService.Error('Well... this is weird...');
+				});
+			});
+			vm.rTypes.forEach(function (t) {
+				RoomService.AddExtra(t).then(function (response) {
+					vm.rExtras[t] = response.data.others;
+				}, function (response) {
+					FlashService.Error('Well... this is weird...');
+				});
+			});
+		}, function (response) {
+			FlashService.Error('Well... this is weird...');
+		});
 
 		//vm.rSubtypes = [];
 		//vm.rSubtypes.Bedroom = ['1 Single Bed', '1 Double Bed', '1 Bunk Bed', '2 Single Beds', '1 Double Bed + 1 Single Bed', '1 Double Bed + 2 Single Beds', '2 Double Beds', '2 Bunk Beds'];
 		//vm.rSubtypes.Bathroom = ['Toilet' ,'Shower Room'];
 		//vm.rSubtypes.Kitchen = ['Cookery', 'Diner'];
+		
+		//vm.rProps = ['Small', 'Medium', 'Large', 'Very Large', 'Extra Large'];
 
-		vm.rSubtypes = [];
-
-		vm.rTypes.forEach(function (t) {
-			vm.rTypes[t] = RoomService.AddSubtype(t);
+		vm.rProps = [];
+		RoomService.AddExtra(null).then(function (response) {
+			vm.rProps = response.data.others;
+		}, function (response) {
+			FlashService.Error('Well... this is weird...');
 		});
 
-		vm.rSizes = ['Small', 'Medium', 'Large', 'Very Large', 'Extra Large'];
 
 		//vm.rExtras = [];
 		//vm.rExtras.Bedroom = ['Mini Fridge', 'Television', 'Air Conditioning', 'Balcony', 'Wardrobe', 'Coffee Machine'];
 		//vm.rExtras.Bathroom = ['Toilet', 'Shower Cabin', 'Sink', 'Bathtub', 'Bidet'];
 		//vm.rExtras.Kitchen = ['Oven', 'Microwave', 'Sink', 'Refrigerator'];
 
-		vm.rExtras = [];
 
-		vm.rExtras.forEach(function (t) {
-			vm.rExtras[t] = RoomService.AddExtra(t);
-		});
+
 
 		function check() {
 			FlashService.Error('Well... this is awkward...');
@@ -51,6 +76,12 @@
 		function add_conf(subtype) {
 			var tboxname = document.getElementById("newconfname");
 			subtype.push(tboxname.value);
+			tboxname.value = "";
+		}
+
+		function add_prop(prop) {
+			var tboxname = document.getElementById("newprop");
+			prop.push(tboxname.value);
 			tboxname.value = "";
 		}
 

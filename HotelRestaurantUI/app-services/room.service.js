@@ -11,7 +11,7 @@
 		var roomName = "";
 		var roomType = "";
 		var roomSubtype = "";
-		var roomSize = "";
+		var roomProp = "";
 
 		service.GetRoomName = GetRoomName;
 		service.SetRoomName = SetRoomName;
@@ -19,8 +19,8 @@
 		service.SetRoomType = SetRoomType;
 		service.GetRoomSubtype = GetRoomSubtype;
 		service.SetRoomSubtype = SetRoomSubtype;
-		service.GetRoomSize = GetRoomSize;
-		service.SetRoomSize = SetRoomSize;
+		service.GetRoomProp = GetRoomProp;
+		service.SetRoomProp = SetRoomProp;
 
 		service.AddRoom = AddRoom;
 		service.AddSubtype = AddSubtype;
@@ -52,12 +52,12 @@
 			this.roomSubtype = roomSubtype;
 		}
 
-		function GetRoomSize() {
-			return this.roomSize;
+		function GetRoomProp() {
+			return this.roomProp;
 		}
 
-		function SetRoomSize(roomSize) {
-			this.roomSize = roomSize;
+		function SetRoomProp(roomProp) {
+			this.roomSize = roomProp;
 		}
 
 		function AddRoom(room) {

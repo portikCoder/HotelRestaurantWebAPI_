@@ -60,18 +60,34 @@
 			</div>
 		</div>
 		<div class="form-group"
-			 ng-class="{ 'has-error': form.roomSize.$dirty && form.roomSize.$error.required }">
-			<label for="roomSize">
-				Room Size:
+			 ng-class="{ 'has-error': form.roomProp.$dirty && form.roomProp.$error.required }">
+			<label>
+				Room Properties:
 			</label>
-			<select name="roomSize"
-					ng-model="vm.room.roomSize"
-					ng-options="s for s in vm.rSizes">
-				<option ng-if="!vm.room.roomSize"
-						value="">
-					Select Room Size
-				</option>
-			</select>
+			<div class="grid-container">
+				<div ng-repeat="p in vm.rProps">
+					<input type="checkbox"
+						   name="{{p}}"
+						   id="{{p}}"
+						   ng-model="vm.room.roomProp" />
+					<label for="{{p}}">
+						{{p}}
+					</label>
+				</div>
+
+			</div>
+			<div>
+				<input style="display:inline"
+					   type="text"
+					   id="newprop"
+					   placeholder="Other..."
+					   ng-model="vm.newProp" />
+				<button type="button"
+						ng-click="vm.add_prop(vm.rProps)"
+						ng-disabled="!vm.newProp">
+					Add New Configuration
+				</button>
+			</div>
 		</div>
 		<div class="form-group"
 			 ng-class="{ 'has-error': form.roomSize.$dirty }">
