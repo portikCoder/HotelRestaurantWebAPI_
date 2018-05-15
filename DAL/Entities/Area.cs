@@ -9,14 +9,14 @@ namespace DAL.Entities
     public class Area
     {
         [Key]
-        public int id {get; set; }
+        public int Id {get; set; }
         private Tuple<int, int> position;
         public int X { get; set; }
         public int Y { get; set; }
         private int terrainType;
         //private String mineDenomination; // megnevezes
 
-        private Area()
+        public Area()
         {
             // idasbled constructor
         }

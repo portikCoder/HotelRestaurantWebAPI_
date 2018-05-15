@@ -46,10 +46,10 @@ namespace HotelRestaurantAPI.Objects
                 }
             }
 
-            room = new Room(position);
-            randomizeTerrainTypes(room);
+           // room = new Room(position);
+          //  randomizeTerrainTypes(room);
 
-            return room;
+            return null;
         }
 
         private static void randomizeTerrainTypes(Room room)
