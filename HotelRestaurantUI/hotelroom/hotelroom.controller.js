@@ -7,6 +7,7 @@
 
     HotelRoomController.$inject = ['$http', '$location', '$rootScope', 'AccountService', 'FlashService'];
     function HotelRoomController($http, $location, $rootScope, AccountService, FlashService) {
+        console.log("MI A FASZ EMBER");
         var vm = this;
         //
         vm.username = AccountService.GetUsername();
