@@ -36,7 +36,7 @@ namespace HotelRestaurantAPI.Controllers
             //return Ok(new[] { "room_404", "bedroom", "doubled penetratin", new string[] { "extra-large", "XXL" }, new string[] { "mini-skirt", "ammm wardrobe", "mini refrigerator" } }.ToList());
             //return Ok( new { "data" = 1, "data2" = 2, "data3" = 3 } );
             return Ok(
-                new { Subtype = new []{ "singled penetratin", "doubled penetratin", "tripled penetratin" } }
+                new { Subtype = new[] { "singled penetratin", "doubled penetratin", "tripled penetratin" } }
             );
         }
 
@@ -65,7 +65,6 @@ namespace HotelRestaurantAPI.Controllers
                 new { Others = new string[] { "mini-skirt", "ammm wardrobe", "mini refrigerator", "tele-vision..." } }
             );
         }
-    }
         /*  Route for recieving the new room data [from the admin! / or not!].
          * 
          */

@@ -1310,7 +1310,7 @@ newMomentProto.format = function() {
 		return formatDate(this, arguments[0]); // our extended formatting
 	}
 	if (this._ambigTime) {
-		return oldMomentFormat(this, 'YYYY-MM-DD');
+		return oldMomentFormat(this, 'yyyy-MM-dd');
 	}
 	if (this._ambigZone) {
 		return oldMomentFormat(this, 'YYYY-MM-DD[T]HH:mm:ss');
@@ -1320,7 +1320,7 @@ newMomentProto.format = function() {
 
 newMomentProto.toISOString = function() {
 	if (this._ambigTime) {
-		return oldMomentFormat(this, 'YYYY-MM-DD');
+		return oldMomentFormat(this, 'yyyy-MM-dd');
 	}
 	if (this._ambigZone) {
 		return oldMomentFormat(this, 'YYYY-MM-DD[T]HH:mm:ss');
@@ -3657,7 +3657,7 @@ var Grid = fc.Grid = RowRenderer.extend({
 		classes.unshift('fc-day', view.widgetContentClass);
 
 		return '<td class="' + classes.join(' ') + '"' +
-			' data-date="' + date.format('YYYY-MM-DD') + '"' + // if date has a time, won't format it
+			' data-date="' + date.format('yyyy-MM-dd') + '"' + // if date has a time, won't format it
 			'></td>';
 	},
 
