@@ -8,23 +8,29 @@
 	HotelController.$inject = ['$http', '$location', '$scope', '$compile', '$rootScope', 'AccountService', 'RoomService', 'FlashService'];
 	function HotelController($http, $location, $scope, $compile, $rootScope, AccountService, RoomService, FlashService) {
 		var vm = this;
-		//
 		vm.username = AccountService.GetUsername();
 		vm.roomEdit = [];
 
-		
 		//Bence
 		vm.services = [];
+		vm.modServ = [];
 		vm.langs = [];
+		vm.modLang = [];
 
 		RoomService.GetSubtypes(null).then(function (response) {
 			vm.services = response.data.subtype;
+			vm.services.forEach((v, k) => {
+				vm.modServ[k] = false;
+			})
 		}, function (response) {
 			FlashService.Error('Buttermilk Chowderpants');
 		});
 
 		RoomService.GetExtras(null).then(function (response) {
 			vm.langs = response.data.others;
+			vm.langs.forEach((v, k) => {
+				vm.modLang[k] = false;
+			})
 		}, function (response) {
 			FlashService.Error('Beetlejuice Curdlesnoot');
 		});
@@ -69,92 +75,92 @@
 			$http.post($rootScope.baseUrl + 'api2/rooms', vm.booking);
 		}
 		function addRoom(room) {
-        vm.GetRooms = function () {
-            return $http.post($rootScope.baseUrl + 'api2/rooms', { UserName: vm.username });
-        }
-        ///
-        vm.hotelRoomsDivName = "HotelRooms";
-        vm.addRoom = addRoom;
-        vm.roomNumber = 0;
-        vm.loadRoooms = loadRoooms;
-        vm.booking = {};
-        vm.isBooked = isBooked;
-        vm.startDate = [];
-        vm.endDate = [];
-        vm.checkDate = checkDate;
-        vm.checkDates = checkDates;
-        vm.filterStartDate;
-        vm.filterEndDate;
-        vm.filter = filter;
-        function filter() {
-            if (checkDate(vm.filterStartDate) &&
-                checkDate(vm.filterEndDate) &&
-                (vm.filterStartDate <= vm.filterEndDate)
-            ) {
-                var result = vm.GetRooms().then(function (data) {
-                    vm.startDate = [];
-                    vm.endDate = [];
-                    vm.booking = {};
+			vm.GetRooms = function () {
+				return $http.post($rootScope.baseUrl + 'api2/rooms', { UserName: vm.username });
+			}
+			//
+			vm.hotelRoomsDivName = "HotelRooms";
+			vm.addRoom = addRoom;
+			vm.roomNumber = 0;
+			vm.loadRoooms = loadRoooms;
+			vm.booking = {};
+			vm.isBooked = isBooked;
+			vm.startDate = [];
+			vm.endDate = [];
+			vm.checkDate = checkDate;
+			vm.checkDates = checkDates;
+			vm.filterStartDate;
+			vm.filterEndDate;
+			vm.filter = filter;
+			function filter() {
+				if (checkDate(vm.filterStartDate) &&
+					checkDate(vm.filterEndDate) &&
+					(vm.filterStartDate <= vm.filterEndDate)
+				) {
+					var result = vm.GetRooms().then(function (data) {
+						vm.startDate = [];
+						vm.endDate = [];
+						vm.booking = {};
 
-                    var target = document.getElementById(vm.hotelRoomsDivName);
-                    target.innerHTML = "";
-                   
-                    localStorage.setItem("rooms", JSON.stringify(data));
-                    var result = "";
-                    addNewCollepsable(vm.hotelRoomsDivName, "Rooms");
-                    for (var i = 0; i < data.data.length; ++i) {
-                        addNewRoomToCollepsable("Rooms", data.data[i]);
-                    }
+						var target = document.getElementById(vm.hotelRoomsDivName);
+						target.innerHTML = "";
 
-                });
-            }
-        }
-        function checkDates(roomId) {
-            return checkDate(vm.startDate[roomId]) && checkDate(vm.endDate[roomId]) && (vm.startDate[roomId] <= vm.endDate[roomId]);
-        }
+						localStorage.setItem("rooms", JSON.stringify(data));
+						var result = "";
+						addNewCollepsable(vm.hotelRoomsDivName, "Rooms");
+						for (var i = 0; i < data.data.length; ++i) {
+							addNewRoomToCollepsable("Rooms", data.data[i]);
+						}
 
-        function checkDate(date) {
-            if (date === undefined || date === null) {
-                return false;
-            }
-            var today = new Date();
-            if (today > date) {
-                return false;
-            }
-            return true;
+					});
+				}
+			}
+			function checkDates(roomId) {
+				return checkDate(vm.startDate[roomId]) && checkDate(vm.endDate[roomId]) && (vm.startDate[roomId] <= vm.endDate[roomId]);
+			}
 
-        }
-        function isBooked(roomId) {
-            
-            if (vm.booking.hasOwnProperty(roomId)) {
-                return true;
-            }
-            return false;
-        }
-        vm.book = book;
-        vm.unBook = unBook;
-        function unBook(roomId) {
-          
-            delete vm.booking[roomId];
-            
-        }
-        function book(roomId) {
-            if (checkDates(roomId)) {
-                vm.booking[roomId] = { startDate: vm.startDate[roomId], endDate: vm.endDate[roomId] };
-                console.log(vm.booking);
-            }
-        }
-        vm.sendBookings = sendBookings;
-        function sendBookings() {
-            $http.post($rootScope.baseUrl + 'api2/rooms', vm.booking);
-        }
-        function addRoom(room) {
+			function checkDate(date) {
+				if (date === undefined || date === null) {
+					return false;
+				}
+				var today = new Date();
+				if (today > date) {
+					return false;
+				}
+				return true;
 
-		}
-		function addNewCollepsable(targetDiv, collepsableName) {
-			var target = document.getElementById(targetDiv);
-			var result = "";
-			result += `
+			}
+			function isBooked(roomId) {
+
+				if (vm.booking.hasOwnProperty(roomId)) {
+					return true;
+				}
+				return false;
+			}
+			vm.book = book;
+			vm.unBook = unBook;
+			function unBook(roomId) {
+
+				delete vm.booking[roomId];
+
+			}
+			function book(roomId) {
+				if (checkDates(roomId)) {
+					vm.booking[roomId] = { startDate: vm.startDate[roomId], endDate: vm.endDate[roomId] };
+					console.log(vm.booking);
+				}
+			}
+			vm.sendBookings = sendBookings;
+			function sendBookings() {
+				$http.post($rootScope.baseUrl + 'api2/rooms', vm.booking);
+			}
+			function addRoom(room) {
+
+			}
+			function addNewCollepsable(targetDiv, collepsableName) {
+				var target = document.getElementById(targetDiv);
+				var result = "";
+				result += `
                 <div class="panel-group">
                     <div class="panel panel-default">
                         <div class="panel-heading">
@@ -167,15 +173,15 @@
                         </div>
                     </div>
                 </div>`;
-			angular.element(target).append($compile(result)($scope));
-		}
-		function addNewRoomToCollepsable(collepsableName, room) {
-			var target = document.getElementById(collepsableName);
-			var result = "";
+				angular.element(target).append($compile(result)($scope));
+			}
+			function addNewRoomToCollepsable(collepsableName, room) {
+				var target = document.getElementById(collepsableName);
+				var result = "";
 
-			vm.roomEdit[room.id] = false;
+				vm.roomEdit[room.id] = false;
 
-			result += `
+				result += `
 				<div class="panel-body">
 					<div class="panel-group">
 						<div class="panel panel-default">
@@ -183,10 +189,10 @@
 								<h4 class="panel-title" style="display:inline">
 									<a data-toggle="collapse" data-target="#`+ room.id + `">` + room.id + `</a>
 								</h4>
-								<p><input type="date" ng-disabled="vm.isBooked(` + '\'' + room.id + '\'' +`)==true" ng-model="vm.startDate[`+ '\'' + room.id + '\'' + `]" value="{{ date | date: 'yyyy/MM/dd' }}" /> </p>
-								<p><input type="date" ng-disabled="vm.isBooked(` + '\'' + room.id + '\'' +`)==true" ng-model="vm.endDate[`+ '\'' + room.id + '\'' + `]" value="{{ date | date: 'yyyy/MM/dd' }}" />  </p>
-								<button type="button" ng-click="vm.book(`+ '\'' + room.id + '\'' + `)" ng-if="vm.isBooked(` + '\'' + room.id + '\'' +`)==false">Book</button>
-								<button type="button" ng-click="vm.unBook(`+ '\'' + room.id + '\'' + `)" ng-if="vm.isBooked(` + '\'' + room.id + '\'' +`)==true">Unbook</button>
+								<p><input type="date" ng-disabled="vm.isBooked(` + '\'' + room.id + '\'' + `)==true" ng-model="vm.startDate[` + '\'' + room.id + '\'' + `]" value="{{ date | date: 'yyyy/MM/dd' }}" /> </p>
+								<p><input type="date" ng-disabled="vm.isBooked(` + '\'' + room.id + '\'' + `)==true" ng-model="vm.endDate[` + '\'' + room.id + '\'' + `]" value="{{ date | date: 'yyyy/MM/dd' }}" />  </p>
+								<button type="button" ng-click="vm.book(`+ '\'' + room.id + '\'' + `)" ng-if="vm.isBooked(` + '\'' + room.id + '\'' + `)==false">Book</button>
+								<button type="button" ng-click="vm.unBook(`+ '\'' + room.id + '\'' + `)" ng-if="vm.isBooked(` + '\'' + room.id + '\'' + `)==true">Unbook</button>
 
 								<div style="text-align: right">
 									<a class="btn btn-primary" ng-click="vm.roomEdit[` + '\'' + room.id + '\'' + `] = ! vm.roomEdit[` + '\'' + room.id + '\'' + `]">Edit Room</a>
@@ -308,76 +314,78 @@
 					</div>
 				</div>
 			</div>`;
-			angular.element(target).append($compile(result)($scope));
-			console.log(result);
-			addNewPropertiesToRoom(room.id, room.properties);
-			addNewOthersToRoom(room.id, room.others);
-		}
-		function addNewPropertiesToRoom(roomId, properties) {
-			for (var i = 0; i < properties.length; ++i) {
-				addNewPropertieToRoom(roomId, properties[i]);
+				angular.element(target).append($compile(result)($scope));
+				console.log(result);
+				addNewPropertiesToRoom(room.id, room.properties);
+				addNewOthersToRoom(room.id, room.others);
 			}
-		}
-		function addNewPropertieToRoom(roomId, propertie) {
-			var target = document.getElementById(roomId + "_properties");
-			var result = `<div class="panel-body">` + propertie + `</div>`;
-			angular.element(target).append($compile(result)($scope));
-		}
-		function addNewOthersToRoom(roomId, others) {
-			for (var i = 0; i < others.length; ++i) {
-				addNewOtherToRoom(roomId, others[i]);
-			}
-		}
-		function addNewOtherToRoom(roomId, other) {
-			var target = document.getElementById(roomId + "_others");
-			var result = `<div class="panel-body">` + other + `</div>`;
-			angular.element(target).append($compile(result)($scope));
-		}
-		function loadRoooms(targetDiv) {
-			console.log("loadRooms");
-			console.log("Bugos szar");
-			console.log("foss");
-
-
-			var result = vm.GetRooms().then(function (data) {
-				var target = document.getElementById(targetDiv);
-				localStorage.setItem("rooms", data);
-				var result = "";
-				addNewCollepsable(targetDiv, "Rooms");
-				for (var i = 0; i < data.data.length; ++i) {
-					addNewRoomToCollepsable("Rooms", data.data[i]);
+			function addNewPropertiesToRoom(roomId, properties) {
+				for (var i = 0; i < properties.length; ++i) {
+					addNewPropertieToRoom(roomId, properties[i]);
 				}
+			}
+			function addNewPropertieToRoom(roomId, propertie) {
+				var target = document.getElementById(roomId + "_properties");
+				var result = `<div class="panel-body">` + propertie + `</div>`;
+				angular.element(target).append($compile(result)($scope));
+			}
+			function addNewOthersToRoom(roomId, others) {
+				for (var i = 0; i < others.length; ++i) {
+					addNewOtherToRoom(roomId, others[i]);
+				}
+			}
+			function addNewOtherToRoom(roomId, other) {
+				var target = document.getElementById(roomId + "_others");
+				var result = `<div class="panel-body">` + other + `</div>`;
+				angular.element(target).append($compile(result)($scope));
+			}
+			function loadRoooms(targetDiv) {
+				console.log("loadRooms");
+				console.log("Bugos szar");
+				console.log("foss");
 
-			});
+
+				var result = vm.GetRooms().then(function (data) {
+					var target = document.getElementById(targetDiv);
+					localStorage.setItem("rooms", data);
+					var result = "";
+					addNewCollepsable(targetDiv, "Rooms");
+					for (var i = 0; i < data.data.length; ++i) {
+						addNewRoomToCollepsable("Rooms", data.data[i]);
+					}
+
+				});
+			}
+			vm.loadRoooms("container");
+
+
+			return vm;
+			// vm.loadRoooms();
+			/*
+			vm.register = register;
+		    
+			function register() {
+				vm.dataLoading = true;
+				if (vm.user.confrimPassword != vm.user.password) {
+					FlashService.Error("Passwords doesn`t matches");
+					vm.user = {};
+					vm.dataLoading = false;
+				}
+				else {
+					UserService.Register(vm.user)
+						.then(function (response) {
+							if (response.success) {
+								FlashService.Success('Registration successful', true);
+								$location.path('/login');
+							} else {
+								FlashService.Error(response.message);
+								vm.dataLoading = false;
+							}
+						});
+				}
+			}
+			*/
 		}
-		vm.loadRoooms("container");
-		return vm;
-		// vm.loadRoooms();
-        /*
-        vm.register = register;
-        
-        function register() {
-            vm.dataLoading = true;
-            if (vm.user.confrimPassword != vm.user.password) {
-                FlashService.Error("Passwords doesn`t matches");
-                vm.user = {};
-                vm.dataLoading = false;
-            }
-            else {
-                UserService.Register(vm.user)
-                    .then(function (response) {
-                        if (response.success) {
-                            FlashService.Success('Registration successful', true);
-                            $location.path('/login');
-                        } else {
-                            FlashService.Error(response.message);
-                            vm.dataLoading = false;
-                        }
-                    });
-            }
-        }
-        */
-
 		function saveChangesTo(room) {
 			//TODO send changed data
 		}
@@ -386,6 +394,5 @@
 			//TODO send delete request
 		}
 	}
-
 
 })();

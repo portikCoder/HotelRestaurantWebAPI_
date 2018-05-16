@@ -1,84 +1,155 @@
 ﻿<div class="col-md-10 col-md-offset-1">
-    <div id="container">
-        <div class="panel-group" id="accordion">
+	<div id="container">
+		<div class="panel-group" id="accordion">
 
-            <div class="panel panel-default">
-                <div class="panel-heading">
-                    <h4 class="panel-title">
-                        <a data-toggle="collapse" data-target="#properties">Properties</a>
-                    </h4>
-                </div>
-                <div id="properties" class="panel-collapse collapse">
-                    <div class="panel-body">
-                        <div class="panel-group">
-                            <div class="panel panel-default">
-                                <div class="panel-heading">
-                                    <h4 class="panel-title">
-                                        <a data-toggle="collapse" data-target="#services">Services</a>
-                                    </h4>
-                                </div>
-                                <div id="services" class="panel-collapse collapse">
-                                    <div class="panel-body">Services 1</div>
-                                    <div class="panel-body">Services 2</div>
-                                    <div class="panel-body">Services 3</div>
-                                </div>
-                            </div>
-                        </div>
+			<div class="panel panel-default">
+				<div class="panel-heading">
+					<h4 class="panel-title">
+						<a data-toggle="collapse" data-target="#properties">Properties</a>
+					</h4>
+				</div>
+				<div id="properties" class="panel-collapse collapse">
+					<div class="panel-body">
+						<div class="panel-group">
+							<div class="panel panel-default">
+								<div class="panel-heading">
+									<h4 class="panel-title">
+										<a data-toggle="collapse" data-target="#services">Services</a>
+									</h4>
+								</div>
+								<div id="services" class="panel-collapse collapse">
+									<div class="panel-body"
+										 ng-repeat="(i,s) in vm.services"
+										 style="display: grid; grid-template-columns: 50% 50%">
+										<div></div>
+										<div>
+											<div style="display: inline"
+											   ng-show="! vm.modServ[i]">{{s}}</div>
+											<input type="text"
+												   name="{{vm.services[i]}}"
+												   ng-model="vm.services[i]"
+												   ng-show="vm.modServ[i]"
+												   style="display: inline"
+												   value="{{s}}"/>
+										</div>
+										<div>
+											<div style="text-align:right"
+												 ng-show="! vm.modServ[i]">
+												<a ng-click="vm.modServ[i] = !vm.modServ[i]"
+												   class="btn btn-primary">
+													Edit
+												</a>
+												<a ng-click="vm.removeServ(i)"
+												   class="btn btn-primary">
+													Delete
+												</a>
+											</div>
+											<div style="text-align:right"
+												 ng-show="vm.modServ[i]">
+												<a ng-click="vm.editServ(i)"
+												   class="btn btn-primary">
+													Save
+												</a>
+												<a ng-click="vm.modServ[i] = !vm.modServ[i]"
+												   class="btn btn-primary">
+													Cancel
+												</a>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
 
-                        <div class="panel-group">
-                            <div class="panel panel-default">
-                                <div class="panel-heading">
-                                    <h4 class="panel-title">
-                                        <a data-toggle="collapse" data-target="#languagesSpoken">Languages Spoken</a>
-                                    </h4>
-                                </div>
-                                <div id="languagesSpoken" class="panel-collapse collapse">
-                                    <div class="panel-body">Language 1</div>
-                                    <div class="panel-body">Language 2</div>
-                                    <div class="panel-body">Language 3</div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+						<div class="panel-group">
+							<div class="panel panel-default">
+								<div class="panel-heading">
+									<h4 class="panel-title">
+										<a data-toggle="collapse" data-target="#languagesSpoken">Languages Spoken</a>
+									</h4>
+								</div>
+								<div id="languagesSpoken" class="panel-collapse collapse">
+									<div class="panel-body"
+										 ng-repeat="(i,l) in vm.langs"
+										 style="display: grid; grid-template-columns: 50% 50%">
+										<div></div>
+										<div>
+											<div style="display: inline"
+												 ng-show="! vm.modLang[i]">{{l}}</div>
+											<input type="text"
+												   name="{{vm.langs[i]}}"
+												   ng-model="vm.langs[i]"
+												   ng-show="vm.modLang[i]"
+												   style="display: inline"
+												   value="{{l}}" />
+										</div>
+										<div>
+											<div style="text-align:right"
+												 ng-show="! vm.modLang[i]">
+												<a ng-click="vm.modLang[i] = !vm.modLang[i]"
+												   class="btn btn-primary">
+													Edit
+												</a>
+												<a ng-click="vm.removeLang(i)"
+												   class="btn btn-primary">
+													Delete
+												</a>
+											</div>
+											<div style="text-align:right"
+												 ng-show="vm.modLang[i]">
+												<a ng-click="vm.editLang(i)"
+												   class="btn btn-primary">
+													Save
+												</a>
+												<a ng-click="vm.modLang[i] = !vm.modLang[i]"
+												   class="btn btn-primary">
+													Cancel
+												</a>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
 
-            <div class="panel panel-default">
-                <div class="panel-heading">
-                    <h4 class="panel-title">
-                        <a data-toggle="collapse" data-target="#otherDetails">Other Details</a>
-                    </h4>
-                </div>
-                <div id="otherDetails" class="panel-collapse collapse">
-                    <div class="panel-body">
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit,
-                        sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                    </div>
-                </div>
-            </div>
+			<div class="panel panel-default">
+				<div class="panel-heading">
+					<h4 class="panel-title">
+						<a data-toggle="collapse" data-target="#otherDetails">Other Details</a>
+					</h4>
+				</div>
+				<div id="otherDetails" class="panel-collapse collapse">
+					<div class="panel-body">
+						Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+						sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+						quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+					</div>
+				</div>
+			</div>
 
 
 
-        </div>
-        <div id="filter">
-            <p>
-                Start Date:<input type="date" ng-model="vm.filterStartDate" value="{{ date | date: 'yyyy/MM/dd' }}" />
-            </p>
-            <p>
-                End Date:<input type="date" ng-model="vm.filterEndDate" value="{{ date | date: 'yyyy/MM/dd' }}" />
-            </p>
-            <p>
-                <button type="button" ng-click="vm.filter()">Search</button>
-            </p>
-        </div>
-        <div id="HotelRooms">
+		</div>
+		<div id="filter">
+			<p>
+				Start Date:<input type="date" ng-model="vm.filterStartDate" value="{{ date | date: 'yyyy/MM/dd' }}" />
+			</p>
+			<p>
+				End Date:<input type="date" ng-model="vm.filterEndDate" value="{{ date | date: 'yyyy/MM/dd' }}" />
+			</p>
+			<p>
+				<button type="button" ng-click="vm.filter()">Search</button>
+			</p>
+		</div>
+		<div id="HotelRooms">
 
-        </div>
+		</div>
 
-    </div>
+	</div>
 
-    <!--room END-->
-    
-    <!--room END-->
+	<!--room END-->
+	<!--room END-->
 </div>
