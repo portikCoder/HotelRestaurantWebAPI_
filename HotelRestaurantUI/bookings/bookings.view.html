@@ -13,8 +13,12 @@
                 <div id="myBookings" class="panel-collapse collapse in">
                     <div class="panel-body" ng-repeat="booking in vm.myBookings">
                         {{booking.id}}:
+                        <p>Status:{{booking.status}}</p>
+                        <p>Price:{{booking.price}}</p>
                         <p> <input type="date" ng-model="booking.startDate" />-<input type="date" ng-model="booking.endDate" /></p>
                         <p><button type="button" ng-click="vm.changeBooking(booking)">Change Booking</button></p>
+                        <p><button type="button" ng-click="vm.deleteBooking(booking)">Delete Booking</button></p>
+
 
                     </div>
 

@@ -19,6 +19,20 @@
         vm.changeBooking = changeBooking;
         vm.checkDates = checkDates;
         vm.checkDates = checkDate;
+        vm.deleteBooking = deleteBooking;
+        function deleteBooking(room) {
+            //TODO 
+            $http.post($rootScope.baseUrl + 'api2/otheruserpreservations', { UserName: vm.usernam, booking: room }).then(function (data) {
+                if (data.data.result == "ok") {
+                    for (var i = 0; i < vm.myBookings.length; ++i) {
+                        if (room.id == vm.myBookings[i].id && room.startDate == vm.myBookings[i].startDate && room.endDate == vm.myBookings[i].endDate) {
+                            delete vm.myBookings[i];
+                            return;
+                        }
+                    }
+                }
+            });
+        }
 
         function checkDates(room) {
             return checkDate(room.startDate) && checkDate(room.endDate) && (room.startDate <= room.endDate);
@@ -39,7 +53,7 @@
           
             if (checkDates(room)) {
                 //TODO 
-                $http.post($rootScope.baseUrl + 'api2/otheruserpreservations', { UserName: vm.usernam, filterDate: vm.filterDate });
+                $http.post($rootScope.baseUrl + 'api2/otheruserpreservations', { UserName: vm.usernam, booking: room });
                 console.log(room);
             }
         }
@@ -64,6 +78,16 @@
                     for (var i = 0; i < vm.myBookings.length; ++i) {
                         vm.myBookings[i].startDate = new Date(vm.myBookings[i].startDate);
                         vm.myBookings[i].endDate = new Date(vm.myBookings[i].endDate);
+                        switch (vm.myBookings[i].status) {
+                            case 0: {
+                                vm.myBookings[i].status = "Pending";
+                                break;
+                            }
+                            case 1: {
+                                vm.myBookings[i].status = "Approved";
+                                break;
+                            }
+                        }
                     }
                     console.log(vm.myBookings);
                     
