@@ -34,7 +34,7 @@
                 checkDate(vm.filterEndDate) &&
                 (vm.filterStartDate <= vm.filterEndDate)
             ) {
-                var result = vm.GetRooms().then(function (data) {
+                var result = vm.filterRooms().then(function (data) {
                     vm.startDate = [];
                     vm.endDate = [];
                     vm.booking = {};
@@ -89,7 +89,10 @@
         }
         vm.sendBookings = sendBookings;
         function sendBookings() {
-            $http.post($rootScope.baseUrl + 'api2/rooms', vm.booking);
+            return $http.post($rootScope.baseUrl + 'api2/bookings', vm.booking);
+        }
+        function filterRooms() {
+            return $http.post($rootScope.baseUrl + 'api2/dateFilter', { startDate: vm.filterStartDate, endDate: vm.filterEndDate });
         }
         function addRoom(room) {
 
