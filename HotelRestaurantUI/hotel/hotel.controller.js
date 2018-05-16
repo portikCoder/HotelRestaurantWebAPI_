@@ -42,6 +42,21 @@
 		}
 
 		//Bence
+		vm.services = [];
+		vm.langs = [];
+
+		RoomService.GetSubtypes(null).then(function (response) {
+			vm.services = response.data.subtype;
+		}, function (response) {
+			FlashService.Error('Buttermilk Chowderpants');
+		});
+
+		RoomService.GetExtras(null).then(function (response) {
+			vm.langs = response.data.others;
+		}, function (response) {
+			FlashService.Error('Beetlejuice Curdlesnoot');
+		});
+
 		vm.rTypes = [];
 		vm.rSubtypes = [];
 		vm.rExtras = [];
