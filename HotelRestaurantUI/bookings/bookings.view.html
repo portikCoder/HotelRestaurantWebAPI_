@@ -1,0 +1,44 @@
+﻿<div class="col-md-6 col-md-offset-3">
+    <div id="container">
+        <p><input type="month" ng-model="vm.filterDate" value="new Date()" /> </p>
+        <p><button type="button" ng-click="vm.getBookings()">Get Bookings</button></p>
+
+        <div class="panel-group">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h4 class="panel-title">
+                        <a data-toggle="collapse" data-target="#myBookings">My Bookings</a>
+                    </h4>
+                </div>
+                <div id="myBookings" class="panel-collapse collapse in">
+                    <div class="panel-body" ng-repeat="booking in vm.myBookings">
+                        {{booking.id}}:
+                        <p> <input type="date" ng-model="booking.startDate" />-<input type="date" ng-model="booking.endDate" /></p>
+                        <p><button type="button" ng-click="vm.changeBooking(booking)">Change Booking</button></p>
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="panel-group">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h4 class="panel-title">
+                        <a data-toggle="collapse" data-target="#othersBookings">Others Bookings</a>
+                    </h4>
+                </div>
+                <div id="othersBookings" class="panel-collapse collapse in">
+                    <div class="panel-body" ng-repeat="booking in vm.othersBookings">
+                        {{booking.id}}:
+                        <p> <input type="date" ng-model="booking.startDate" disabled/>-<input type="date" ng-model="booking.endDate" disabled/></p>
+                        
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
