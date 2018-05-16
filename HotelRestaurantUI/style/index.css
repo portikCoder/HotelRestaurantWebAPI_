@@ -33,6 +33,27 @@
 }
 
 .grid-container {
+	padding: 1em;
 	display: grid;
-	grid-template-columns: auto auto auto;
+	grid-template-columns: 33% 34% 33%;
+}
+
+.grid-container label {
+	overflow: hidden;
+	margin: 4px 0 0 0;
+}
+
+.panel-body {
+	border-top: solid 1px #ddd;
+}
+
+.form-group {
+	border-top: solid 1px #ddd;
+	padding-top: 1em;
+	display: grid;
+	grid-template-columns: 50% 50%;
+}
+
+.form-group > * {
+	margin: 3px;
 }

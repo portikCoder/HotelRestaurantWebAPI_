@@ -117,8 +117,8 @@
 									<a data-toggle="collapse" data-target="#`+ room.id + `">` + room.id + `</a>
 								</h4>
 								<div style="text-align: right">
-									<a ng-click="vm.roomEdit[` + '\'' + room.id + '\'' + `] = ! vm.roomEdit[` + '\'' + room.id + '\'' + `]">Edit Room</a>
-									<a ng-click="vm.deleteRoom(room)">Delete</a>
+									<a class="btn btn-primary" ng-click="vm.roomEdit[` + '\'' + room.id + '\'' + `] = ! vm.roomEdit[` + '\'' + room.id + '\'' + `]">Edit Room</a>
+									<a class="btn btn-primary" ng-click="vm.deleteRoom(room)">Delete</a>
 								</div>
 							</div>
 
@@ -153,7 +153,7 @@
 								</div>
 							</div>
 
-							<div ng-show="vm.roomEdit[` + '\'' + room.id + '\'' + `]" id="` + room.id + `">
+							<div ng-show="vm.roomEdit[` + '\'' + room.id + '\'' + `]" id="` + room.id + `" class="panel-collapse">
 								<div class="panel-body">
 									<label for="roomType">
 													Type:
@@ -190,7 +190,7 @@
 											</div>
 											<div id="`+ room.id + "_properties" + `">
 												<div class="grid-container">
-													<div ng-repeat="p in vm.rProps">
+													<div class="grid-item" ng-repeat="p in vm.rProps">
 														<input type="checkbox"
 															   name="{{p}}_"
 															   id="{{p}}_"
@@ -213,7 +213,7 @@
 											</div>
 											<div id="`+ room.id + "_others" + `">
 												<div class="grid-container">
-													<div ng-repeat="e in vm.rExtras[` + room.id + `_type]">
+													<div class="grid-item" ng-repeat="e in vm.rExtras[` + room.id + `_type]">
 														<input type="checkbox"
 															   name="{{e}}"
 															   id="{{e}}"
@@ -227,9 +227,9 @@
 										</div>
 									</div>
 								</div>
-								<div>
-									<a ng-click="vm.saveChangesTo(room)">Confirm Changes</a>
-									<a ng-click="vm.roomEdit[` + '\'' + room.id + '\'' + `] = ! vm.roomEdit[` + '\'' + room.id + '\'' + `]">Cancel</a>
+								<div style="margin: 0 0 1.5em 1.5em">
+									<a class="btn btn-primary" ng-click="vm.saveChangesTo(room)">Confirm Changes</a>
+									<a class="btn btn-primary" ng-click="vm.roomEdit[` + '\'' + room.id + '\'' + `] = ! vm.roomEdit[` + '\'' + room.id + '\'' + `]">Cancel</a>
 								</div>
 							</div>
 						</div>
