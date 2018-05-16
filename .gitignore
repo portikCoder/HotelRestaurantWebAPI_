@@ -5,7 +5,6 @@
 
 # User-specific files
 .suo
-v15/.suo
 *.suo
 *.user
 *.userosscache
@@ -292,10 +291,6 @@ paket-files/
 # JetBrains Rider
 .idea/
 *.sln.iml
-
-# minesssss
-*.ide-shm
-*.ide-wal
 
 # CodeRush
 .cr/
