@@ -52,11 +52,11 @@
   <ItemGroup>
     <Compile Include="Entities\Area.cs" />
     <Compile Include="Entities\Equipment.cs" />
-    <Compile Include="Entities\Mine.cs" />
     <Compile Include="Entities\Properties.cs" />
     <Compile Include="Entities\Reservation.cs" />
     <Compile Include="Entities\Room.cs" />
     <Compile Include="Entities\RoomEquipment.cs" />
+    <Compile Include="Entities\RoomReservation.cs" />
     <Compile Include="Entities\User.cs" />
     <Compile Include="HotelRestaurantDBContext.cs" />
     <Compile Include="Migrations\Configuration.cs" />

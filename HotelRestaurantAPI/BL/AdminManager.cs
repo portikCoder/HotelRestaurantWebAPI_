@@ -1,0 +1,127 @@
+﻿using DAL;
+using DAL.Entities;
+using HotelRestaurantAPI.Models;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+
+namespace HotelRestaurantAPI.BL
+{
+    public class AdminManager
+    {
+        private HotelRestaurantDBContext DbContext = new HotelRestaurantDBContext();
+
+        public List<Room> GetRoom()
+        {
+            return DbContext.Rooms.ToList();
+        }
+        public List<Equipment> GetRoomEquipment(int id)
+
+        {
+            var eqpId = DbContext.RoomEquipment.Where(x => x.RoomId == id).ToList();
+            List<Equipment> equipmentList = new List<Equipment>();
+            foreach (var c in eqpId)
+            {
+
+                equipmentList.Add(GetEquipment(c.EquipmentId));
+            }
+
+            return equipmentList;
+        }
+        public Equipment GetEquipment(int id)
+        {
+            return DbContext.Equipment.FirstOrDefault(x => x.Id == id);
+        }
+        public Equipment GetEquipment(string name)
+        {
+            return DbContext.Equipment.FirstOrDefault(x => x.name == name);
+        }
+        public Room GetRoom(int id)
+        {
+            var S = DbContext.Rooms.FirstOrDefault(x => x.Id == id);
+            return S;
+        }
+        public void insertRoom(Room room)
+        {
+
+            DbContext.Rooms.Add(room);
+            DbContext.SaveChanges();
+        }
+        public void AddRoomEquipment(int id, string name)
+        {
+            RoomEquipment roomEquipment = new RoomEquipment();
+            Room room = GetRoom(id);
+            Equipment equipment = GetEquipment(name);
+            roomEquipment.Equipment = equipment;
+            roomEquipment.Room = room;
+            DbContext.RoomEquipment.Add(roomEquipment);
+            DbContext.SaveChanges();
+
+
+
+        }
+        public void AddEquipment(string name)
+        {
+            Equipment equipment = new Equipment(name);
+
+            DbContext.Equipment.Add(equipment);
+            DbContext.SaveChanges();
+        }
+
+        
+        public void AddReservation(List<int> roomId,Reservation reservation)
+        {
+            DbContext.Reservations.Add(reservation);
+            RoomReservation roomReservation = new RoomReservation();
+            roomReservation.Reservation = reservation;
+            foreach (int c in roomId)
+            {
+                roomReservation.Room = GetRoom(c);
+                DbContext.RoomReservations.Add(roomReservation);
+            }
+            DbContext.SaveChanges();
+
+
+        }
+        public List<ReservationModel> GetAllReservation()
+        {
+            List<Reservation> reservationsList = DbContext.Reservations.ToList();
+            List<ReservationModel> list = new List<ReservationModel>();
+            ReservationModel model = new ReservationModel();
+            List<Reservation> ListAllReservation = new List<Reservation>();
+            foreach(var c in reservationsList)
+            {
+                var roomList = DbContext.RoomReservations.Where(x => x.ReservationId == c.Id);
+                foreach (var t in roomList)
+                {
+                    model.RoomId.Add(t.RoomId);
+                }
+                model.reservation = c;
+                list.Add(model);
+            }
+            return list;
+        }
+        public List<ReservationModel> GetReservationToDate(DateTime StartTime , DateTime FinishTime)
+        {
+            var reservationsList = DbContext.Reservations.Where(x=>x.startDate>=StartTime && x.finishDate>=FinishTime);
+            List<ReservationModel> list = new List<ReservationModel>();
+            ReservationModel model = new ReservationModel();
+            List<Reservation> ListAllReservation = new List<Reservation>();
+            foreach (var c in reservationsList)
+            {
+                var roomList = DbContext.RoomReservations.Where(x => x.ReservationId == c.Id);
+                foreach (var t in roomList)
+                {
+                    model.RoomId.Add(t.RoomId);
+                }
+                model.reservation = c;
+                list.Add(model);
+            }
+            return list;
+        }
+
+
+
+    }
+}

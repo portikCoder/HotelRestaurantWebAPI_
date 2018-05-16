@@ -18,6 +18,8 @@ namespace DAL.Entities
         public Double prive { get; set; }
         public int status { get; set; }
 
+        public virtual ICollection<RoomReservation> RoomReservations { get; set; }
+
 
 
     }

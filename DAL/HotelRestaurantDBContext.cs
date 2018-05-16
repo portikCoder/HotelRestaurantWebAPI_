@@ -22,15 +22,20 @@ namespace DAL
 
             modelBuilder.Entity<RoomEquipment>()
                 .HasKey(c => new { c.RoomId, c.EquipmentId });
-
-
-
             modelBuilder.Entity<Room>()
              .HasMany(c => c.RoomEquipment).WithRequired().HasForeignKey(c => c.RoomId);
 
             modelBuilder.Entity<Equipment>()
              .HasMany(c => c.RoomEquipment).WithRequired().HasForeignKey(c => c.EquipmentId);
-            
+
+            modelBuilder.Entity<RoomReservation>()
+                .HasKey(c => new { c.RoomId, c.ReservationId });
+            modelBuilder.Entity<Room>()
+             .HasMany(c => c.RoomReservations).WithRequired().HasForeignKey(c => c.RoomId);
+
+            modelBuilder.Entity<Reservation>()
+             .HasMany(c => c.RoomReservations).WithRequired().HasForeignKey(c => c.ReservationId);
+
         }
 
         public DbSet<User> Users { get; set; }
@@ -39,6 +44,7 @@ namespace DAL
         public DbSet<Properties> Properties { get; set; }
         public DbSet<Reservation> Reservations{ get; set; }
         public DbSet<RoomEquipment> RoomEquipment { get; set; }
+        public DbSet<RoomReservation> RoomReservations { get; set; }
         //public DbSet<User> userke { get; set; }
     }
 }

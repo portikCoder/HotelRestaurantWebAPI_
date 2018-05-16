@@ -11,6 +11,6 @@ namespace DAL.Entities
     {
         [Key]
         public int Id { get; set; }
-        public String name { get; set; }
+        public String name { get; set;}
     }
 }
