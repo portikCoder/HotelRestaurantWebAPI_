@@ -14,7 +14,7 @@
         function register() {
             vm.dataLoading = true;
             if (vm.user.confrimPassword != vm.user.password) {
-                FlashService.Error("Passwords doesn`t matches");
+                FlashService.Error("Passwords don`t match");
                 vm.user.confrimPassword = '';
                 vm.dataLoading = false;
             }
@@ -31,7 +31,6 @@
                     }, function (response) {
                         // This is for test purposes, change it later to a nice error message to the CLIENT...
                         FlashService.Error(response.data);
-                        //FlashService.Error("Kutya fasza.....");
                         vm.dataLoading = false;
                     });
             }

@@ -206,12 +206,23 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="add_room\add_room.view.html" />
+    <Content Include="add_room\add_room.controller.js" />
+    <Content Include="adminpage\adminpage.controller.js" />
+    <Content Include="adminpage\adminpage.view.html" />
+    <Content Include="app-services\room.service.js" />
+    <Content Include="list_rooms\list_rooms.controller.js" />
+    <Content Include="list_rooms\list_rooms.view.html" />
     <Content Include="app-services\account.service.js" />
     <Content Include="app-services\top.bar.controller.js" />
     <Content Include="app-services\user.service.js" />
     <Content Include="app.js" />
+    <Content Include="bookings\bookings.controller.js" />
+    <Content Include="bookings\bookings.view.html" />
     <Content Include="home\home.controller.js" />
     <Content Include="home\home.view.html" />
+    <Content Include="hotel\hotel.controller.js" />
+    <Content Include="hotel\hotel.view.html" />
     <Content Include="index.html" />
     <Content Include="login\login.controller.js" />
     <Content Include="login\login.view.html" />
@@ -244,6 +255,9 @@
     <Content Include="Scripts\angular-touch.min.js" />
     <Content Include="Scripts\angular.js" />
     <Content Include="Scripts\angular.min.js" />
+    <Content Include="Scripts\calendar.js" />
+    <Content Include="Scripts\fullcalendar.js" />
+    <Content Include="Scripts\gcal.js" />
     <Content Include="Scripts\i18n\angular-locale_af-na.js" />
     <Content Include="Scripts\i18n\angular-locale_af-za.js" />
     <Content Include="Scripts\i18n\angular-locale_af.js" />
@@ -982,9 +996,13 @@
     <Content Include="Scripts\i18n\angular-locale_zh.js" />
     <Content Include="Scripts\i18n\angular-locale_zu-za.js" />
     <Content Include="Scripts\i18n\angular-locale_zu.js" />
+    <Content Include="Scripts\moment.js" />
     <Content Include="Scripts\sitemap.xml" />
+    <Content Include="Scripts\ui-bootstrap-tpls.min.js" />
     <Content Include="style\index.css" />
     <Content Include="style\stuff-and-things-random-things.jpg" />
+    <Content Include="hotelroom\hotelroom.controller.js" />
+    <Content Include="hotelroom\hotelroom.view.html" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
