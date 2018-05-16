@@ -9,6 +9,14 @@ namespace DAL.Entities
 {
     public class Equipment
     {
+        public Equipment(string name)
+        {
+            this.name = name;
+        }
+        public Equipment()
+        {
+           
+        }
         [Key]
         public int Id { get; set; }
         public String name { get; set; }

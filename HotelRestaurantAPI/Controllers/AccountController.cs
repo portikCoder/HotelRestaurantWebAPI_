@@ -22,6 +22,25 @@ namespace HotelRestaurantAPI.Controllers
         [Route("api2/login")]
         public IHttpActionResult Login(LoginDTO loginData)
         {
+            RoomRepository test = new RoomRepository();
+            try
+            {
+
+
+                //test.AddEquipment("table");
+                //test.AddEquipment("tv");
+                //test.insertRoom(new Room("baddroom"));
+                //test.GetEquipment(1);
+                //test.GetRoom();
+                //test.GetRoom(1);
+                //test.AddRoomEquipment(1, "tv");
+                //test.AddRoomEquipment(1, "table");
+                test.GetRoomEquipment(1);
+
+            }catch(Exception e)
+            {
+                return BadRequest(e.Message);
+            }
             User user;
             try
             {
@@ -67,9 +86,6 @@ namespace HotelRestaurantAPI.Controllers
             try
             {
                 user = AccountManager.CreateUser(registrationData, DBContext);
-                //room = RoomManager.FirstConfigureRoom();
-                //DBContext.Rooms.Add(room);
-                //user.Room = room;
                 DBContext.Users.Add(user);
                 DBContext.SaveChanges();
             }

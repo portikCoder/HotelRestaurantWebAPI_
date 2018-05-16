@@ -6,10 +6,19 @@ using System.Web;
 
 namespace DAL.Entities
 {
+
     public class Room
     {
+        public Room ( String t)
+        {
+            Type = t;
+        }
+        public Room()
+        {
+           
+        }
         [Key]
-        public int id { get; set; }
+        public int Id { get; set; }
         public String Type { get; set; }
 
 

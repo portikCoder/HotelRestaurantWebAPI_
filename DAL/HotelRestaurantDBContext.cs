@@ -21,14 +21,16 @@ namespace DAL
             base.OnModelCreating(modelBuilder);
 
             modelBuilder.Entity<RoomEquipment>()
-              .HasRequired<Room>(s => s.Room)
-              .WithMany(g => g.RoomEquipment)
-              .HasForeignKey<int>(s => s.RoomId);
+                .HasKey(c => new { c.RoomId, c.EquipmentId });
 
-            modelBuilder.Entity<RoomEquipment>()
-              .HasRequired<Equipment>(s => s.Equipment)
-              .WithMany(g => g.RoomEquipment)
-              .HasForeignKey<int>(s => s.EquipmentId);
+
+
+            modelBuilder.Entity<Room>()
+             .HasMany(c => c.RoomEquipment).WithRequired().HasForeignKey(c => c.RoomId);
+
+            modelBuilder.Entity<Equipment>()
+             .HasMany(c => c.RoomEquipment).WithRequired().HasForeignKey(c => c.EquipmentId);
+            
         }
 
         public DbSet<User> Users { get; set; }

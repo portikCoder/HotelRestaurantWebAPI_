@@ -247,8 +247,8 @@ C:\Users\Elod\source\repos\HotelRestaurantWebAPI_\HotelRestaurantUI\bin\Microsof
 C:\Users\Elod\source\repos\HotelRestaurantWebAPI_\HotelRestaurantUI\bin\Microsoft.AI.ServerTelemetryChannel.xml
 C:\Users\Elod\source\repos\HotelRestaurantWebAPI_\HotelRestaurantUI\bin\Microsoft.AI.WindowsServer.xml
 C:\Users\Elod\source\repos\HotelRestaurantWebAPI_\HotelRestaurantUI\bin\Microsoft.AI.Web.xml
-C:\Users\Elod\source\repos\HotelRestaurantWebAPI_\HotelRestaurantUI\obj\Debug\HotelRestaurantUI.csprojResolveAssemblyReference.cache
 C:\Users\Elod\source\repos\HotelRestaurantWebAPI_\HotelRestaurantUI\obj\Debug\HotelRestaurantUI.csproj.CoreCompileInputs.cache
 C:\Users\Elod\source\repos\HotelRestaurantWebAPI_\HotelRestaurantUI\obj\Debug\HotelRestaurantUI.csproj.CopyComplete
 C:\Users\Elod\source\repos\HotelRestaurantWebAPI_\HotelRestaurantUI\obj\Debug\HotelRestaurantUI.dll
 C:\Users\Elod\source\repos\HotelRestaurantWebAPI_\HotelRestaurantUI\obj\Debug\HotelRestaurantUI.pdb
+C:\Users\Elod\source\repos\HotelRestaurantWebAPI_\HotelRestaurantUI\obj\Debug\HotelRestaurantUI.csprojResolveAssemblyReference.cache

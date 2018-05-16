@@ -149,6 +149,7 @@
     <Compile Include="BL\AccountManager.cs" />
     <Compile Include="BL\RuntimeTypeCheckExtensions.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\testController.cs" />
     <Compile Include="Controllers\UserController.cs" />
     <Compile Include="DTO\LoginDTO.cs" />
     <Compile Include="DTO\RegisterDTO.cs" />
