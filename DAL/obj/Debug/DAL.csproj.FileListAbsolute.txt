@@ -10,6 +10,7 @@ C:\Users\Szabi\source\repos\HotelRestaurantWebAPI_\DAL\obj\Debug\DAL.csproj.Core
 C:\Users\Szabi\source\repos\HotelRestaurantWebAPI_\DAL\obj\Debug\DAL.csproj.CopyComplete
 C:\Users\Szabi\source\repos\HotelRestaurantWebAPI_\DAL\obj\Debug\DAL.dll
 C:\Users\Szabi\source\repos\HotelRestaurantWebAPI_\DAL\obj\Debug\DAL.pdb
+<<<<<<< HEAD
 C:\Users\Dell5548\Documents\Visual Studio 2017\Projects\HotelRestaurant\DAL\bin\Debug\DAL.dll.config
 C:\Users\Dell5548\Documents\Visual Studio 2017\Projects\HotelRestaurant\DAL\bin\Debug\DAL.dll
 C:\Users\Dell5548\Documents\Visual Studio 2017\Projects\HotelRestaurant\DAL\bin\Debug\DAL.pdb
@@ -22,3 +23,5 @@ C:\Users\Dell5548\Documents\Visual Studio 2017\Projects\HotelRestaurant\DAL\obj\
 C:\Users\Dell5548\Documents\Visual Studio 2017\Projects\HotelRestaurant\DAL\obj\Debug\DAL.csproj.CopyComplete
 C:\Users\Dell5548\Documents\Visual Studio 2017\Projects\HotelRestaurant\DAL\obj\Debug\DAL.dll
 C:\Users\Dell5548\Documents\Visual Studio 2017\Projects\HotelRestaurant\DAL\obj\Debug\DAL.pdb
+=======
+>>>>>>> 2e17e64fcd62e274489be4396b46405130721532
