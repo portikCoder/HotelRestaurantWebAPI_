@@ -16,6 +16,7 @@ namespace HotelRestaurantAPI.Controllers
         private HotelRestaurantDBContext DBContext = new HotelRestaurantDBContext();
 
         [HttpPost]
+        [Authorize]
         [Route("api2/rooms")]
         public IHttpActionResult GetRooms(UserDTO user)
         {
