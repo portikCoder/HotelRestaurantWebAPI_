@@ -151,11 +151,8 @@
     <Compile Include="BL\RuntimeTypeCheckExtensions.cs" />
     <Compile Include="BL\UsersManager.cs" />
     <Compile Include="Controllers\AccountController.cs" />
-<<<<<<< HEAD
     <Compile Include="Controllers\AdminController.cs" />
-=======
     <Compile Include="Controllers\testController.cs" />
->>>>>>> origin/ElodDatabase
     <Compile Include="Controllers\UserController.cs" />
     <Compile Include="DTO\LoginDTO.cs" />
     <Compile Include="DTO\RegisterDTO.cs" />
