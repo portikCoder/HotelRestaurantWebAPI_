@@ -24,13 +24,13 @@
 										<div></div>
 										<div>
 											<div style="display: inline"
-											   ng-show="! vm.modServ[i]">{{s}}</div>
+												 ng-show="! vm.modServ[i]">{{s}}</div>
 											<input type="text"
 												   name="{{vm.services[i]}}"
 												   ng-model="vm.services[i]"
 												   ng-show="vm.modServ[i]"
 												   style="display: inline"
-												   value="{{s}}"/>
+												   value="{{s}}" />
 										</div>
 										<div>
 											<div style="text-align:right"
@@ -55,6 +55,24 @@
 													Cancel
 												</a>
 											</div>
+										</div>
+									</div>
+
+									<div class="panel-body"
+										 style="display: grid; grid-template-columns: 50% 50%">
+										<div></div>
+										<div>
+											<input type="text"
+												   name="newServ"
+												   ng-model="vm.newServ"
+												   style="display: inline"
+												   placeholder="Add new Service..." />
+										</div>
+										<div style="text-align: right">
+											<a ng-click="vm.addServ(vm.newServ)"
+											   class="btn btn-primary">
+												Add new Service
+											</a>
 										</div>
 									</div>
 								</div>
@@ -106,6 +124,24 @@
 													Cancel
 												</a>
 											</div>
+										</div>
+									</div>
+
+									<div class="panel-body"
+										 style="display: grid; grid-template-columns: 50% 50%">
+										<div></div>
+										<div>
+											<input type="text"
+												   name="newServ"
+												   ng-model="vm.newLang"
+												   style="display: inline"
+												   placeholder="Add new Language..." />
+										</div>
+										<div style="text-align: right">
+											<a ng-click="vm.addLang(vm.newLang)"
+											   class="btn btn-primary">
+												Add new Language
+											</a>
 										</div>
 									</div>
 								</div>

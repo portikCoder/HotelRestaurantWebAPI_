@@ -12,7 +12,8 @@
         vm.othersBookings = [];
         vm.filterDate = new Date();
         //
-        vm.username = AccountService.GetUsername();
+		vm.username = AccountService.GetUsername();
+		vm.months = ["Jan", "Febr", "Márc", "Ápr", "Máj", "Jún", "Júl", "Szept", "Okt", "Nov", "Dec"];
 
         vm.getOthersBookings = getOthersBookings;
 
@@ -47,7 +48,7 @@
             return $http.post($rootScope.baseUrl + 'api2/otheruserpreservations', { UserName: vm.usernam, filterDate: vm.filterDate });
         }
         vm.getMyBookings = function () {
-            return $http.post($rootScope.baseUrl + 'api2/userpreservations', { UserName: vm.username, filterDate: vm.filterDate });
+            return $http.post($rootScope.baseUrl + 'api2/allpreservations', { UserName: vm.username, filterDate: vm.filterDate });
         }
         vm.getBookings = getBookings;
         function getBookings() {

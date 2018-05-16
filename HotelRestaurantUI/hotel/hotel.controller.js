@@ -68,6 +68,12 @@
 
 		vm.saveChangesTo = saveChangesTo;
 		vm.deleteRoom = deleteRoom;
+		vm.editServ = editServ;
+		vm.editLang = editLang;
+		vm.addServ = addServ;
+		vm.addLang = addLang;
+		vm.newServ = "";
+		vm.newLang = "";
 		//Bence End
 
 		vm.sendBookings = sendBookings;
@@ -392,6 +398,22 @@
 
 		function deleteRoom(room) {
 			//TODO send delete request
+		}
+
+		function editServ(index) {
+			//TODO edit Service of a specific index
+		}
+
+		function editLang(index) {
+			//TODO edit Language of a specific index
+		}
+
+		function addServ(serv) {
+			//TODO add a new Service
+		}
+
+		function addLang(lang) {
+			//TODO add a new Spoken Language
 		}
 	}
 
