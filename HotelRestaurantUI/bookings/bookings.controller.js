@@ -53,6 +53,11 @@
         function getBookings() {
             vm.getOthersBookings().then(function (data) {
                 vm.othersBookings = data.data;
+                for (var i = 0; i < vm.othersBookings.length; ++i) {
+                    vm.othersBookings[i].startDate = new Date(vm.othersBookings[i].startDate);
+                    vm.othersBookings[i].endDate = new Date(vm.othersBookings[i].endDate);
+                }
+                console.log(vm.othersBookings);
                 vm.getMyBookings().then(function (data) {
                     vm.myBookings = data.data;
                     console.log(vm.myBookings);
@@ -61,6 +66,7 @@
                         vm.myBookings[i].endDate = new Date(vm.myBookings[i].endDate);
                     }
                     console.log(vm.myBookings);
+                    
                 });
                 
             });

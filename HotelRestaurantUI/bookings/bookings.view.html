@@ -30,9 +30,11 @@
                     </h4>
                 </div>
                 <div id="othersBookings" class="panel-collapse collapse in">
-                    <div class="panel-body" ng-repeat="booking in vm.myBookings">
+                    <div class="panel-body" ng-repeat="booking in vm.othersBookings">
                         {{booking.id}}:
                         <p> <input type="date" ng-model="booking.startDate" disabled/>-<input type="date" ng-model="booking.endDate" disabled/></p>
+                        
+
                     </div>
 
                 </div>
