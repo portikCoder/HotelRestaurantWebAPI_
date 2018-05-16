@@ -10,6 +10,8 @@ using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
+using System.Data.Entity.Validation;
+using HotelRestaurantAPI.Models;
 
 namespace HotelRestaurantAPI.Controllers
 {
@@ -22,6 +24,46 @@ namespace HotelRestaurantAPI.Controllers
         [Route("api2/login")]
         public IHttpActionResult Login(LoginDTO loginData)
         {
+            RoomRepository test = new RoomRepository();
+            AdminManager.GetRoomReservation(1); 
+            try
+            {
+
+
+                //test.AddEquipment("table");
+                //test.AddEquipment("tv");
+                //test.insertRoom(new Room("baddroom"));
+                //test.GetEquipment(1);
+                //test.GetRoom();
+                //test.GetRoom(1);
+                //test.AddRoomEquipment(1, "tv");
+                //test.AddRoomEquipment(1, "table");
+                //test.GetRoomEquipment(1);
+               
+                Reservation t = new Reservation();
+                t.price = 30;
+                t.createReservation = DateTime.Today;
+                t.startDate = DateTime.Today.AddDays(8);
+                t.finishDate = DateTime.Today.AddDays(12);
+                t.status = 0;
+               
+                List<int> rt = new List<int>();
+                rt.Add(1);
+                // test1.AddReservation(rt, t);
+                //List<ReservationModel>  le =test1.GetReservationToDate(DateTime.Today.AddDays(7),DateTime.Today.AddDays(11));
+                List<Reservation> lee = AdminManager.GetRoomReservation(1);
+                test.GetRoomEquipment(1);
+
+            }catch(DbEntityValidationException  e)
+            {
+                foreach (var validationErrors in e.EntityValidationErrors)
+                {
+                    foreach (var validationError in validationErrors.ValidationErrors)
+                    {
+                        System.Console.WriteLine("Property: {0} Error: {1}", validationError.PropertyName, validationError.ErrorMessage);
+                    }
+                }
+            }
             User user;
             try
             {
@@ -67,9 +109,6 @@ namespace HotelRestaurantAPI.Controllers
             try
             {
                 user = AccountManager.CreateUser(registrationData, DBContext);
-                //room = RoomManager.FirstConfigureRoom();
-                //DBContext.Rooms.Add(room);
-                user.Room = room;
                 DBContext.Users.Add(user);
                 DBContext.SaveChanges();
             }

@@ -17,7 +17,7 @@ namespace DAL.Entities
         public string Email { get; set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }
-        public Room Room { get; set; }
+        
 
         private int gatheredGold;
         private int gatheredMine;

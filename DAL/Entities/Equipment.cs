@@ -1,31 +1,26 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
-using System.Web;
+using System.Text;
+using System.Threading.Tasks;
 
 namespace DAL.Entities
 {
-
-    public class Room
+    public class Equipment
     {
-        public Room ( String t)
+        public Equipment(string name)
         {
-            Type = t;
+            this.name = name;
         }
-        public Room()
+        public Equipment()
         {
            
         }
         [Key]
         public int Id { get; set; }
-        public String Type { get; set; }
+        public String name { get; set; }
 
-        
         public virtual ICollection<RoomEquipment> RoomEquipment { get; set; }
-        public virtual ICollection<RoomReservation> RoomReservations { get; set; }
-
-
-
     }
 }

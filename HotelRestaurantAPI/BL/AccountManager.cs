@@ -30,6 +30,7 @@ namespace HotelRestaurantAPI.BL
         {
             User user = dBContext.Users.Where(u => u.UserName.Equals(loginDTO.UserName)).FirstOrDefault();
 
+        
             if (user == null)
             {
                 throw new UserNotExistsException();
