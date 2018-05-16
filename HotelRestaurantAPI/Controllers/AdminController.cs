@@ -24,7 +24,7 @@ namespace HotelRestaurantAPI.Controllers
         {
             /* Get tthe lists of rooms from DB!!!! */
             List<Room> rooms = new List<Room>();
-
+             
             /*test data*/
             List<(string Id, string Type, string Subtype, string[] Properties, string[] Others)> rooms_t = new List<(string Id, string Type, string Subtype, string[] Properties, string[] Others)>(){
                 ("room_404", "bedroom", "doubled penetratin", new string[] { "extra-large", "XXL"}, new string[] { "mini-skirt", "ammm wardrobe", "mini refrigerator" }),
