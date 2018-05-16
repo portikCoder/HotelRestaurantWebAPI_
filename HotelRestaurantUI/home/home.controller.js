@@ -12,10 +12,13 @@
         vm.check = check;
         vm.username = AccountService.GetUsername();
 
-        vm.GetRooms = function () {
-            var response = $http.post($rootScope.baseUrl + 'api2/rooms', { UserName: vm.username });
-            console.log(response)
-        }
+		vm.GetRooms = function () {
+			return $http.post($rootScope.baseUrl + 'api2/rooms', { UserName: vm.username });
+		}
+		var result = vm.GetRooms().then(function (data) {
+			var temp = data;
+			console.log(temp.data);
+		});
 
         function check() {
             FlashService.Error('Kukra fel...');
