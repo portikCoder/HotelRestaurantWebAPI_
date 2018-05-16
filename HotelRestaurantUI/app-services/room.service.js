@@ -12,6 +12,7 @@
 		var roomType = "";
 		var roomSubtype = "";
 		var roomProp = "";
+		var roomExtra = "";
 
 		service.GetRoomName = GetRoomName;
 		service.SetRoomName = SetRoomName;
@@ -21,10 +22,12 @@
 		service.SetRoomSubtype = SetRoomSubtype;
 		service.GetRoomProp = GetRoomProp;
 		service.SetRoomProp = SetRoomProp;
+		service.GetRoomExtra = GetRoomExtra;
+		service.SetRoomExtra = SetRoomExtra;
 
 		service.AddRoom = AddRoom;
-		service.AddSubtype = AddSubtype;
-		service.AddExtra = AddExtra;
+		service.GetSubtypes = GetSubtypes;
+		service.GetExtras = GetExtras;
 
 		return service;
 
@@ -57,18 +60,26 @@
 		}
 
 		function SetRoomProp(roomProp) {
-			this.roomSize = roomProp;
+			this.roomProp= roomProp;
+		}
+
+		function GetRoomExtra() {
+			return this.roomExtra;
+		}
+
+		function SetRoomExtra(roomExtra) {
+			this.roomExtra = roomExtra;
 		}
 
 		function AddRoom(room) {
 			//TODO: get http post address
 		}
 
-		function AddSubtype(type) {
+		function GetSubtypes(type) {
 			return $http.get($rootScope.baseUrl + "api2/subtypes");
 		}
 
-		function AddExtra(type) {
+		function GetExtras(type) {
 			return $http.get($rootScope.baseUrl + "api2/extras");
 		}
 	}

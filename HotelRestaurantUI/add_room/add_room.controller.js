@@ -26,17 +26,17 @@
 		vm.rSubtypes = [];
 		vm.rExtras = [];
 
-		RoomService.AddSubtype(null).then(function (response) {
+		RoomService.GetSubtypes(null).then(function (response) {
 			vm.rTypes = response.data.subtype;
 			vm.rTypes.forEach(function (t) {
-				RoomService.AddSubtype(t).then(function (response) {
+				RoomService.GetSubtypes(t).then(function (response) {
 					vm.rSubtypes[t] = response.data.subtype;
 				}, function (response) {
 					FlashService.Error('Well... this is weird...');
 				});
 			});
 			vm.rTypes.forEach(function (t) {
-				RoomService.AddExtra(t).then(function (response) {
+				RoomService.GetExtras(t).then(function (response) {
 					vm.rExtras[t] = response.data.others;
 				}, function (response) {
 					FlashService.Error('Well... this is weird...');
@@ -54,7 +54,7 @@
 		//vm.rProps = ['Small', 'Medium', 'Large', 'Very Large', 'Extra Large'];
 
 		vm.rProps = [];
-		RoomService.AddExtra(null).then(function (response) {
+		RoomService.GetExtras(null).then(function (response) {
 			vm.rProps = response.data.others;
 		}, function (response) {
 			FlashService.Error('Well... this is weird...');
