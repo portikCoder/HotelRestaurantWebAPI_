@@ -20,6 +20,14 @@ namespace DAL
         {
             base.OnModelCreating(modelBuilder);
 
+            modelBuilder.Entity<RoomReservation>()
+             .HasKey(c => new { c.ReservationId, c.RoomId });
+            modelBuilder.Entity<Room>()
+             .HasMany(c => c.RoomReservations).WithRequired().HasForeignKey(c => c.RoomId);
+
+            modelBuilder.Entity<Reservation>()
+             .HasMany(c => c.RoomReservations).WithRequired().HasForeignKey(c => c.ReservationId);
+
             modelBuilder.Entity<RoomEquipment>()
                 .HasKey(c => new { c.RoomId, c.EquipmentId });
             modelBuilder.Entity<Room>()
@@ -28,13 +36,7 @@ namespace DAL
             modelBuilder.Entity<Equipment>()
              .HasMany(c => c.RoomEquipment).WithRequired().HasForeignKey(c => c.EquipmentId);
 
-            modelBuilder.Entity<RoomReservation>()
-                .HasKey(c => new { c.RoomId, c.ReservationId });
-            modelBuilder.Entity<Room>()
-             .HasMany(c => c.RoomReservations).WithRequired().HasForeignKey(c => c.RoomId);
-
-            modelBuilder.Entity<Reservation>()
-             .HasMany(c => c.RoomReservations).WithRequired().HasForeignKey(c => c.ReservationId);
+         
 
         }
 

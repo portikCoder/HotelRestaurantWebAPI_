@@ -11,11 +11,13 @@ namespace DAL.Entities
     public class RoomReservation
     {
         [Key]
-        public int RoomId;
-        public int ReservationId;
+        public int RoomId { get; set; }
+        public int ReservationId { get; set; }
         [ForeignKey("RoomId")]
         public virtual Room Room { get; set; }
-        [ForeignKey("EquipmentId")]
+        [ForeignKey("ReservationId")]
         public virtual Reservation Reservation { get; set; }
+
+       
     }
 }

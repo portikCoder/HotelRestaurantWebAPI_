@@ -8,7 +8,12 @@ namespace HotelRestaurantAPI.Models
 {
     public class ReservationModel
     {
+        public ReservationModel()
+        {
+            RoomId = new List<int>();
+        }
         public Reservation reservation { get; set; }
         public List<int> RoomId { get; set; }
     }
+    
 }

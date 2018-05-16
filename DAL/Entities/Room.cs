@@ -21,7 +21,7 @@ namespace DAL.Entities
         public int Id { get; set; }
         public String Type { get; set; }
 
-        //s
+        
         public virtual ICollection<RoomEquipment> RoomEquipment { get; set; }
         public virtual ICollection<RoomReservation> RoomReservations { get; set; }
 

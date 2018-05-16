@@ -11,11 +11,10 @@ namespace DAL.Entities
     {
         [Key]
         public int Id{get; set;}
-        public User user { get; set; }
         public DateTime createReservation { get; set; }
         public DateTime startDate { get; set; }
         public DateTime finishDate { get; set; }
-        public Double prive { get; set; }
+        public Double price { get; set; }
         public int status { get; set; }
 
         public virtual ICollection<RoomReservation> RoomReservations { get; set; }
