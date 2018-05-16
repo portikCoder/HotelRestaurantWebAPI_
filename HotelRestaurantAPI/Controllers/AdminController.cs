@@ -65,7 +65,7 @@ namespace HotelRestaurantAPI.Controllers
                 new { Others = new string[] { "mini-skirt", "ammm wardrobe", "mini refrigerator", "tele-vision..." } }
             );
         }
-    }
+   
         /*  Route for recieving the new room data [from the admin! / or not!].
          * 
          */
