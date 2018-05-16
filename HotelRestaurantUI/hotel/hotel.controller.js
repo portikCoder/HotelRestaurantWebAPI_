@@ -2,7 +2,7 @@
     'use strict';
 
     angular
-        .module('app', ['daypilot'])
+        .module('app')
         .controller('HotelController', HotelController);
 
     HotelController.$inject = ['$http', '$location', '$scope', '$compile', '$rootScope', 'AccountService', 'FlashService'];

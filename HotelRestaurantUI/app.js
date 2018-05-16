@@ -45,6 +45,11 @@
                     templateUrl: 'hotelroom/hotelroom.view.html',
                     controllerAs: 'vm'
                 })
+                .when('/bookings', {
+                    controller: 'BookingsController',
+                    templateUrl: 'bookings/bookings.view.html',
+                    controllerAs: 'vm'
+                })
                 .when('/home', {
                     controller: 'HomeController',
                     templateUrl: 'home/home.view.html',
