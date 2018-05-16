@@ -35,12 +35,14 @@
 		</div>
 		<div class="form-group"
 			 ng-class="{ 'has-error': form.roomSubtype.$dirty && form.roomSubtype.$error.required }">
-			<label for="bedType">
+			<label for="bedType" 
+				   style="padding-bottom: 1em">
 				Room Subtype:
 			</label>
 			<select name="bedType"
 					ng-model="vm.room.roomSubtype"
-					ng-options="st for st in vm.rSubtypes[vm.room.roomType]">
+					ng-options="st for st in vm.rSubtypes[vm.room.roomType]"
+					style="margin-bottom: 1em">
 				<option ng-if="!vm.room.roomType"
 						value="">
 					Select Room Type
