@@ -22,7 +22,7 @@
         vm.deleteBooking = deleteBooking;
         function deleteBooking(room) {
             //TODO 
-            $http.post($rootScope.baseUrl + 'api2/otheruserpreservations', { UserName: vm.usernam, booking: room }).then(function (data) {
+            $http.post($rootScope.baseUrl + 'api2/deleteBooking', { UserName: vm.username, booking: room }).then(function (data) {
                 if (data.data.result == "ok") {
                     for (var i = 0; i < vm.myBookings.length; ++i) {
                         if (room.id == vm.myBookings[i].id && room.startDate == vm.myBookings[i].startDate && room.endDate == vm.myBookings[i].endDate) {
@@ -53,12 +53,12 @@
           
             if (checkDates(room)) {
                 //TODO 
-                $http.post($rootScope.baseUrl + 'api2/otheruserpreservations', { UserName: vm.usernam, booking: room });
+                $http.post($rootScope.baseUrl + 'api2/changeBooking', { UserName: vm.username, booking: room });
                 console.log(room);
             }
         }
         function getOthersBookings() {
-            return $http.post($rootScope.baseUrl + 'api2/otheruserpreservations', { UserName: vm.usernam, filterDate: vm.filterDate });
+            return $http.post($rootScope.baseUrl + 'api2/otheruserpreservations', { UserName: vm.username, filterDate: vm.filterDate });
         }
         vm.getMyBookings = function () {
             return $http.post($rootScope.baseUrl + 'api2/userpreservations', { UserName: vm.username, filterDate: vm.filterDate });
