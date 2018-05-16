@@ -1,3 +1,4 @@
+﻿@@ -0,0 +1,95 @@
 ﻿using DAL;
 using DAL.Entities;
 using HotelRestaurantAPI.DTO;
@@ -36,7 +37,7 @@ namespace HotelRestaurantAPI.Controllers
             //return Ok(new[] { "room_404", "bedroom", "doubled penetratin", new string[] { "extra-large", "XXL" }, new string[] { "mini-skirt", "ammm wardrobe", "mini refrigerator" } }.ToList());
             //return Ok( new { "data" = 1, "data2" = 2, "data3" = 3 } );
             return Ok(
-                new { Subtype = new []{ "singled penetratin", "doubled penetratin", "tripled penetratin" } }
+                new { Subtype = new[] { "singled penetratin", "doubled penetratin", "tripled penetratin" } }
             );
         }
 

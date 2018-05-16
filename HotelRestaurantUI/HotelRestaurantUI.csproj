@@ -998,9 +998,6 @@
   <ItemGroup />
   <ItemGroup>
     <Content Include="app-services\flash.service.js" />
-    <None Include=".bin\git.cmd" />
-    <None Include=".bin\node.cmd" />
-    <None Include=".bin\npm.cmd" />
     <None Include="packages.config">
       <SubType>Designer</SubType>
     </None>
