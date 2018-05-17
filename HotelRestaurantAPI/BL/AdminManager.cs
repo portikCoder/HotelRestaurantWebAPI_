@@ -29,6 +29,12 @@ namespace HotelRestaurantAPI.BL
 
             return equipmentList;
         }
+
+        internal static List<Subtype> GetSubtypes()
+        {
+            throw new NotImplementedException();
+        }
+
         private static Equipment GetEquipment(int id)
         {
             return DbContext.Equipment.FirstOrDefault(x => x.Id == id);
@@ -41,6 +47,12 @@ namespace HotelRestaurantAPI.BL
         {
             return DbContext.Equipment.ToList();
         }
+
+        internal static List<Equipment> GetOthers()
+        {
+            throw new NotImplementedException();
+        }
+
         private static Room GetRoom(int id)
         {
             var S = DbContext.Rooms.FirstOrDefault(x => x.Id == id);
