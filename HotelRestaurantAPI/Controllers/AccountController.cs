@@ -31,7 +31,7 @@ namespace HotelRestaurantAPI.Controllers
             {
 
 
-                
+
                 //test.AddEquipment("table");
                 //test.AddEquipment("tv");
                 //test.insertRoom(new Room());
@@ -49,13 +49,15 @@ namespace HotelRestaurantAPI.Controllers
                 //t.startDate = DateTime.Today.AddDays(8);
                 //t.finishDate = DateTime.Today.AddDays(12);
                 //t.status = 0;
-               
+
                 //List<int> rt = new List<int>();
                 //rt.Add(1);
                 //AdminManager.AddReservation(rt, t);
                 //List<ReservationModel>  le =test1.GetReservationToDate(DateTime.Today.AddDays(7),DateTime.Today.AddDays(11));
                 //List<Reservation> lee = AdminManager.GetRoomReservation(1);
                 //test.GetRoomEquipment(1);
+                AdminManager.AddProperties("XXL");
+                AdminManager.AddRoomProperties(1, "XXL");
 
             }catch(DbEntityValidationException  e)
             {

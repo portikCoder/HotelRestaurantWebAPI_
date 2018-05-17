@@ -156,6 +156,62 @@ namespace HotelRestaurantAPI.BL
             }
             return ListReserVation;
         }
+        public static void AddProperties(string name)
+        {
+            Properties properties = new Properties();
+            properties.name = name;
+
+            DbContext.Properties.Add(properties);
+            DbContext.SaveChanges();
+        }
+        public static Properties GetProperti(string name)
+        {
+            return DbContext.Properties.FirstOrDefault(x => x.name == name);
+        }
+        public static List<Properties> GetAllProperti(string name)
+        {
+            return DbContext.Properties.ToList();
+        }
+        public static List<Properties> GetRoomProperti(int roomId)
+        {
+            var listRoomProperty = DbContext.RoomProperties.Where(x => x.RoomId == roomId).ToList();
+            List<Properties> listProperty = new List<Properties>();
+            foreach (var res in listRoomProperty)
+            {
+                listProperty.Add(DbContext.Properties.FirstOrDefault(x => x.Id == res.PropertiId));
+            }
+            return listProperty;
+        }
+        public static void AddRoomProperties(int roomId, string name)
+        {
+            RoomProperties  roomProperties= new RoomProperties();
+            Room room = GetRoom(roomId);
+            Properties properties = GetProperti(name);
+            roomProperties.Properties = properties;
+            roomProperties.Room = room;
+            DbContext.RoomProperties.Add(roomProperties);
+            DbContext.SaveChanges();
+
+
+
+        }
+        public static List<RoomModel> GetAllRoom()
+        {
+            List<Room> RoomList = GetRoom();
+            List<RoomModel> listRoomModel = new List<RoomModel>();
+            RoomModel roomModel = new RoomModel();
+            foreach(Room room in RoomList)
+            {
+                roomModel.PropertisList = GetRoomProperti(room.Id);
+                roomModel.EquipmentList = GetRoomEquipment(room.Id);
+                roomModel.room = room;
+                listRoomModel.Add(roomModel);
+            }
+            return listRoomModel;
+        }
+
+
+
 
 
 
