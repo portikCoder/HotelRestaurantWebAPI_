@@ -136,6 +136,7 @@
                             <div id="`+ room.id + `" class="panel-collapse collapse">
                                 <div class="panel-body">type:`+ room.type + `</div>
                                 <div class="panel-body">subtype:`+ room.subtype + `</div>
+                                <div class="panel-body">price:`+ room.price + `</div>
                                 <div class="panel-body">
                            
                                   <div class="panel-group">

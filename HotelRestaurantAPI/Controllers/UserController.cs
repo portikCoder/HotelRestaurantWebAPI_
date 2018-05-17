@@ -16,6 +16,7 @@ namespace HotelRestaurantAPI.Controllers
         private HotelRestaurantDBContext DBContext = new HotelRestaurantDBContext();
 
         [HttpPost]
+        //[Authorize]
         [Route("api2/rooms")]
         public IHttpActionResult GetRooms(UserDTO user)
         {
@@ -26,9 +27,9 @@ namespace HotelRestaurantAPI.Controllers
             /*test data*/
 
             return Ok(new[] {
-                new { Id = "room_404", Type = "bedroom", Subtype = "doubled penetratin", Properties = new string[] { "extra-large", "XXL" }, Others = new string[] { "mini-skirt", "ammm wardrobe", "mini refrigerator" }},
-                new { Id = "room_406", Type = "bedroom", Subtype = "doubled penetratin", Properties = new string[] { "extra-large", "XXL" }, Others = new string[] { "mini-skirt", "ammm wardrobe", "mini refrigerator" }},
-                new { Id = "room_408", Type = "bedroom", Subtype = "doubled penetratin", Properties = new string[] { "extra-large", "XXL" }, Others = new string[] { "mini-skirt", "ammm wardrobe", "mini refrigerator" }},
+                new { Id = "room_404", Price=20, Type = "bedroom", Subtype = "doubled penetratin", Properties = new string[] { "extra-large", "XXL" }, Others = new string[] { "mini-skirt", "ammm wardrobe", "mini refrigerator" }},
+                new { Id = "room_406", Price=50, Type = "bedroom", Subtype = "doubled penetratin", Properties = new string[] { "extra-large", "XXL" }, Others = new string[] { "mini-skirt", "ammm wardrobe", "mini refrigerator" }},
+                new { Id = "room_408", Price=1150, Type = "bedroom", Subtype = "doubled penetratin", Properties = new string[] { "extra-large", "XXL" }, Others = new string[] { "mini-skirt", "ammm wardrobe", "mini refrigerator" }},
             });
         }
 
