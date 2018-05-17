@@ -88,10 +88,14 @@
                 //    templateUrl: "index.html"
                 //})
                 .otherwise({ redirectTo: '/login' });
+        })
+        .run(run);
 
-
-
-	}
+    run.$inject = ['$rootScope', '$location', '$cookies', '$http'];
+    function run($rootScope, $location, $cookies, $http) {
+        //Base page URL
+        $rootScope.baseUrl = "http://localhost/HotelRestaurantAPI/";
+    }
 
 })();
 
