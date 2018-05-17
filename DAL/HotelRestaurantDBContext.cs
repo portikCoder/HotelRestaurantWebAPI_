@@ -58,6 +58,7 @@ namespace DAL
         public DbSet<Reservation> Reservations{ get; set; }
         public DbSet<RoomEquipment> RoomEquipment { get; set; }
         public DbSet<RoomReservation> RoomReservations { get; set; }
+        public DbSet<RoomProperties> RoomProperties { get; set; }
         public DbSet<Type> Types { get; set; }
         public DbSet<Subtype> Subtypes { get; set; }
         public DbSet<Objects> Objects { get; set; }

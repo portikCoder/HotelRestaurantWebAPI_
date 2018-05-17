@@ -177,6 +177,8 @@
     </Compile>
     <Compile Include="BL\AuthenticationHandler.cs" />
     <Compile Include="Models\ReservationModel.cs" />
+    <Compile Include="Models\ReservationRoomModel.cs" />
+    <Compile Include="Models\RoomModel.cs" />
     <Compile Include="Objects\RoomManager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Utility\TokenManager.cs" />
