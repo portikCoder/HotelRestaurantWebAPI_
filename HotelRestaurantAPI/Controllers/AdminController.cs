@@ -47,7 +47,7 @@ namespace HotelRestaurantAPI.Controllers
         public IHttpActionResult GetExtras()
         {
             /* Get tthe lists of rooms from DB!!!! */
-            List<Equipment> others = AdminManager.GetOthers();
+            List<DAL.Entities.Objects> others = AdminManager.GetOthers();
 
             /*test data*/
             var test1 = new { Others = new string[] { "mini-skirt", "ammm wardrobe", "mini refrigerator", "tele-vision..." } };
