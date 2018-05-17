@@ -26,22 +26,33 @@ namespace HotelRestaurantAPI.Controllers
         {
             RoomRepository test = new RoomRepository();
           
-            AdminManager.GetRoomReservation(1); 
+            
             try
             {
 
 
 
-                //test.AddEquipment("table");
-                //test.AddEquipment("tv");
-                //test.insertRoom(new Room());
-                //test.GetEquipment(1);
-                //test.GetRoom();
-                //test.GetRoom(1);
+                test.AddEquipment("table");
+                test.AddEquipment("tv");
+                AdminManager.addSubType("double pen");
+                AdminManager.AddProperties("XXL");
+                List<Equipment> q = new List<Equipment>();
+                q = AdminManager.GetAllEquipment();
+                List<Properties> e = new List<Properties>();
+                e = AdminManager.GetAllProperti();
+                Room room = new Room();
+                room.Price = 12;
+                room.Id = 12;
+                //room.Id = 11;
+                RoomModel roomModel = new RoomModel();
+                roomModel.PropertisList = e;
+                roomModel.EquipmentList = q;
+                roomModel.room = room;
+                AdminManager.AddRoom(roomModel);
                 //test.AddRoomEquipment(1, "tv");
                 //test.AddRoomEquipment(1, "table");
                 //test.GetRoomEquipment(1);
-                //AdminManager.addSubType("double pen");
+
                 //AdminManager.addRoomSubType("double pen", 1);
                 //Reservation t = new Reservation();
                 //t.price = 30;
@@ -53,21 +64,17 @@ namespace HotelRestaurantAPI.Controllers
                 //List<int> rt = new List<int>();
                 //rt.Add(1);
                 //AdminManager.AddReservation(rt, t);
-                //List<ReservationModel>  le =test1.GetReservationToDate(DateTime.Today.AddDays(7),DateTime.Today.AddDays(11));
-                //List<Reservation> lee = AdminManager.GetRoomReservation(1);
-                //test.GetRoomEquipment(1);
-                AdminManager.AddProperties("XXL");
-                AdminManager.AddRoomProperties(1, "XXL");
 
-            }catch(DbEntityValidationException  e)
+
+                //test.GetRoomEquipment(1);
+
+                //AdminManager.AddRoomProperties(1, "XXL");
+                //List<RoomModel> tu = AdminManager.GetAllRoomByDate(DateTime.Today.AddDays(8), DateTime.Today.AddDays(9));
+                //AdminManager.GetAllRoomByDate(DateTime.Today.AddDays(8), DateTime.Today.AddDays(8));
+
+            }catch(Exception e)
             {
-                foreach (var validationErrors in e.EntityValidationErrors)
-                {
-                    foreach (var validationError in validationErrors.ValidationErrors)
-                    {
-                        System.Console.WriteLine("Property: {0} Error: {1}", validationError.PropertyName, validationError.ErrorMessage);
-                    }
-                }
+                BadRequest(e.Message);
             }
             User user;
             try

@@ -21,4 +21,3 @@ C:\Users\Elod\source\repos\HotelRestaurantWebAPI_\DAL\obj\Debug\DAL.csproj.CoreC
 C:\Users\Elod\source\repos\HotelRestaurantWebAPI_\DAL\obj\Debug\DAL.csproj.CopyComplete
 C:\Users\Elod\source\repos\HotelRestaurantWebAPI_\DAL\obj\Debug\DAL.dll
 C:\Users\Elod\source\repos\HotelRestaurantWebAPI_\DAL\obj\Debug\DAL.pdb
-C:\Users\Elod\source\repos\HotelRestaurantWebAPI_\DAL\obj\Debug\DAL.csprojResolveAssemblyReference.cache

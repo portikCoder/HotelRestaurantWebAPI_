@@ -103,6 +103,12 @@ C:\Users\Dell5548\Documents\Visual Studio 2017\Projects\HotelRestaurant\HotelRes
 C:\Users\Dell5548\Documents\Visual Studio 2017\Projects\HotelRestaurant\HotelRestaurantAPI\obj\Debug\HotelRestaurantAPI.csproj.CopyComplete
 C:\Users\Dell5548\Documents\Visual Studio 2017\Projects\HotelRestaurant\HotelRestaurantAPI\obj\Debug\HotelRestaurantAPI.dll
 C:\Users\Dell5548\Documents\Visual Studio 2017\Projects\HotelRestaurant\HotelRestaurantAPI\obj\Debug\HotelRestaurantAPI.pdb
+C:\Users\Elod\source\repos\HotelRestaurantWebAPI_\HotelRestaurantAPI\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\Elod\source\repos\HotelRestaurantWebAPI_\HotelRestaurantAPI\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\Elod\source\repos\HotelRestaurantWebAPI_\HotelRestaurantAPI\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\Elod\source\repos\HotelRestaurantWebAPI_\HotelRestaurantAPI\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+C:\Users\Elod\source\repos\HotelRestaurantWebAPI_\HotelRestaurantAPI\bin\roslyn\System.IO.Compression.dll
+C:\Users\Elod\source\repos\HotelRestaurantWebAPI_\HotelRestaurantAPI\bin\roslyn\VBCSCompiler.exe
 C:\Users\Elod\source\repos\HotelRestaurantWebAPI_\HotelRestaurantAPI\bin\HotelRestaurantAPI.dll.config
 C:\Users\Elod\source\repos\HotelRestaurantWebAPI_\HotelRestaurantAPI\bin\HotelRestaurantAPI.dll
 C:\Users\Elod\source\repos\HotelRestaurantWebAPI_\HotelRestaurantAPI\bin\HotelRestaurantAPI.pdb
@@ -113,13 +119,9 @@ C:\Users\Elod\source\repos\HotelRestaurantWebAPI_\HotelRestaurantAPI\bin\roslyn\
 C:\Users\Elod\source\repos\HotelRestaurantWebAPI_\HotelRestaurantAPI\bin\roslyn\csi.exe.config
 C:\Users\Elod\source\repos\HotelRestaurantWebAPI_\HotelRestaurantAPI\bin\roslyn\csi.rsp
 C:\Users\Elod\source\repos\HotelRestaurantWebAPI_\HotelRestaurantAPI\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
-C:\Users\Elod\source\repos\HotelRestaurantWebAPI_\HotelRestaurantAPI\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
 C:\Users\Elod\source\repos\HotelRestaurantWebAPI_\HotelRestaurantAPI\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
-C:\Users\Elod\source\repos\HotelRestaurantWebAPI_\HotelRestaurantAPI\bin\roslyn\Microsoft.CodeAnalysis.dll
 C:\Users\Elod\source\repos\HotelRestaurantWebAPI_\HotelRestaurantAPI\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
-C:\Users\Elod\source\repos\HotelRestaurantWebAPI_\HotelRestaurantAPI\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
 C:\Users\Elod\source\repos\HotelRestaurantWebAPI_\HotelRestaurantAPI\bin\roslyn\Microsoft.CSharp.Core.targets
-C:\Users\Elod\source\repos\HotelRestaurantWebAPI_\HotelRestaurantAPI\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
 C:\Users\Elod\source\repos\HotelRestaurantWebAPI_\HotelRestaurantAPI\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
 C:\Users\Elod\source\repos\HotelRestaurantWebAPI_\HotelRestaurantAPI\bin\roslyn\Microsoft.VisualBasic.Core.targets
 C:\Users\Elod\source\repos\HotelRestaurantWebAPI_\HotelRestaurantAPI\bin\roslyn\Microsoft.Win32.Primitives.dll
@@ -129,7 +131,6 @@ C:\Users\Elod\source\repos\HotelRestaurantWebAPI_\HotelRestaurantAPI\bin\roslyn\
 C:\Users\Elod\source\repos\HotelRestaurantWebAPI_\HotelRestaurantAPI\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
 C:\Users\Elod\source\repos\HotelRestaurantWebAPI_\HotelRestaurantAPI\bin\roslyn\System.Diagnostics.Process.dll
 C:\Users\Elod\source\repos\HotelRestaurantWebAPI_\HotelRestaurantAPI\bin\roslyn\System.Diagnostics.StackTrace.dll
-C:\Users\Elod\source\repos\HotelRestaurantWebAPI_\HotelRestaurantAPI\bin\roslyn\System.IO.Compression.dll
 C:\Users\Elod\source\repos\HotelRestaurantWebAPI_\HotelRestaurantAPI\bin\roslyn\System.IO.FileSystem.dll
 C:\Users\Elod\source\repos\HotelRestaurantWebAPI_\HotelRestaurantAPI\bin\roslyn\System.IO.FileSystem.DriveInfo.dll
 C:\Users\Elod\source\repos\HotelRestaurantWebAPI_\HotelRestaurantAPI\bin\roslyn\System.IO.FileSystem.Primitives.dll
@@ -152,7 +153,6 @@ C:\Users\Elod\source\repos\HotelRestaurantWebAPI_\HotelRestaurantAPI\bin\roslyn\
 C:\Users\Elod\source\repos\HotelRestaurantWebAPI_\HotelRestaurantAPI\bin\roslyn\vbc.exe
 C:\Users\Elod\source\repos\HotelRestaurantWebAPI_\HotelRestaurantAPI\bin\roslyn\vbc.exe.config
 C:\Users\Elod\source\repos\HotelRestaurantWebAPI_\HotelRestaurantAPI\bin\roslyn\vbc.rsp
-C:\Users\Elod\source\repos\HotelRestaurantWebAPI_\HotelRestaurantAPI\bin\roslyn\VBCSCompiler.exe
 C:\Users\Elod\source\repos\HotelRestaurantWebAPI_\HotelRestaurantAPI\bin\roslyn\VBCSCompiler.exe.config
 C:\Users\Elod\source\repos\HotelRestaurantWebAPI_\HotelRestaurantAPI\bin\x86\sqlcese40.dll
 C:\Users\Elod\source\repos\HotelRestaurantWebAPI_\HotelRestaurantAPI\bin\x86\sqlceqp40.dll

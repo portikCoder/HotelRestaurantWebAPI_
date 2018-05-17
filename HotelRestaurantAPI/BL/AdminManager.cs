@@ -16,7 +16,7 @@ namespace HotelRestaurantAPI.BL
         {
             return DbContext.Rooms.ToList();
         }
-        public static List<Equipment> GetRoomEquipment(int id)
+        private static List<Equipment> GetRoomEquipment(int id)
 
         {
             var eqpId = DbContext.RoomEquipment.Where(x => x.RoomId == id).ToList();
@@ -29,20 +29,24 @@ namespace HotelRestaurantAPI.BL
 
             return equipmentList;
         }
-        public static Equipment GetEquipment(int id)
+        private static Equipment GetEquipment(int id)
         {
             return DbContext.Equipment.FirstOrDefault(x => x.Id == id);
         }
-        public static Equipment GetEquipment(string name)
+        private static Equipment GetEquipment(string name)
         {
             return DbContext.Equipment.FirstOrDefault(x => x.name == name);
         }
-        public static Room GetRoom(int id)
+        public static List<Equipment> GetAllEquipment()
+        {
+            return DbContext.Equipment.ToList();
+        }
+        private static Room GetRoom(int id)
         {
             var S = DbContext.Rooms.FirstOrDefault(x => x.Id == id);
             return S;
         }
-        public static void insertRoom(Room room)
+        private static void insertRoom(Room room)
         {
 
             DbContext.Rooms.Add(room);
@@ -96,12 +100,16 @@ namespace HotelRestaurantAPI.BL
 
         public static void AddReservation(List<int> roomId,Reservation reservation)
         {
+            Room room = GetRoom(roomId[0]);
+            double startdate = Convert.ToSingle(reservation.finishDate);
+            double finishdate = Convert.ToSingle(reservation.startDate);
+            reservation.price = (finishdate-startdate) * room.Price;
             DbContext.Reservations.Add(reservation);
             RoomReservation roomReservation = new RoomReservation();
             roomReservation.Reservation = reservation;
             foreach (int c in roomId)
             {
-                Room room = GetRoom(c);
+                 room = GetRoom(c);
                 roomReservation.Room = room;
                 DbContext.RoomReservations.Add(roomReservation);
             }
@@ -130,7 +138,7 @@ namespace HotelRestaurantAPI.BL
         }
         public static List<ReservationModel> GetReservationToDate(DateTime StartTime , DateTime FinishTime)
         {
-            var reservationsList = DbContext.Reservations.Where(x=>x.startDate>=StartTime && x.finishDate>=FinishTime);
+            var reservationsList = DbContext.Reservations.Where(x=>(x.startDate<=StartTime && x.finishDate >= StartTime) || (x.startDate<=FinishTime && x.finishDate >= FinishTime));
             List<ReservationModel> list = new List<ReservationModel>();
             ReservationModel model = new ReservationModel();
             List<Reservation> ListAllReservation = new List<Reservation>();
@@ -146,7 +154,7 @@ namespace HotelRestaurantAPI.BL
             }
             return list;
         }
-        public static List<Reservation> GetRoomReservation(int id)
+        private static List<Reservation> GetRoomReservation(int id)
         {
             var listRoomReservation = DbContext.RoomReservations.Where(x => x.RoomId == id).ToList();
             List<Reservation> ListReserVation = new List<Reservation>();
@@ -168,7 +176,7 @@ namespace HotelRestaurantAPI.BL
         {
             return DbContext.Properties.FirstOrDefault(x => x.name == name);
         }
-        public static List<Properties> GetAllProperti(string name)
+        public static List<Properties> GetAllProperti()
         {
             return DbContext.Properties.ToList();
         }
@@ -195,6 +203,7 @@ namespace HotelRestaurantAPI.BL
 
 
         }
+        //oszes szoba lekerdezese
         public static List<RoomModel> GetAllRoom()
         {
             List<Room> RoomList = GetRoom();
@@ -209,11 +218,112 @@ namespace HotelRestaurantAPI.BL
             }
             return listRoomModel;
         }
+        //idoszerinti lekerdezes szobak 
+        public static List<RoomModel> GetAllRoomByDate(DateTime start, DateTime finish)
+        {
+            List<ReservationModel> listres = GetReservationToDate(start, finish);
+          
+            SortedSet< int> roomId = new SortedSet<int>();
+            foreach(var c in listres)
+            {
+                foreach (int t in c.RoomId)
+                {
+                    roomId.Add(t);
+                }
+            }
+            
+            List<Room> RoomList = GetRoom();
+            List<Room> RoomSelect = new List<Room>();
+            List<RoomModel> listRoomModel = new List<RoomModel>();
+            RoomModel roomModel = new RoomModel();
+            int temp = 0;
+            foreach(var room in RoomList)
+            {
+                foreach(int t in roomId)
+                {
+                    if (room.Id == t)
+                    {
+                        temp = 1;
+                        break;
+                    }
+                }
+                if (temp == 0)
+                {
+                    RoomSelect.Add(room);
+                }
+            }
+            foreach (Room room in RoomSelect)
+            {
+                roomModel.PropertisList = GetRoomProperti(room.Id);
+                roomModel.EquipmentList = GetRoomEquipment(room.Id);
+                roomModel.room = room;
+                listRoomModel.Add(roomModel);
+            }
+            return listRoomModel;
 
+        }
+
+        public static List<ReservationRoomModel> GetAllReservationRoom()
+        {
+            List<Reservation> reservationsList = DbContext.Reservations.ToList();
+            List<ReservationRoomModel> list = new List<ReservationRoomModel>();
+            ReservationRoomModel model = new ReservationRoomModel();
+            foreach (var c in reservationsList)
+            {
+                var roomList = DbContext.RoomReservations.Where(x => x.ReservationId == c.Id).ToList();
+                model.roomId = roomList[1].RoomId;
+                model.startDate = c.startDate;
+                model.finishDate = c.finishDate;
+                model.createReservation = c.createReservation;
+                model.price = model.price;
+                model.status = c.status;
+                model.Id = c.Id;
+                list.Add(model);
+            }
+
+            return list;
+        }
+        public static List<ReservationRoomModel> GetReservationRoomToDate(DateTime StartTime, DateTime FinishTime)
+        {
+            var reservationsList = DbContext.Reservations.Where(x => (x.startDate <= StartTime && x.finishDate >= StartTime) || (x.startDate <= FinishTime && x.finishDate >= FinishTime));
+            List<ReservationRoomModel> list = new List<ReservationRoomModel>();
+            ReservationRoomModel model = new ReservationRoomModel();
+            List<Reservation> ListAllReservation = new List<Reservation>();
+            foreach (var c in reservationsList)
+            {
+                var roomList = DbContext.RoomReservations.Where(x => x.ReservationId == c.Id).ToList();
+                model.roomId = roomList[1].RoomId;
+                model.startDate = c.startDate;
+                model.finishDate = c.finishDate;
+                model.createReservation = c.createReservation;
+                model.price = model.price;
+                model.status = c.status;
+                model.Id = c.Id;
+                list.Add(model);
+            }
+            return list;
+        }
+        public static void AddRoom(RoomModel roomModel)
+        {
+            insertRoom(roomModel.room);
+
+            foreach(var c in roomModel.PropertisList)
+            {
+                AddRoomProperties(roomModel.room.Id, c.name);
+            }
+            foreach (var c in roomModel.EquipmentList)
+            {
+                AddRoomEquipment(roomModel.room.Id, c.name);
+            }
+            DbContext.SaveChanges();
+
+        }
+        
+
+        }
 
 
 
 
 
     }
-}
