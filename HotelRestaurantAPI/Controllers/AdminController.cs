@@ -1,5 +1,6 @@
 ﻿using DAL;
 using DAL.Entities;
+using HotelRestaurantAPI.BL;
 using HotelRestaurantAPI.DTO;
 using System;
 using System.Collections;
@@ -17,7 +18,11 @@ namespace HotelRestaurantAPI.Controllers
         /*  For serving the subtype fields...
          * 
          */
-        [HttpGet]
+
+            /*
+             PENDING
+             */
+        [HttpPost]
         [Route("api2/subtypes")]
         public IHttpActionResult GetSubtypes(UserDTO user)
         {
@@ -25,44 +30,32 @@ namespace HotelRestaurantAPI.Controllers
             List<Room> rooms = new List<Room>();
 
             /*test data*/
-            List<(string Id, string Type, string Subtype, string[] Properties, string[] Others)> rooms_t = new List<(string Id, string Type, string Subtype, string[] Properties, string[] Others)>(){
-                ("room_404", "bedroom", "doubled penetratin", new string[] { "extra-large", "XXL"}, new string[] { "mini-skirt", "ammm wardrobe", "mini refrigerator" }),
-                ("room_406", "bedroom", "doubled penetratin", new string[] { "extra-large", "XXL"}, new string[] { "mini-skirt", "ammm wardrobe", "mini refrigerator" }),
-                ("room_408", "bedroom", "doubled penetratin", new string[] { "extra-large", "XXL"}, new string[] { "mini-skirt", "ammm wardrobe", "mini refrigerator" }),
-
-            };
+            var test1 = new { Subtype = new[] { "singled penetratin", "doubled penetratin", "tripled penetratin" } };
             /*test data*/
 
             //return Ok(new[] { "room_404", "bedroom", "doubled penetratin", new string[] { "extra-large", "XXL" }, new string[] { "mini-skirt", "ammm wardrobe", "mini refrigerator" } }.ToList());
             //return Ok( new { "data" = 1, "data2" = 2, "data3" = 3 } );
             return Ok(
-                new { Subtype = new[] { "singled penetratin", "doubled penetratin", "tripled penetratin" } }
+                test1
             );
         }
 
         /*  For serving the extras fields...
          * 
          */
-        [HttpGet]
+        [HttpPost]
         [Route("api2/extras")]
-        public IHttpActionResult GetExtras(UserDTO user)
+        public IHttpActionResult GetExtras(Int32 roomid)
         {
             /* Get tthe lists of rooms from DB!!!! */
-            List<Room> rooms = new List<Room>();
+            List<Equipment> equipments = AdminManager.GetRoomEquipment(roomid);
 
             /*test data*/
-            var rooms_t = new List<(string Id, string Type, string Subtype, string[] Properties, string[] Others)>(){
-                ("room_404", "bedroom", "doubled penetratin", new string[] { "extra-large", "XXL"}, new string[] { "mini-skirt", "ammm wardrobe", "mini refrigerator" }),
-                ("room_406", "bedroom", "doubled penetratin", new string[] { "extra-large", "XXL"}, new string[] { "mini-skirt", "ammm wardrobe", "mini refrigerator" }),
-                ("room_408", "bedroom", "doubled penetratin", new string[] { "extra-large", "XXL"}, new string[] { "mini-skirt", "ammm wardrobe", "mini refrigerator" }),
-
-            };
+            var test1 = new { Others = new string[] { "mini-skirt", "ammm wardrobe", "mini refrigerator", "tele-vision..." } };
             /*test data*/
 
-            //return Ok(new[] { "room_404", "bedroom", "doubled penetratin", new string[] { "extra-large", "XXL" }, new string[] { "mini-skirt", "ammm wardrobe", "mini refrigerator" } }.ToList());
-            //return Ok( new { "data" = 1, "data2" = 2, "data3" = 3 } );
             return Ok(
-                new { Others = new string[] { "mini-skirt", "ammm wardrobe", "mini refrigerator", "tele-vision..." } }
+                equipments
             );
         }
         /*  Route for recieving the new room data [from the admin! / or not!].
