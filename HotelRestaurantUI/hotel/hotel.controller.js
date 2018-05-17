@@ -196,10 +196,12 @@
 								<h4 class="panel-title" style="display:inline">
 									<a data-toggle="collapse" data-target="#`+ room.id + `">` + room.id + `</a>
 								</h4>
-								<div style="padding-bottom: 1em">
-									Between:
-									<input style="display: inline" type="date" ng-disabled="vm.isBooked(` + '\'' + room.id + '\'' + `)==true" ng-model="vm.startDate[` + '\'' + room.id + '\'' + `]" value="{{ date | date: 'yyyy/MM/dd' }}" /> and 
-									<input style="display: inline" type="date" ng-disabled="vm.isBooked(` + '\'' + room.id + '\'' + `)==true" ng-model="vm.endDate[` + '\'' + room.id + '\'' + `]" value="{{ date | date: 'yyyy/MM/dd' }}" />
+								<div style="padding-bottom: 1em; display: grid; grid-template-columns: 85% 15%">
+									<div>
+										Between:
+										<input style="display: inline" type="date" ng-disabled="vm.isBooked(` + '\'' + room.id + '\'' + `)==true" ng-model="vm.startDate[` + '\'' + room.id + '\'' + `]" value="{{ date | date: 'yyyy/MM/dd' }}" /> and 
+										<input style="display: inline" type="date" ng-disabled="vm.isBooked(` + '\'' + room.id + '\'' + `)==true" ng-model="vm.endDate[` + '\'' + room.id + '\'' + `]" value="{{ date | date: 'yyyy/MM/dd' }}" />
+									</div>
 									<div style="text-align: right">
 										<button type="button" ng-click="vm.book(`+ '\'' + room.id + '\'' + `)" ng-if="vm.isBooked(` + '\'' + room.id + '\'' + `)==false" class="btn btn-primary">Book</button>
 										<button type="button" ng-click="vm.unBook(`+ '\'' + room.id + '\'' + `)" ng-if="vm.isBooked(` + '\'' + room.id + '\'' + `)==true" class="btn btn-primary">Unbook</button>
