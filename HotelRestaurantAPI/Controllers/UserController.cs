@@ -17,7 +17,7 @@ namespace HotelRestaurantAPI.Controllers
 
         [HttpPost]
         //[Authorize]
-        [Route("api2/rooms")]
+        //[Route("api2/rooms")]
         public IHttpActionResult GetRooms(UserDTO user)
         {
             /* Get tthe lists of rooms from DB!!!! */

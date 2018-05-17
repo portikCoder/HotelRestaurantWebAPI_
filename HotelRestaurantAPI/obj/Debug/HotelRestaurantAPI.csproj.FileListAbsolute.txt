@@ -313,3 +313,10 @@ C:\Users\Bence\Source\Repos\HotelRestaurantWebAPI_\HotelRestaurantAPI\obj\Debug\
 C:\Users\Bence\Source\Repos\HotelRestaurantWebAPI_\HotelRestaurantAPI\obj\Debug\HotelRestaurantAPI.csproj.CopyComplete
 C:\Users\Bence\Source\Repos\HotelRestaurantWebAPI_\HotelRestaurantAPI\obj\Debug\HotelRestaurantAPI.dll
 C:\Users\Bence\Source\Repos\HotelRestaurantWebAPI_\HotelRestaurantAPI\obj\Debug\HotelRestaurantAPI.pdb
+C:\Users\Dell5548\Documents\Visual Studio 2017\Projects\HotelRestaurant\HotelRestaurantAPI\bin\Microsoft.Owin.dll
+C:\Users\Dell5548\Documents\Visual Studio 2017\Projects\HotelRestaurant\HotelRestaurantAPI\bin\Microsoft.Owin.Security.dll
+C:\Users\Dell5548\Documents\Visual Studio 2017\Projects\HotelRestaurant\HotelRestaurantAPI\bin\Microsoft.Owin.Security.OAuth.dll
+C:\Users\Dell5548\Documents\Visual Studio 2017\Projects\HotelRestaurant\HotelRestaurantAPI\bin\Owin.dll
+C:\Users\Dell5548\Documents\Visual Studio 2017\Projects\HotelRestaurant\HotelRestaurantAPI\bin\Microsoft.Owin.xml
+C:\Users\Dell5548\Documents\Visual Studio 2017\Projects\HotelRestaurant\HotelRestaurantAPI\bin\Microsoft.Owin.Security.xml
+C:\Users\Dell5548\Documents\Visual Studio 2017\Projects\HotelRestaurant\HotelRestaurantAPI\bin\Microsoft.Owin.Security.OAuth.xml
