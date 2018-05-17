@@ -16,6 +16,8 @@ namespace DAL
             //System.Console.WriteLine(connectionString);
         }
 
+        
+
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
@@ -58,6 +60,8 @@ namespace DAL
         public DbSet<RoomReservation> RoomReservations { get; set; }
         public DbSet<Type> Types { get; set; }
         public DbSet<Subtype> Subtypes { get; set; }
+        public DbSet<Objects> Objects { get; set; }
+        
         //public DbSet<User> userke { get; set; }
     }
 }
