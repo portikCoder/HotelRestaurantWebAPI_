@@ -28,7 +28,7 @@ namespace HotelRestaurantAPI.BL
             }
 
             return equipmentList;
-        }
+        } 
 
         internal static List<Subtype> GetSubtypes()
         {
