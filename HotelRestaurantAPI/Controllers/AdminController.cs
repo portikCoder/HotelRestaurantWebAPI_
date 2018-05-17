@@ -12,97 +12,98 @@ using System.Web.Http;
 
 namespace HotelRestaurantAPI.Controllers
 {
-    public class AdminController : ApiController
+  public class AdminController : ApiController
+  {
+    private HotelRestaurantDBContext DBContext = new HotelRestaurantDBContext();
+    /*  For serving the subtype fields...
+     * 
+     */
+
+    /*
+     PENDING
+     */
+    [HttpPost]
+    [Route("api2/subtypes")]
+    public IHttpActionResult GetSubtypes(UserDTO user)
     {
-        private HotelRestaurantDBContext DBContext = new HotelRestaurantDBContext();
-        /*  For serving the subtype fields...
-         * 
-         */
+      /* Get tthe lists of rooms from DB!!!! */
+      List<Room> rooms = new List<Room>();
 
-            /*
-             PENDING
-             */
-        [HttpPost]
-        [Route("api2/subtypes")]
-        public IHttpActionResult GetSubtypes(UserDTO user)
-        {
-            /* Get tthe lists of rooms from DB!!!! */
-            List<Room> rooms = new List<Room>();
+      /*test data*/
+      var test1 = new { Subtype = new[] { "singled penetratin", "doubled penetratin", "tripled penetratin" } };
+      /*test data*/
 
-            /*test data*/
-            var test1 = new { Subtype = new[] { "singled penetratin", "doubled penetratin", "tripled penetratin" } };
-            /*test data*/
+      //return Ok(new[] { "room_404", "bedroom", "doubled penetratin", new string[] { "extra-large", "XXL" }, new string[] { "mini-skirt", "ammm wardrobe", "mini refrigerator" } }.ToList());
+      //return Ok( new { "data" = 1, "data2" = 2, "data3" = 3 } );
+      return Ok(
+          test1
+      );
+    }
 
-            //return Ok(new[] { "room_404", "bedroom", "doubled penetratin", new string[] { "extra-large", "XXL" }, new string[] { "mini-skirt", "ammm wardrobe", "mini refrigerator" } }.ToList());
-            //return Ok( new { "data" = 1, "data2" = 2, "data3" = 3 } );
-            return Ok(
-                test1
-            );
-        }
+    /*  For serving the extras fields...
+     * 
+     */
+    [HttpPost]
+    [Route("api2/extras")]
+    public IHttpActionResult GetExtras()
+    {
+      /* Get tthe lists of rooms from DB!!!! */
+      List<Equipment> equipments = AdminManager.GetRoomEquipment(0);
 
-        /*  For serving the extras fields...
-         * 
-         */
-        [HttpPost]
-        [Route("api2/extras")]
-        public IHttpActionResult GetExtras(Int32 roomid)
-        {
-            /* Get tthe lists of rooms from DB!!!! */
-            List<Equipment> equipments = AdminManager.GetRoomEquipment(roomid);
+      /*test data*/
+      var test1 = new { Others = new string[] { "mini-skirt", "ammm wardrobe", "mini refrigerator", "tele-vision..." } };
+      /*test data*/
 
-            /*test data*/
-            var test1 = new { Others = new string[] { "mini-skirt", "ammm wardrobe", "mini refrigerator", "tele-vision..." } };
-            /*test data*/
+      return Ok(
+          test1
+      //equipments
+      );
+    }
+    /*  Route for recieving the new room data [from the admin! / or not!].
+     * 
+     */
+    [HttpGet]
+    [Route("api2/addnewroom")]
+    public IHttpActionResult AddNewRoom(UserDTO user)
+    {
+      /* Get tthe lists of rooms from DB!!!! */
+      List<Room> rooms = new List<Room>();
 
-            return Ok(
-                equipments
-            );
-        }
-        /*  Route for recieving the new room data [from the admin! / or not!].
-         * 
-         */
-        [HttpGet]
-        [Route("api2/addnewroom")]
-        public IHttpActionResult AddNewRoom(UserDTO user)
-        {
-            /* Get tthe lists of rooms from DB!!!! */
-            List<Room> rooms = new List<Room>();
-
-            /*test data*/
-            var rooms_t = new List<(string Id, string Type, string Subtype, string[] Properties, string[] Others)>(){
+      /*test data*/
+      var rooms_t = new List<(string Id, string Type, string Subtype, string[] Properties, string[] Others)>(){
                 ("room_404", "bedroom", "doubled penetratin", new string[] { "extra-large", "XXL"}, new string[] { "mini-skirt", "ammm wardrobe", "mini refrigerator" }),
                 ("room_406", "bedroom", "doubled penetratin", new string[] { "extra-large", "XXL"}, new string[] { "mini-skirt", "ammm wardrobe", "mini refrigerator" }),
                 ("room_408", "bedroom", "doubled penetratin", new string[] { "extra-large", "XXL"}, new string[] { "mini-skirt", "ammm wardrobe", "mini refrigerator" }),
 
             };
-            /*test data*/
+      /*test data*/
 
-            //return Ok(new[] { "room_404", "bedroom", "doubled penetratin", new string[] { "extra-large", "XXL" }, new string[] { "mini-skirt", "ammm wardrobe", "mini refrigerator" } }.ToList());
-            //return Ok( new { "data" = 1, "data2" = 2, "data3" = 3 } );
-            return Ok(
-                new { Others = new string[] { "mini-skirt", "ammm wardrobe", "mini refrigerator", "tele-vision..." } }
-            );
-        }
+      //return Ok(new[] { "room_404", "bedroom", "doubled penetratin", new string[] { "extra-large", "XXL" }, new string[] { "mini-skirt", "ammm wardrobe", "mini refrigerator" } }.ToList());
+      //return Ok( new { "data" = 1, "data2" = 2, "data3" = 3 } );
+      return Ok(
+          new { Others = new string[] { "mini-skirt", "ammm wardrobe", "mini refrigerator", "tele-vision..." } }
+      );
+    }
 
-        [HttpPost]
-        [Route("api2/allpreservations")]
-        public IHttpActionResult GetPreservations(UserDTO user)
-        {
-            /* Get tthe lists of rooms from DB!!!! */
-            List<Room> rooms = new List<Room>();
+    [HttpPost]
+    [Route("api2/allpreservations")]
+    public IHttpActionResult GetPreservations(UserDTO user)
+    {
+      /* Get tthe lists of rooms from DB!!!! */
+      List<Room> rooms = new List<Room>();
 
-            /*test data*/
-            List<(string Id, string Type, string Subtype, string[] Properties, string[] Others)> rooms_t = new List<(string Id, string Type, string Subtype, string[] Properties, string[] Others)>(){
+      /*test data*/
+      List<(string Id, string Type, string Subtype, string[] Properties, string[] Others)> rooms_t = new List<(string Id, string Type, string Subtype, string[] Properties, string[] Others)>(){
                 ("room_404", "bedroom", "doubled penetratin", new string[] { "extra-large", "XXL"}, new string[] { "mini-skirt", "ammm wardrobe", "mini refrigerator" }),
                 ("room_406", "bedroom", "doubled penetratin", new string[] { "extra-large", "XXL"}, new string[] { "mini-skirt", "ammm wardrobe", "mini refrigerator" }),
                 ("room_408", "bedroom", "doubled penetratin", new string[] { "extra-large", "XXL"}, new string[] { "mini-skirt", "ammm wardrobe", "mini refrigerator" }),
 
             };
-            /*test data*/
+      /*test data*/
 
-            //return Ok(new[] { "room_404", "bedroom", "doubled penetratin", new string[] { "extra-large", "XXL" }, new string[] { "mini-skirt", "ammm wardrobe", "mini refrigerator" } }.ToList());
-            //return Ok( new { "data" = 1, "data2" = 2, "data3" = 3 } );
-            return Ok(new[] {
+      //return Ok(new[] { "room_404", "bedroom", "doubled penetratin", new string[] { "extra-large", "XXL" }, new string[] { "mini-skirt", "ammm wardrobe", "mini refrigerator" } }.ToList());
+      //return Ok( new { "data" = 1, "data2" = 2, "data3" = 3 } );
+      return Ok(new[] {
                 new { Id = "room_404", StartDate = DateTime.Now, EndDate = DateTime.Now.AddDays(2), User = "julcsa", Status = 1, Price=(1000)},
                 new { Id = "room_406", StartDate = DateTime.Today.AddDays(4), EndDate = DateTime.Today.AddDays(7), User = "julcsa", Status = 0, Price=(5500)},
                 new { Id = "room_408", StartDate = DateTime.Today.AddDays(5), EndDate = DateTime.Today.AddDays(6), User = "julcsa", Status = 0, Price=(750)},
@@ -113,6 +114,6 @@ namespace HotelRestaurantAPI.Controllers
                 new { Id = "room_408", StartDate = DateTime.Today.AddDays(8), EndDate = DateTime.Today.AddDays(10), User = "szaszi", Status = 0, Price=(2500)},
                 new { Id = "room_409", StartDate = DateTime.Today.AddDays(2), EndDate = DateTime.Today.AddDays(10), User = "taszika a Mari Honaja", Status = 0, Price=(500)},
             });
-        }
     }
+  }
 }

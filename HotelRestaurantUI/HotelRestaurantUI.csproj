@@ -206,7 +206,12 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="add_room\add_room.controller.js" />
+    <Content Include="add_room\add_room.view.html" />
+    <Content Include="adminpage\adminpage.controller.js" />
+    <Content Include="adminpage\adminpage.view.html" />
     <Content Include="app-services\account.service.js" />
+    <Content Include="app-services\room.service.js" />
     <Content Include="app-services\top.bar.controller.js" />
     <Content Include="app-services\user.service.js" />
     <Content Include="app.js" />

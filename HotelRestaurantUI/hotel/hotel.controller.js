@@ -5,8 +5,8 @@
         .module('app')
         .controller('HotelController', HotelController);
 
-    HotelController.$inject = ['$http', '$location', '$scope', '$compile', '$rootScope', 'AccountService', 'FlashService'];
-    function HotelController($http, $location, $scope, $compile, $rootScope, AccountService, FlashService) {
+    HotelController.$inject = ['$http', '$location', '$scope', '$compile', '$rootScope', 'AccountService', 'RoomService', 'FlashService'];
+    function HotelController($http, $location, $scope, $compile, $rootScope, AccountService, RoomService, FlashService) {
         var vm = this;
         vm.date = new Date();
         //
@@ -240,63 +240,6 @@
 									</div>
 								</div>
 							</div>
-								  angular.element(target).append($compile(result)($scope));
-			}
-			function addNewRoomToCollepsable(collepsableName, room) {
-				var target = document.getElementById(collepsableName);
-				var result = "";
-
-				vm.roomEdit[room.id] = false;
-
-				result += `
-				<div class="panel-body">
-					<div class="panel-group">
-						<div class="panel panel-default">
-							<div class="panel-heading">
-								<h4 class="panel-title" style="display:inline">
-									<a data-toggle="collapse" data-target="#`+ room.id + `">` + room.id + `</a>
-								</h4>
-								<p><input type="date" ng-disabled="vm.isBooked(` + '\'' + room.id + '\'' + `)==true" ng-model="vm.startDate[` + '\'' + room.id + '\'' + `]" value="{{ date | date: 'yyyy/MM/dd' }}" /> </p>
-								<p><input type="date" ng-disabled="vm.isBooked(` + '\'' + room.id + '\'' + `)==true" ng-model="vm.endDate[` + '\'' + room.id + '\'' + `]" value="{{ date | date: 'yyyy/MM/dd' }}" />  </p>
-								<button type="button" ng-click="vm.book(`+ '\'' + room.id + '\'' + `)" ng-if="vm.isBooked(` + '\'' + room.id + '\'' + `)==false">Book</button>
-								<button type="button" ng-click="vm.unBook(`+ '\'' + room.id + '\'' + `)" ng-if="vm.isBooked(` + '\'' + room.id + '\'' + `)==true">Unbook</button>
-
-								<div style="text-align: right">
-									<a class="btn btn-primary" ng-click="vm.roomEdit[` + '\'' + room.id + '\'' + `] = ! vm.roomEdit[` + '\'' + room.id + '\'' + `]">Edit Room</a>
-									<a class="btn btn-primary" ng-click="vm.deleteRoom(room)">Delete</a>
-								</div>
-							</div>
-
-							<div ng-show="! vm.roomEdit[` + '\'' + room.id + '\'' + `]" id="` + room.id + `" class="panel-collapse collapse">
-								<div class="panel-body">type:`+ room.type + `</div>
-								<div class="panel-body">subtype:`+ room.subtype + `</div>
-								<div class="panel-body">price:`+ room.room_price + `</div>
-								<div class="panel-body">
-									<div class="panel-group">
-										<div class="panel panel-default">
-											<div class="panel-heading">
-												<h4 class="panel-title">
-													<a data-toggle="collapse" data-target="#`+ room.id + "_properties" + `">Properties </a>
-												</h4>
-											</div>
-											<div id="`+ room.id + "_properties" + `" class="panel-collapse collapse">
-											</div>
-										</div>
-									</div>
-
-									<div class="panel-group">
-										<div class="panel panel-default">
-											<div class="panel-heading">
-												<h4 class="panel-title">
-													<a data-toggle="collapse" data-target="#`+ room.id + "_others" + `">Others</a>
-												</h4>
-											</div>
-											<div id="`+ room.id + "_others" + `" class="panel-collapse collapse">
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
 
 							<div ng-show="vm.roomEdit[` + '\'' + room.id + '\'' + `]" id="` + room.id + `" class="panel-collapse">
 								<div class="panel-body">
@@ -446,7 +389,11 @@
         }
         */
 
-    }
+		}
+
+		function saveChangesTo(room) {
+			//TODO send new data about room
+		}
 
 		function deleteRoom(room) {
 			//TODO send delete request
