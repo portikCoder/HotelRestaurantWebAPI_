@@ -1,33 +1,33 @@
 ﻿(function () {
-    'use strict';
+	'use strict';
 
-    angular
-        .module('app', ['ngRoute', 'ngCookies'])
-        .config(function ($provide, $httpProvider, $routeProvider, $locationProvider, $qProvider) {
+	angular
+		.module('app', ['ngRoute', 'ngCookies'])
+		.config(function ($provide, $httpProvider, $routeProvider, $locationProvider, $qProvider) {
 
-            //$locationProvider.html5Mode(true);
-            // Intercept http calls.
-            $provide.factory('MyHttpInterceptor', function () {
-                return {
-                    request: function (config) {
-                        if (config.url.indexOf('api2') > -1) {
-                            return config;
-                        } else if (config.url.indexOf('api') > -1) {
-                            config.headers = config.headers || {};
-                            var token = localStorage.getItem('userlogintoken');
-                            if (token) {
-                                config.headers.Authorization = 'Bearer ' + token;
-                            }
-                            return config;
-                        }
-                        return config;
-                    }
+			//$locationProvider.html5Mode(true);
+			// Intercept http calls.
+			$provide.factory('MyHttpInterceptor', function () {
+				return {
+					request: function (config) {
+						if (config.url.indexOf('api2') > -1) {
+							return config;
+						} else if (config.url.indexOf('api') > -1) {
+							config.headers = config.headers || {};
+							var token = localStorage.getItem('userlogintoken');
+							if (token) {
+								config.headers.Authorization = 'Bearer ' + token;
+							}
+							return config;
+						}
+						return config;
+					}
 
-                }
-            });
+				}
+			});
 
 			// Add the interceptor to the $httpProvider.
-            $httpProvider.interceptors.push('MyHttpInterceptor');
+			$httpProvider.interceptors.push('MyHttpInterceptor');
 
 			$routeProvider
 				.when('/login', {
@@ -65,34 +65,30 @@
 					templateUrl: 'list_rooms/list_rooms.view.html',
 					controllerAs: 'vm'
 				})
-
-			
 				.when('/hotelroom', {
-                    controller: 'HotelRoomController',
-                    templateUrl: 'hotelroom/hotelroom.view.html',
-                    controllerAs: 'vm'
-                })
-                .when('/bookings', {
-                    controller: 'BookingsController',
-                    templateUrl: 'bookings/bookings.view.html',
-                    controllerAs: 'vm'
-                })
-                
-                .when('/hotel', {
-                    controller: 'HotelController',
-                    templateUrl: 'hotel/hotel.view.html',
-                    controllerAs: 'vm'
-                })
+					controller: 'HotelRoomController',
+					templateUrl: 'hotelroom/hotelroom.view.html',
+					controllerAs: 'vm'
+				})
+				.when('/bookings', {
+					controller: 'BookingsController',
+					templateUrl: 'bookings/bookings.view.html',
+					controllerAs: 'vm'
+				})
+				.when('/hotel', {
+					controller: 'HotelController',
+					templateUrl: 'hotel/hotel.view.html',
+					controllerAs: 'vm'
+				})
+				.otherwise({ redirectTo: '/login' });
+		})
+		.run(run);
 
-                //.when("/", {
-                //    templateUrl: "index.html"
-                //})
-                .otherwise({ redirectTo: '/login' });
-
-
-
+	run.$inject = ['$rootScope', '$location', '$cookies', '$http'];
+	function run($rootScope, $location, $cookies, $http) {
+		//Base page URL
+		$rootScope.baseUrl = "http://localhost/HotelRestaurantAPI/";
 	}
-
 })();
 
 

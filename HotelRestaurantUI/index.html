@@ -21,7 +21,7 @@
         </div>-->
 
         <div id="topBar" class="text-right" ng-controller="TopBarController" ng-show="hastoken()">
-            <span class="welcomeMessage">Hello, te szarjancsi: <span class="name_color" ng-bind=" accountService.GetUsername()"> </span>!</span>
+            <span class="welcomeMessage">Hello <span class="name_color" ng-bind=" accountService.GetUsername()"> </span>!</span>
             <span class="statusMessage">Status: <span class="name_color" ng-bind="accountService.GetStatus()"> </span>!</span>
             <a class="topBarElement" href='#!/login' ng-click="logout()">Log out</a>
         </div>
