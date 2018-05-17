@@ -76,11 +76,11 @@
 		}
 
 		function GetSubtypes(type) {
-			return $http.post($rootScope.baseUrl + "api2/subtypes");
+			return $http.get($rootScope.baseUrl + "api2/subtypes");
 		}
 
 		function GetExtras(type) {
-			return $http.post($rootScope.baseUrl + "api2/extras");
+			return $http.get($rootScope.baseUrl + "api2/extras");
 		}
 	}
 
