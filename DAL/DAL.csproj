@@ -56,7 +56,10 @@
     <Compile Include="Entities\Reservation.cs" />
     <Compile Include="Entities\Room.cs" />
     <Compile Include="Entities\RoomEquipment.cs" />
+    <Compile Include="Entities\RoomProperties.cs" />
     <Compile Include="Entities\RoomReservation.cs" />
+    <Compile Include="Entities\Subtype.cs" />
+    <Compile Include="Entities\Type.cs" />
     <Compile Include="Entities\User.cs" />
     <Compile Include="HotelRestaurantDBContext.cs" />
     <Compile Include="Migrations\Configuration.cs" />

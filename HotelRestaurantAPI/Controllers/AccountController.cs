@@ -25,34 +25,37 @@ namespace HotelRestaurantAPI.Controllers
         public IHttpActionResult Login(LoginDTO loginData)
         {
             RoomRepository test = new RoomRepository();
+          
             AdminManager.GetRoomReservation(1); 
             try
             {
 
 
+                
                 //test.AddEquipment("table");
                 //test.AddEquipment("tv");
-                //test.insertRoom(new Room("baddroom"));
+                //test.insertRoom(new Room());
                 //test.GetEquipment(1);
                 //test.GetRoom();
                 //test.GetRoom(1);
                 //test.AddRoomEquipment(1, "tv");
                 //test.AddRoomEquipment(1, "table");
                 //test.GetRoomEquipment(1);
+                //AdminManager.addSubType("double pen");
+                //AdminManager.addRoomSubType("double pen", 1);
+                //Reservation t = new Reservation();
+                //t.price = 30;
+                //t.createReservation = DateTime.Today;
+                //t.startDate = DateTime.Today.AddDays(8);
+                //t.finishDate = DateTime.Today.AddDays(12);
+                //t.status = 0;
                
-                Reservation t = new Reservation();
-                t.price = 30;
-                t.createReservation = DateTime.Today;
-                t.startDate = DateTime.Today.AddDays(8);
-                t.finishDate = DateTime.Today.AddDays(12);
-                t.status = 0;
-               
-                List<int> rt = new List<int>();
-                rt.Add(1);
-                // test1.AddReservation(rt, t);
+                //List<int> rt = new List<int>();
+                //rt.Add(1);
+                //AdminManager.AddReservation(rt, t);
                 //List<ReservationModel>  le =test1.GetReservationToDate(DateTime.Today.AddDays(7),DateTime.Today.AddDays(11));
-                List<Reservation> lee = AdminManager.GetRoomReservation(1);
-                test.GetRoomEquipment(1);
+                //List<Reservation> lee = AdminManager.GetRoomReservation(1);
+                //test.GetRoomEquipment(1);
 
             }catch(DbEntityValidationException  e)
             {
