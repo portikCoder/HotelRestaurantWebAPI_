@@ -1,7 +1,3 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> 02fbce0bee1dbb8bfb422adf488f2c4a7c24ec3a
 C:\Users\Dell5548\Documents\Visual Studio 2017\Projects\HotelRestaurant\DAL\bin\Debug\DAL.dll.config
 C:\Users\Dell5548\Documents\Visual Studio 2017\Projects\HotelRestaurant\DAL\bin\Debug\DAL.dll
 C:\Users\Dell5548\Documents\Visual Studio 2017\Projects\HotelRestaurant\DAL\bin\Debug\DAL.pdb
@@ -14,20 +10,3 @@ C:\Users\Dell5548\Documents\Visual Studio 2017\Projects\HotelRestaurant\DAL\obj\
 C:\Users\Dell5548\Documents\Visual Studio 2017\Projects\HotelRestaurant\DAL\obj\Debug\DAL.csproj.CopyComplete
 C:\Users\Dell5548\Documents\Visual Studio 2017\Projects\HotelRestaurant\DAL\obj\Debug\DAL.dll
 C:\Users\Dell5548\Documents\Visual Studio 2017\Projects\HotelRestaurant\DAL\obj\Debug\DAL.pdb
-<<<<<<< HEAD
-=======
-C:\Users\Szabi\source\repos\HotelRestaurantWebAPI_\DAL\bin\Debug\DAL.dll.config
-C:\Users\Szabi\source\repos\HotelRestaurantWebAPI_\DAL\bin\Debug\DAL.dll
-C:\Users\Szabi\source\repos\HotelRestaurantWebAPI_\DAL\bin\Debug\DAL.pdb
-C:\Users\Szabi\source\repos\HotelRestaurantWebAPI_\DAL\bin\Debug\EntityFramework.dll
-C:\Users\Szabi\source\repos\HotelRestaurantWebAPI_\DAL\bin\Debug\EntityFramework.SqlServer.dll
-C:\Users\Szabi\source\repos\HotelRestaurantWebAPI_\DAL\bin\Debug\EntityFramework.xml
-C:\Users\Szabi\source\repos\HotelRestaurantWebAPI_\DAL\bin\Debug\EntityFramework.SqlServer.xml
-C:\Users\Szabi\source\repos\HotelRestaurantWebAPI_\DAL\obj\Debug\DAL.csprojAssemblyReference.cache
-C:\Users\Szabi\source\repos\HotelRestaurantWebAPI_\DAL\obj\Debug\DAL.csproj.CoreCompileInputs.cache
-C:\Users\Szabi\source\repos\HotelRestaurantWebAPI_\DAL\obj\Debug\DAL.csproj.CopyComplete
-C:\Users\Szabi\source\repos\HotelRestaurantWebAPI_\DAL\obj\Debug\DAL.dll
-C:\Users\Szabi\source\repos\HotelRestaurantWebAPI_\DAL\obj\Debug\DAL.pdb
->>>>>>> origin/PelokBranch_UI_ADMIN
-=======
->>>>>>> 02fbce0bee1dbb8bfb422adf488f2c4a7c24ec3a
