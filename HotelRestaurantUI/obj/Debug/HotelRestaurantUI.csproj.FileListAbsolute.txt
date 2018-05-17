@@ -251,3 +251,4 @@ C:\Users\Elod\source\repos\HotelRestaurantWebAPI_\HotelRestaurantUI\obj\Debug\Ho
 C:\Users\Elod\source\repos\HotelRestaurantWebAPI_\HotelRestaurantUI\obj\Debug\HotelRestaurantUI.csproj.CopyComplete
 C:\Users\Elod\source\repos\HotelRestaurantWebAPI_\HotelRestaurantUI\obj\Debug\HotelRestaurantUI.dll
 C:\Users\Elod\source\repos\HotelRestaurantWebAPI_\HotelRestaurantUI\obj\Debug\HotelRestaurantUI.pdb
+C:\Users\Elod\source\repos\HotelRestaurantWebAPI_\HotelRestaurantUI\obj\Debug\HotelRestaurantUI.csprojResolveAssemblyReference.cache

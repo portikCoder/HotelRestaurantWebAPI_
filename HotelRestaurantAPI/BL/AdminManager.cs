@@ -317,10 +317,37 @@ namespace HotelRestaurantAPI.BL
             }
             DbContext.SaveChanges();
 
-        }
-        
 
         }
+        public static void DeleteRservation(int id)
+        {
+            Reservation t = DbContext.Reservations.FirstOrDefault(x => x.Id == id);
+            t.status = -1;
+        }
+        public static void DeleteRoom(int id)
+        {
+            List<RoomEquipment> roomEquipmentlist = DbContext.RoomEquipment.Where(x => x.RoomId == id).ToList();
+            foreach(var c in roomEquipmentlist)
+            {
+                DbContext.RoomEquipment.Remove(c);
+            }
+            List<RoomProperties> roomProperties = DbContext.RoomProperties.Where(x => x.RoomId == id).ToList();
+            foreach (var c in roomProperties)
+            {
+                DbContext.RoomProperties.Remove(c);
+            }
+            List<RoomReservation> RoomReservations = DbContext.RoomReservations.Where(x => x.RoomId == id).ToList();
+            foreach (var c in RoomReservations)
+            {
+                DbContext.RoomReservations.Remove(c);
+            }
+            DbContext.Rooms.Remove(DbContext.Rooms.FirstOrDefault(x=>x.Id==id));
+        }
+
+
+
+
+    }
 
 
 
