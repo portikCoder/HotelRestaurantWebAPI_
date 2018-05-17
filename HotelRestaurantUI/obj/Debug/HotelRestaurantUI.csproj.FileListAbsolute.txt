@@ -126,6 +126,7 @@ C:\Users\Dell5548\Documents\Visual Studio 2017\Projects\HotelRestaurant\HotelRes
 C:\Users\Dell5548\Documents\Visual Studio 2017\Projects\HotelRestaurant\HotelRestaurantUI\obj\Debug\HotelRestaurantUI.dll
 C:\Users\Dell5548\Documents\Visual Studio 2017\Projects\HotelRestaurant\HotelRestaurantUI\obj\Debug\HotelRestaurantUI.pdb
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 C:\Users\Dell5548\Documents\Visual Studio 2017\Projects\HotelRestaurant\HotelRestaurantUI\obj\Debug\HotelRestaurantUI.csprojResolveAssemblyReference.cache
 C:\Users\Szabi\source\repos\HotelRestaurantWebAPI_\HotelRestaurantUI\bin\HotelRestaurantUI.dll.config
@@ -383,3 +384,5 @@ C:\Users\Bence\Source\Repos\HotelRestaurantWebAPI_\HotelRestaurantUI\obj\Debug\H
 C:\Users\Bence\Source\Repos\HotelRestaurantWebAPI_\HotelRestaurantUI\obj\Debug\HotelRestaurantUI.dll
 C:\Users\Bence\Source\Repos\HotelRestaurantWebAPI_\HotelRestaurantUI\obj\Debug\HotelRestaurantUI.pdb
 >>>>>>> origin/PelokBranch_UI_ADMIN
+=======
+>>>>>>> 02fbce0bee1dbb8bfb422adf488f2c4a7c24ec3a

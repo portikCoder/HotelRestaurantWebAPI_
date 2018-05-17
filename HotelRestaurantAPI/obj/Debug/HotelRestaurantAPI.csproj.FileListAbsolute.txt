@@ -209,8 +209,11 @@ C:\Users\Elod\source\repos\HotelRestaurantWebAPI_\HotelRestaurantAPI\obj\Debug\H
 C:\Users\Elod\source\repos\HotelRestaurantWebAPI_\HotelRestaurantAPI\obj\Debug\HotelRestaurantAPI.csproj.CopyComplete
 C:\Users\Elod\source\repos\HotelRestaurantWebAPI_\HotelRestaurantAPI\obj\Debug\HotelRestaurantAPI.dll
 C:\Users\Elod\source\repos\HotelRestaurantWebAPI_\HotelRestaurantAPI\obj\Debug\HotelRestaurantAPI.pdb
+<<<<<<< HEAD
 =======
 >>>>>>> origin/PelokBranch_UI_ADMIN
+=======
+>>>>>>> 02fbce0bee1dbb8bfb422adf488f2c4a7c24ec3a
 C:\Users\Dell5548\Documents\Visual Studio 2017\Projects\HotelRestaurant\HotelRestaurantAPI\bin\HotelRestaurantAPI.dll.config
 C:\Users\Dell5548\Documents\Visual Studio 2017\Projects\HotelRestaurant\HotelRestaurantAPI\bin\HotelRestaurantAPI.dll
 C:\Users\Dell5548\Documents\Visual Studio 2017\Projects\HotelRestaurant\HotelRestaurantAPI\bin\HotelRestaurantAPI.pdb
@@ -316,6 +319,7 @@ C:\Users\Dell5548\Documents\Visual Studio 2017\Projects\HotelRestaurant\HotelRes
 C:\Users\Dell5548\Documents\Visual Studio 2017\Projects\HotelRestaurant\HotelRestaurantAPI\obj\Debug\HotelRestaurantAPI.csproj.CopyComplete
 C:\Users\Dell5548\Documents\Visual Studio 2017\Projects\HotelRestaurant\HotelRestaurantAPI\obj\Debug\HotelRestaurantAPI.dll
 C:\Users\Dell5548\Documents\Visual Studio 2017\Projects\HotelRestaurant\HotelRestaurantAPI\obj\Debug\HotelRestaurantAPI.pdb
+<<<<<<< HEAD
 <<<<<<< HEAD
 =======
 C:\Users\Bence\Source\Repos\HotelRestaurantWebAPI_\HotelRestaurantAPI\bin\HotelRestaurantAPI.dll.config
@@ -424,3 +428,5 @@ C:\Users\Bence\Source\Repos\HotelRestaurantWebAPI_\HotelRestaurantAPI\obj\Debug\
 C:\Users\Bence\Source\Repos\HotelRestaurantWebAPI_\HotelRestaurantAPI\obj\Debug\HotelRestaurantAPI.dll
 C:\Users\Bence\Source\Repos\HotelRestaurantWebAPI_\HotelRestaurantAPI\obj\Debug\HotelRestaurantAPI.pdb
 >>>>>>> origin/PelokBranch_UI_ADMIN
+=======
+>>>>>>> 02fbce0bee1dbb8bfb422adf488f2c4a7c24ec3a
