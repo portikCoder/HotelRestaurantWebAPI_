@@ -5,6 +5,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Web;
 
+
 namespace DAL.Entities
 {
 
@@ -18,7 +19,8 @@ namespace DAL.Entities
         {
            
         }
-        [Index(IsUnique = true)]
+        [Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int Id { get; set; }
         public Type Type { get; set; }
         public Subtype Subtype { get; set; }
