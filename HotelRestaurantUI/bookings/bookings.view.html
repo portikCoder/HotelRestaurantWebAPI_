@@ -34,12 +34,12 @@
 								Change Booking
 							</button>
 						</div>-->
-						<div ng-show="booking.status === 1"
+						<div ng-show="booking.status === 'Approved'"
 							 style="color: green">
 							This Booking has been approved. <a ng-click="vm.changeBookingStatus(booking, 0)">Withdraw Approval</a>
 						</div>
 
-						<div ng-show="booking.status === 0">
+						<div ng-show="booking.status === 'Pending'">
 							<div style="padding-bottom: 4px">This Booking is awaiting approval.</div>
 							<a ng-click="vm.changeBookingStatus(booking, 1)"
 							   class="btn btn-primary">Approve</a>
@@ -47,7 +47,7 @@
 							   class="btn btn-primary">Reject</a>
 						</div>
 
-						<div ng-show="booking.status === -1"
+						<div ng-show="booking.status === 'Rejected'"
 							 style="color: darkred">
 							This Booking has been rejected. <a ng-click="vm.changeBookingStatus(booking, 0)">Withdraw Rejection</a>
 						</div>
@@ -73,5 +73,8 @@
 				</div>
 			</div>
 		</div>-->
+	</div>
+	<div style="text-align:center">
+		<a class="btn btn-primary" href="#!/admin">Back</a>
 	</div>
 </div>
