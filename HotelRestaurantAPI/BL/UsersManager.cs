@@ -58,15 +58,15 @@ namespace HotelRestaurantAPI.BL
                 {
                     model.RoomId.Add(t.RoomId);
                 }
-                model.reservation = c;
+                model.Reservation = c;
                 list.Add(model);
             }
             foreach(var c in list)
             {
-                c.reservation.price = 0;
-                c.reservation.status = 0;
-                c.reservation.createReservation = DateTime.MaxValue;
-                c.reservation.RoomReservations = null;
+                c.Reservation.price = 0;
+                c.Reservation.status = 0;
+                c.Reservation.createReservation = DateTime.MaxValue;
+                c.Reservation.RoomReservations = null;
             }
 
             return list;
@@ -84,15 +84,15 @@ namespace HotelRestaurantAPI.BL
                 {
                     model.RoomId.Add(t.RoomId);
                 }
-                model.reservation = c;
+                model.Reservation = c;
                 list.Add(model);
             }
             foreach (var c in list)
             {
-                c.reservation.price = 0;
-                c.reservation.status = 0;
-                c.reservation.createReservation = DateTime.MaxValue;
-                c.reservation.RoomReservations = null;
+                c.Reservation.price = 0;
+                c.Reservation.status = 0;
+                c.Reservation.createReservation = DateTime.MaxValue;
+                c.Reservation.RoomReservations = null;
             }
             return list;
         }

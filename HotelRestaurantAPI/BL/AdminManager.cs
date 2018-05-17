@@ -122,7 +122,7 @@ namespace HotelRestaurantAPI.BL
                 {
                     model.RoomId.Add(t.RoomId);
                 }
-                model.reservation = c;
+                model.Reservation = c;
                 list.Add(model);
             }
 
@@ -141,7 +141,7 @@ namespace HotelRestaurantAPI.BL
                 {
                     model.RoomId.Add(t.RoomId);
                 }
-                model.reservation = c;
+                model.Reservation = c;
                 list.Add(model);
             }
             return list;

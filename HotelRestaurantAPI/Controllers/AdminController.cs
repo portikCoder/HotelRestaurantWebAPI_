@@ -62,9 +62,10 @@ namespace HotelRestaurantAPI.Controllers
     /*  Route for recieving the new room data [from the admin! / or not!].
      * 
      */
-    [HttpGet]
+     /* PENDING */
+    [HttpPost]
     [Route("api2/addnewroom")]
-    public IHttpActionResult AddNewRoom(UserDTO user)
+    public IHttpActionResult AddNewRoom(Models.ReservationModel newroom)
     {
       /* Get tthe lists of rooms from DB!!!! */
       List<Room> rooms = new List<Room>();
@@ -84,10 +85,11 @@ namespace HotelRestaurantAPI.Controllers
           new { Others = new string[] { "mini-skirt", "ammm wardrobe", "mini refrigerator", "tele-vision..." } }
       );
     }
-
-    [HttpPost]
+    
+         /* PENDING  - > OK */
+    [HttpGet]
     [Route("api2/allpreservations")]
-    public IHttpActionResult GetPreservations(UserDTO user)
+    public IHttpActionResult GetPreservations()
     {
       /* Get tthe lists of rooms from DB!!!! */
       List<Room> rooms = new List<Room>();
@@ -116,6 +118,7 @@ namespace HotelRestaurantAPI.Controllers
             });
     }
 
+
     [HttpPost]
     [Route("api2/editroom")]
     public IHttpActionResult EditRoom(/*RoomDTO room*/)
@@ -125,9 +128,9 @@ namespace HotelRestaurantAPI.Controllers
 
     [HttpPost]
     [Route("api2/deleteroom")]
-    public IHttpActionResult DeleteRoom(string room_id)
+    public IHttpActionResult DeleteRoom([FromBody]String roomid)
     {
-      return Ok();
+      return Ok(roomid);
     }
 
     [HttpPost]
@@ -137,20 +140,21 @@ namespace HotelRestaurantAPI.Controllers
       return Ok();
     }
 
+        /*nope*/
     [HttpPost]
     [Route("api2/editlanguage")]
     public IHttpActionResult EditLang(int index)
     {
       return Ok();
     }
-
+        /*nope*/
     [HttpPost]
     [Route("api2/addservice")]
     public IHttpActionResult AddServ(string serv)
     {
       return Ok();
     }
-
+        /*nope*/
     [HttpPost]
     [Route("api2/addlanguage")]
     public IHttpActionResult AddLang(string lang)
@@ -162,7 +166,15 @@ namespace HotelRestaurantAPI.Controllers
     [Route("api2/changebookingstatus")]
     public IHttpActionResult ChangeBookingStatus(/*ChangeDTO change*/)
     {
+            // get a reservation id with roomid = ReservationStatus
       return Ok();
     }
   }
 }
+
+/*
+    update + delete:
+        room: roomModel;
+        reservation: reservRoomModel;
+
+     */

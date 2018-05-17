@@ -12,7 +12,7 @@ namespace HotelRestaurantAPI.Models
         {
             RoomId = new List<int>();
         }
-        public Reservation reservation { get; set; }
+        public Reservation Reservation { get; set; }
         public List<int> RoomId { get; set; }
     }
     
