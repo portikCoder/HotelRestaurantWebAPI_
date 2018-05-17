@@ -19,29 +19,29 @@ namespace HotelRestaurantAPI.Controllers
          * 
          */
 
-        /*
-         PENDING
-         */
+
+        /* ok */
         [HttpGet]
         [Route("api2/subtypes")]
         public IHttpActionResult GetSubtypes(UserDTO user)
         {
             /* Get tthe lists of rooms from DB!!!! */
-            List<Subtype> rooms = new List<Subtype>();
-            rooms = AdminManager.GetSubtypes();
+            List<Subtype> subtypes = new List<Subtype>();
+            subtypes = AdminManager.GetSubtypes();
 
             /*test data*/
             var test1 = new { Subtype = new[] { "singled penetratin", "doubled penetratin", "tripled penetratin" } };
             /*test data*/
 
             return Ok(
-                test1
+                new { Subtype = subtypes }
             );
         }
 
         /*  For serving the extras fields...
          * 
          */
+        /* ok */
         [HttpGet]
         [Route("api2/extras")]
         public IHttpActionResult GetExtras()
@@ -61,7 +61,7 @@ namespace HotelRestaurantAPI.Controllers
         /*  Route for recieving the new room data [from the admin! / or not!].
          * 
          */
-        /* PENDING */
+        /* ok */
         [HttpPost]
         [Route("api2/addnewroom")]
         public IHttpActionResult AddNewRoom(Models.RoomModel room)
