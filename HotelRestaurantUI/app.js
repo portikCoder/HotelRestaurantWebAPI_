@@ -26,21 +26,48 @@
                 }
             });
 
-            // Add the interceptor to the $httpProvider.
+			// Add the interceptor to the $httpProvider.
             $httpProvider.interceptors.push('MyHttpInterceptor');
 
-            $routeProvider
-                .when('/login', {
-                    controller: 'LoginController',
-                    templateUrl: 'login/login.view.html',
-                    controllerAs: 'vm'
-                })
-                .when('/register', {
-                    controller: 'RegisterController',
-                    templateUrl: 'register/register.view.html',
-                    controllerAs: 'vm'
-                })
-                .when('/hotelroom', {
+			$routeProvider
+				.when('/login', {
+					controller: 'LoginController',
+					templateUrl: 'login/login.view.html',
+					controllerAs: 'vm'
+				})
+				.when('/register', {
+					controller: 'RegisterController',
+					templateUrl: 'register/register.view.html',
+					controllerAs: 'vm'
+				})
+				.when('/home', {
+					controller: 'HomeController',
+					templateUrl: 'home/home.view.html',
+					controllerAs: 'vm'
+				})
+				.when('/room', {
+					controller: 'RoomController',
+					templateUrl: 'room/room.view.html',
+					controllerAs: 'vm'
+				})
+				.when('/admin', {
+					controller: 'AdminPageController',
+					templateUrl: 'adminpage/adminpage.view.html',
+					controllerAs: 'vm'
+				})
+				.when('/add_room', {
+					controller: 'AddRoomController',
+					templateUrl: 'add_room/add_room.view.html',
+					controllerAs: 'vm'
+				})
+				.when('/list', {
+					controller: 'ListRoomsController',
+					templateUrl: 'list_rooms/list_rooms.view.html',
+					controllerAs: 'vm'
+				})
+
+			
+				.when('/hotelroom', {
                     controller: 'HotelRoomController',
                     templateUrl: 'hotelroom/hotelroom.view.html',
                     controllerAs: 'vm'
@@ -50,11 +77,7 @@
                     templateUrl: 'bookings/bookings.view.html',
                     controllerAs: 'vm'
                 })
-                .when('/home', {
-                    controller: 'HomeController',
-                    templateUrl: 'home/home.view.html',
-                    controllerAs: 'vm'
-                })
+                
                 .when('/hotel', {
                     controller: 'HotelController',
                     templateUrl: 'hotel/hotel.view.html',
@@ -66,14 +89,9 @@
                 //})
                 .otherwise({ redirectTo: '/login' });
 
-        })
-        .run(run);
 
-    run.$inject = ['$rootScope', '$location', '$cookies', '$http'];
-    function run($rootScope, $location, $cookies, $http) {
-        //Base page URL
-        $rootScope.baseUrl = "http://localhost/HotelRestaurantAPI/";
-    }
+
+	}
 
 })();
 
