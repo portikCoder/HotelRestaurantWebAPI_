@@ -1,6 +1,12 @@
-﻿<div>
-	<h1>Hi {{ vm.username }}!</h1>
-	<button class="btn btn-info" data-toggle="collapse" data-target="#lang">Available languages:</button>
+﻿<div class="col-md-10 col-md-offset-1">
+	<h3 style="text-align: center">Hi, {{ vm.username }}!</h3>
+	<div style="width: 100%; margin: 0.5em 0 0.5em 0; border-bottom: solid 1px #ddd" />
+	<button class="btn btn-info"
+			data-toggle="collapse"
+			data-target="#lang"
+			style="width: 100%">
+		Available languages:
+	</button>
 	<div id="lang" class="collapse">
 		<ul>
 			<li ng-repeat="lang in langs">
@@ -8,8 +14,13 @@
 			</li>
 		</ul>
 	</div>
-	<br />
-	<button class="btn btn-info" data-toggle="collapse" data-target="#serv">Provided services: </button>
+	<div style="width: 100%; margin: 0.5em 0 0.5em 0; border-bottom: solid 1px #ddd" />
+	<button class="btn btn-info"
+			data-toggle="collapse"
+			data-target="#serv"
+			style="width: 100%">
+		Provided services:
+	</button>
 	<div id="serv" class="collapse">
 		<ul>
 			<li ng-repeat="serv in servs">
@@ -17,10 +28,11 @@
 			</li>
 		</ul>
 	</div>
-	<br />
-	<p>
-		<a href="#!/add_room" class="btn btn-primary">Add New Room</a>
-		<a href="#!/hotel" class="btn btn-primary">Show Rooms</a>
+	<div style="width: 100%; margin: 0.5em 0 0.5em 0; border-bottom: solid 1px #ddd" />
+	<p style="text-align: center">
+		<a href="#!/add_room" style="margin-right: 1em" class="btn btn-primary">Add New Room</a>
+		<a href="#!/hotel" style="margin-right: 1em" class="btn btn-primary">Show Rooms</a>
+		<a href="#!/bookings" style="margin-right: 1em" class="btn btn-primary">Show All Bookings</a>
 		<a href="#!/login" class="btn btn-primary">Logout</a>
 	</p>
 </div>

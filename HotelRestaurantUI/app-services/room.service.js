@@ -13,6 +13,7 @@
 		var roomSubtype = "";
 		var roomProp = "";
 		var roomExtra = "";
+		var roomPrice = 0;
 
 		service.GetRoomName = GetRoomName;
 		service.SetRoomName = SetRoomName;
@@ -24,6 +25,8 @@
 		service.SetRoomProp = SetRoomProp;
 		service.GetRoomExtra = GetRoomExtra;
 		service.SetRoomExtra = SetRoomExtra;
+		service.GetRoomPrice = GetRoomPrice;
+		service.SetRoomPrice = SetRoomPrice;
 
 		service.AddRoom = AddRoom;
 		service.GetSubtypes = GetSubtypes;
@@ -69,6 +72,14 @@
 
 		function SetRoomExtra(roomExtra) {
 			this.roomExtra = roomExtra;
+		}
+
+		function GetRoomPrice() {
+			return this.roomPrice;
+		}
+
+		function SetRoomPrice(roomPrice) {
+			this.roomPrice = roomPrice;
 		}
 
 		function AddRoom(room) {

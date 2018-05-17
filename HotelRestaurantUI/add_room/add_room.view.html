@@ -35,7 +35,7 @@
 		</div>
 		<div class="form-group"
 			 ng-class="{ 'has-error': form.roomSubtype.$dirty && form.roomSubtype.$error.required }">
-			<label for="bedType" 
+			<label for="bedType"
 				   style="padding-bottom: 1em">
 				Room Subtype:
 			</label>
@@ -119,6 +119,18 @@
 				Add New Configuration
 			</button>
 		</div>
+		<div class="form-group"
+			 ng-class="{ 'has-error': form.roomPrice.$dirty && form.roomPrice.$error.required }">
+			<label for="roomPrice">
+				Price per night (Euro):
+			</label>
+			<input type="number"
+				   name="roomPrice"
+				   id="roomPrice"
+				   class="form-control"
+				   ng-model="vm.room.roomPrice"
+				   required />
+		</div>
 		<div class="from-actions" style="text-align: center; margin-bottom: 1em">
 			<button type="submit"
 					ng-disabled="form.$invalid || vm.dataLoading"
@@ -128,6 +140,7 @@
 			<img ng-if="vm.dataLoading"
 				 src="data:image/gif;base64,R0lGODlhEAAQAPIAAP///wAAAMLCwkJCQgAAAGJiYoKCgpKSkiH/C05FVFNDQVBFMi4wAwEAAAAh/hpDcmVhdGVkIHdpdGggYWpheGxvYWQuaW5mbwAh+QQJCgAAACwAAAAAEAAQAAADMwi63P4wyklrE2MIOggZnAdOmGYJRbExwroUmcG2LmDEwnHQLVsYOd2mBzkYDAdKa+dIAAAh+QQJCgAAACwAAAAAEAAQAAADNAi63P5OjCEgG4QMu7DmikRxQlFUYDEZIGBMRVsaqHwctXXf7WEYB4Ag1xjihkMZsiUkKhIAIfkECQoAAAAsAAAAABAAEAAAAzYIujIjK8pByJDMlFYvBoVjHA70GU7xSUJhmKtwHPAKzLO9HMaoKwJZ7Rf8AYPDDzKpZBqfvwQAIfkECQoAAAAsAAAAABAAEAAAAzMIumIlK8oyhpHsnFZfhYumCYUhDAQxRIdhHBGqRoKw0R8DYlJd8z0fMDgsGo/IpHI5TAAAIfkECQoAAAAsAAAAABAAEAAAAzIIunInK0rnZBTwGPNMgQwmdsNgXGJUlIWEuR5oWUIpz8pAEAMe6TwfwyYsGo/IpFKSAAAh+QQJCgAAACwAAAAAEAAQAAADMwi6IMKQORfjdOe82p4wGccc4CEuQradylesojEMBgsUc2G7sDX3lQGBMLAJibufbSlKAAAh+QQJCgAAACwAAAAAEAAQAAADMgi63P7wCRHZnFVdmgHu2nFwlWCI3WGc3TSWhUFGxTAUkGCbtgENBMJAEJsxgMLWzpEAACH5BAkKAAAALAAAAAAQABAAAAMyCLrc/jDKSatlQtScKdceCAjDII7HcQ4EMTCpyrCuUBjCYRgHVtqlAiB1YhiCnlsRkAAAOwAAAAAAAAAAAA==" />
 			<!--<a href="#!/admin" class="btn btn-primary">Add Room</a>-->
+
 			<a class="btn btn-primary" href="#!/admin">Back</a>
 		</div>
 	</form>

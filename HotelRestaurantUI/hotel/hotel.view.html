@@ -166,23 +166,29 @@
 				</div>
 			</div>
 
-        </div>
-        <div id="filter">
-            <p>
-                Start Date:<input type="date" ng-model="vm.filterStartDate" value="{{ date | date: 'yyyy-MM-dd' }}" />
-            </p>
-            <p>
-                End Date:<input type="date" ng-model="vm.filterEndDate" value="{{ date | date: 'yyyy-MM-dd' }}" />
-            </p>
-            <p>
-                <button type="button" ng-click="vm.filter()">Search</button>
-            </p>
-        </div>
-        <div id="HotelRooms">
+		</div>
+		<div id="filter">
+			<p>
+				Start Date:<input type="date" ng-model="vm.filterStartDate" value="{{ date | date: 'yyyy-MM-dd' }}" />
+			</p>
+			<p>
+				End Date:<input type="date" ng-model="vm.filterEndDate" value="{{ date | date: 'yyyy-MM-dd' }}" />
+			</p>
+			<p>
+				<button type="button" ng-click="vm.filter()">Search</button>
+			</p>
+		</div>
+		<div id="HotelRooms">
 
 
 		</div>
 
+
+
+	</div>
+
+	<div style="text-align:center">
+		<a class="btn btn-primary" href="#!/admin">Back</a>
 	</div>
 
 	<!--room END-->
