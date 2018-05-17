@@ -35,7 +35,7 @@
 		</div>
 		<div class="form-group"
 			 ng-class="{ 'has-error': form.roomSubtype.$dirty && form.roomSubtype.$error.required }">
-			<label for="bedType" 
+			<label for="bedType"
 				   style="padding-bottom: 1em">
 				Room Subtype:
 			</label>
@@ -118,6 +118,18 @@
 					ng-disabled="!vm.newExtra">
 				Add New Configuration
 			</button>
+		</div>
+		<div class="form-group"
+			 ng-class="{ 'has-error': form.roomPrice.$dirty && form.roomPrice.$error.required }">
+			<label for="roomPrice">
+				Price per night (Euro):
+			</label>
+			<input type="number"
+				   name="roomPrice"
+				   id="roomPrice"
+				   class="form-control"
+				   ng-model="vm.room.roomPrice"
+				   required />
 		</div>
 		<div class="from-actions" style="text-align: center; margin-bottom: 1em">
 			<button type="submit"
