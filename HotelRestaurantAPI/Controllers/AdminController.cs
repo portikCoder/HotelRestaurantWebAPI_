@@ -22,7 +22,7 @@ namespace HotelRestaurantAPI.Controllers
     /*
      PENDING
      */
-    [HttpPost]
+    [HttpGet]
     [Route("api2/subtypes")]
     public IHttpActionResult GetSubtypes(UserDTO user)
     {
@@ -43,7 +43,7 @@ namespace HotelRestaurantAPI.Controllers
     /*  For serving the extras fields...
      * 
      */
-    [HttpPost]
+    [HttpGet]
     [Route("api2/extras")]
     public IHttpActionResult GetExtras()
     {
