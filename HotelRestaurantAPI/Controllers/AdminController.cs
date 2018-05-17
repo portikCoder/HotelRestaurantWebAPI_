@@ -115,5 +115,54 @@ namespace HotelRestaurantAPI.Controllers
                 new { Id = "room_409", StartDate = DateTime.Today.AddDays(2), EndDate = DateTime.Today.AddDays(10), User = "taszika a Mari Honaja", Status = 0, Price=(500)},
             });
     }
+
+    [HttpPost]
+    [Route("api2/editroom")]
+    public IHttpActionResult EditRoom(/*RoomDTO room*/)
+    {
+      return Ok();
+    }
+
+    [HttpPost]
+    [Route("api2/deleteroom")]
+    public IHttpActionResult DeleteRoom(string room_id)
+    {
+      return Ok();
+    }
+
+    [HttpPost]
+    [Route("api2/editservice")]
+    public IHttpActionResult EditService(int index)
+    {
+      return Ok();
+    }
+
+    [HttpPost]
+    [Route("api2/editlanguage")]
+    public IHttpActionResult EditLang(int index)
+    {
+      return Ok();
+    }
+
+    [HttpPost]
+    [Route("api2/addservice")]
+    public IHttpActionResult AddServ(string serv)
+    {
+      return Ok();
+    }
+
+    [HttpPost]
+    [Route("api2/addlanguage")]
+    public IHttpActionResult AddLang(string lang)
+    {
+      return Ok();
+    }
+
+    [HttpPost]
+    [Route("api2/changebookingstatus")]
+    public IHttpActionResult ChangeBookingStatus(/*ChangeDTO change*/)
+    {
+      return Ok();
+    }
   }
 }

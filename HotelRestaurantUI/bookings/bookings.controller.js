@@ -18,6 +18,7 @@
 		vm.getOthersBookings = getOthersBookings;
 
 		vm.changeBooking = changeBooking;
+		vm.changeBookingStatus = changeBookingStatus;
 		vm.checkDates = checkDates;
 		vm.checkDates = checkDate;
 		vm.deleteBooking = deleteBooking;
@@ -106,7 +107,9 @@
 
 		///
 
-
+		function changeBookingStatus(booking, status) {
+			return $http.post($rootScope.baseUrl + "api2/changebookingstatus", { Book: booking, Status: status });
+		}
 	}
 
 

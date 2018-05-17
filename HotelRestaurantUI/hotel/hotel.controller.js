@@ -208,7 +208,7 @@
 									</div>
 								</div>
 								<a class="btn btn-primary" ng-click="vm.roomEdit[` + '\'' + room.id + '\'' + `] = ! vm.roomEdit[` + '\'' + room.id + '\'' + `]">Edit Room</a>
-								<a class="btn btn-primary" ng-click="vm.deleteRoom(room)">Delete</a>
+								<a class="btn btn-primary" ng-click="vm.deleteRoom(` + '\'' + room.id + '\'' + `)">Delete</a>
 							</div>
 
 							<div ng-show="! vm.roomEdit[` + '\'' + room.id + '\'' + `]" id="` + room.id + `" class="panel-collapse collapse">
@@ -392,27 +392,27 @@
 
 
 		function saveChangesTo(room) {
-			//TODO send new data about room
+			return $http.post($rootScope.baseUrl + "api2/editroom", room);
 		}
 
-		function deleteRoom(room) {
-			//TODO send delete request
+		function deleteRoom(room_id) {
+			return $http.post($rootScope.baseUrl + "api2/deleteroom", room_id);
 		}
 
 		function editServ(index) {
-			//TODO edit Service of a specific index
+			return $http.post($rootScope.baseUrl + "api2/editservice", index);
 		}
 
 		function editLang(index) {
-			//TODO edit Language of a specific index
+			return $http.post($rootScope.baseUrl + "api2/editlanguage", index);
 		}
 
 		function addServ(serv) {
-			//TODO add a new Service
+			return $http.post($rootScope.baseUrl + "api2/addservice", index);
 		}
 
 		function addLang(lang) {
-			//TODO add a new Spoken Language
+			return $http.post($rootScope.baseUrl + "api2/addlanguage", index);
 		}
 	}
 
