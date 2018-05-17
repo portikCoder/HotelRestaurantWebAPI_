@@ -19,15 +19,15 @@ namespace DAL
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
-
+            //Room Reservation
             modelBuilder.Entity<RoomReservation>()
              .HasKey(c => new { c.ReservationId, c.RoomId });
             modelBuilder.Entity<Room>()
              .HasMany(c => c.RoomReservations).WithRequired().HasForeignKey(c => c.RoomId);
-
+            
             modelBuilder.Entity<Reservation>()
              .HasMany(c => c.RoomReservations).WithRequired().HasForeignKey(c => c.ReservationId);
-
+            //Room Equipment
             modelBuilder.Entity<RoomEquipment>()
                 .HasKey(c => new { c.RoomId, c.EquipmentId });
             modelBuilder.Entity<Room>()
@@ -36,7 +36,16 @@ namespace DAL
             modelBuilder.Entity<Equipment>()
              .HasMany(c => c.RoomEquipment).WithRequired().HasForeignKey(c => c.EquipmentId);
 
-         
+            ///Room Property
+            modelBuilder.Entity<RoomProperties>()
+                .HasKey(c => new { c.RoomId, c.PropertiId });
+            modelBuilder.Entity<Room>()
+             .HasMany(c => c.RoomProperties).WithRequired().HasForeignKey(c => c.RoomId);
+
+            modelBuilder.Entity<Properties>()
+             .HasMany(c => c.RoomProperties).WithRequired().HasForeignKey(c => c.PropertiId);
+
+
 
         }
 
@@ -47,6 +56,8 @@ namespace DAL
         public DbSet<Reservation> Reservations{ get; set; }
         public DbSet<RoomEquipment> RoomEquipment { get; set; }
         public DbSet<RoomReservation> RoomReservations { get; set; }
+        public DbSet<Type> Types { get; set; }
+        public DbSet<Subtype> Subtypes { get; set; }
         //public DbSet<User> userke { get; set; }
     }
 }

@@ -68,8 +68,32 @@ namespace HotelRestaurantAPI.BL
             DbContext.Equipment.Add(equipment);
             DbContext.SaveChanges();
         }
+        public static void addType(string name)
+        {
+            DbContext.Types.Add(new DAL.Entities.Type(name));
+            DbContext.SaveChanges();
 
-        
+        }
+        public static void addRoomType(string typeName, int roomId)
+        {
+            DAL.Entities.Type type = DbContext.Types.FirstOrDefault(x => x.Name == typeName);
+            DbContext.Rooms.FirstOrDefault(x => x.Id == roomId).Type = type;
+            DbContext.SaveChanges();
+        }
+        public static void addSubType(string name)
+        {
+            DbContext.Subtypes.Add(new Subtype(name));
+            DbContext.SaveChanges();
+
+        }
+        public static void addRoomSubType(string subTypeName, int roomId)
+        {
+            Subtype subType = DbContext.Subtypes.FirstOrDefault(x => x.name == subTypeName);
+            DbContext.Rooms.FirstOrDefault(x => x.Id == roomId).Subtype = subType;
+            DbContext.SaveChanges();
+        }
+
+
         public static void AddReservation(List<int> roomId,Reservation reservation)
         {
             DbContext.Reservations.Add(reservation);
