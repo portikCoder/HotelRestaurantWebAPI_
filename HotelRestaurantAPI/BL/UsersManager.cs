@@ -42,10 +42,10 @@ namespace HotelRestaurantAPI.BL
             var S = DbContext.Rooms.FirstOrDefault(x => x.Id == id);
             return S;
         }
-     
-      
 
-       
+
+
+
         public static List<ReservationModel> GetAllReservation()
         {
             List<Reservation> reservationsList = DbContext.Reservations.ToList();
@@ -61,7 +61,7 @@ namespace HotelRestaurantAPI.BL
                 model.Reservation = c;
                 list.Add(model);
             }
-            foreach(var c in list)
+            foreach (var c in list)
             {
                 c.Reservation.price = 0;
                 c.Reservation.status = 0;
