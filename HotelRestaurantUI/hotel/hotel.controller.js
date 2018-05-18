@@ -80,10 +80,10 @@
 
 		vm.sendBookings = sendBookings;
 		function sendBookings() {
-			$http.post($rootScope.baseUrl + 'api2/rooms', vm.booking);
+            $http.post($rootScope.baseUrl + 'api/User/GetRooms', vm.booking);
 		}
 		vm.GetRooms = function () {
-			return $http.post($rootScope.baseUrl + 'api2/rooms', { UserName: vm.username });
+            return $http.post($rootScope.baseUrl + 'api/User/GetRooms', { UserName: vm.username });
 		}
 		//
 		vm.hotelRoomsDivName = "HotelRooms";

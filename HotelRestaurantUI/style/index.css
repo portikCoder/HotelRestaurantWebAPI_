@@ -1,6 +1,7 @@
 ﻿body {
 	background-image: url("stuff-and-things-random-things.jpg");
-	background-repeat: repeat;
+	/*background-repeat: repeat;*/
+    background-size: auto;
 	opacity: 0.8;
 	background-color: #cccccc;
 	/* background-image: url("angularjs.PNG"); */
