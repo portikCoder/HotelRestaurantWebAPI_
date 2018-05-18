@@ -16,7 +16,8 @@ namespace HotelRestaurantAPI.Controllers
     private HotelRestaurantDBContext DBContext = new HotelRestaurantDBContext();
 
     [HttpPost]
-    [Route("api2/rooms")]
+    [Authorize]
+    //[Route("api2/rooms")]
     public IHttpActionResult GetRooms(UserDTO user)
     {
       /* Get tthe lists of rooms from DB!!!! */
@@ -26,9 +27,9 @@ namespace HotelRestaurantAPI.Controllers
       /*test data*/
 
       return Ok(new[] {
-                new { Id = "room_404", Type = "bedroom", Subtype = "doubled penetratin", Properties = new string[] { "extra-large", "XXL" }, Others = new string[] { "mini-skirt", "ammm wardrobe", "mini refrigerator" }},
-                new { Id = "room_406", Type = "bedroom", Subtype = "doubled penetratin", Properties = new string[] { "extra-large", "XXL" }, Others = new string[] { "mini-skirt", "ammm wardrobe", "mini refrigerator" }},
-                new { Id = "room_408", Type = "bedroom", Subtype = "doubled penetratin", Properties = new string[] { "extra-large", "XXL" }, Others = new string[] { "mini-skirt", "ammm wardrobe", "mini refrigerator" }},
+                new { Id = "room_404", room_price = 500, Type = "bedroom", Subtype = "Single Bed", Properties = new string[] { "medium", "has a balcony" }, Others = new string[] { "air conditioning", "mini fridge" }},
+                new { Id = "room_406", room_price = 600, Type = "bedroom", Subtype = "Three Beds", Properties = new string[] { "extra-large", "is on roof level" }, Others = new string[] { "air conditioning", "wardrobe", "mini fridge" } },
+                new { Id = "room_408", room_price = 700, Type = "bedroom", Subtype = "Double Bed", Properties = new string[] { "medium" }, Others = new string[] { "television" }},
             });
     }
 

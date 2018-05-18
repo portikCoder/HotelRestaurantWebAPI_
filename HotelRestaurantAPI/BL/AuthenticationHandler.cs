@@ -1,16 +1,16 @@
-﻿using System;
+﻿using JWT;
+using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Web;
-using JWT;
 using System.Net;
 using System.Net.Http;
 using System.Threading;
 using System.Threading.Tasks;
+using System.Web;
 using System.Web.Http;
 using System.Web.Http.Dispatcher;
 
-namespace HotelRestaurantAPI.MessageHandlers
+namespace HotelRestaurantAPI.BL
 {
     public class AuthenticationHandler : DelegatingHandler
     {
