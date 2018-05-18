@@ -24,8 +24,11 @@
 					AccountService.SetUserStatus(userstatus);
 					AccountService.LoadUserInterface(userstatus);
 					vm.dataLoading = false;
-
-					$location.path('/home');
+                    if (userstatus === "Admin") {
+                        $location.path('/admin');
+                    } else {
+                        $location.path('/hotel');
+                    }
 				}
 			}, function (response) {
 				// This is for test purposes, change it later to a nice error message to the CLIENT...

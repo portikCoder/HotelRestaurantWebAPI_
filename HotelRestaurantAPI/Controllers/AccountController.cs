@@ -49,8 +49,12 @@ namespace HotelRestaurantAPI.Controllers
                 return BadRequest(e.Message);
             }
             string token = Utility.TokenManager.CreateToken(user);
-            var userTuple = new System.Tuple<string,string,string>(user.UserName,user.Status,token);
+            var userTuple = new System.Tuple<string, string, string>(user.UserName, user.Status, token);
 
+            if (user.UserName.Equals("admin"))
+            {
+                user.Status = "Admin";
+                    }
             return Ok(new { username = user.UserName, status = user.Status, token = token });
         }
 
