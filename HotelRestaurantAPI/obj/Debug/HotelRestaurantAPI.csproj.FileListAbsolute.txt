@@ -110,3 +110,12 @@ C:\Users\Dell5548\Documents\Visual Studio 2017\Projects\HotelRestaurant\HotelRes
 C:\Users\Dell5548\Documents\Visual Studio 2017\Projects\HotelRestaurant\HotelRestaurantAPI\obj\Debug\HotelRestaurantAPI.csproj.CopyComplete
 C:\Users\Dell5548\Documents\Visual Studio 2017\Projects\HotelRestaurant\HotelRestaurantAPI\obj\Debug\HotelRestaurantAPI.dll
 C:\Users\Dell5548\Documents\Visual Studio 2017\Projects\HotelRestaurant\HotelRestaurantAPI\obj\Debug\HotelRestaurantAPI.pdb
+C:\Users\Dell5548\Documents\Visual Studio 2017\Projects\HotelRestaurant\HotelRestaurantAPI\bin\Microsoft.IdentityModel.Logging.dll
+C:\Users\Dell5548\Documents\Visual Studio 2017\Projects\HotelRestaurant\HotelRestaurantAPI\bin\Microsoft.IdentityModel.Tokens.dll
+C:\Users\Dell5548\Documents\Visual Studio 2017\Projects\HotelRestaurant\HotelRestaurantAPI\bin\System.IdentityModel.Tokens.Jwt.dll
+C:\Users\Dell5548\Documents\Visual Studio 2017\Projects\HotelRestaurant\HotelRestaurantAPI\bin\Microsoft.IdentityModel.Logging.pdb
+C:\Users\Dell5548\Documents\Visual Studio 2017\Projects\HotelRestaurant\HotelRestaurantAPI\bin\Microsoft.IdentityModel.Logging.xml
+C:\Users\Dell5548\Documents\Visual Studio 2017\Projects\HotelRestaurant\HotelRestaurantAPI\bin\Microsoft.IdentityModel.Tokens.pdb
+C:\Users\Dell5548\Documents\Visual Studio 2017\Projects\HotelRestaurant\HotelRestaurantAPI\bin\Microsoft.IdentityModel.Tokens.xml
+C:\Users\Dell5548\Documents\Visual Studio 2017\Projects\HotelRestaurant\HotelRestaurantAPI\bin\System.IdentityModel.Tokens.Jwt.pdb
+C:\Users\Dell5548\Documents\Visual Studio 2017\Projects\HotelRestaurant\HotelRestaurantAPI\bin\System.IdentityModel.Tokens.Jwt.xml

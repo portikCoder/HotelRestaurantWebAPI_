@@ -53,7 +53,7 @@ namespace HotelRestaurantAPI.BL
                             //var secret = ConfigurationManager.AppSettings.Get("jwtKey");
                             var secret = "secretKey";
 
-                            Thread.CurrentPrincipal = HotelRestaurantAPI.Utility.TokenManager.ValidateToken(
+                            Thread.CurrentPrincipal = HotelRestaurantAPI.Utility.TokenManagerTest.ValidateToken(
                                 token,
                                 secret,
                                 true

@@ -129,7 +129,7 @@ namespace HotelRestaurantAPI.Controllers
                 return BadRequest(ex.Message);
             }
 
-            token = Utility.TokenManager.CreateToken(user);
+            token = Utility.TokenManagerTest.CreateToken(user);
             return Ok(token);
         }
 
