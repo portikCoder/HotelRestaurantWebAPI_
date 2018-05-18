@@ -69,6 +69,10 @@ namespace HotelRestaurantAPI.Utility
                         case "username":
                             claims.Add(new Claim(ClaimTypes.Name, pair.Value.ToString(), ClaimValueTypes.String));
                             break;
+                        //case: "roles"
+                        case "admin":
+                            claims.Add(new Claim(ClaimTypes.Role, pair.Value.ToString(), ClaimValueTypes.String));
+                            break;
                     }
                 }
 

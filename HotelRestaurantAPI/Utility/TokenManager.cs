@@ -76,11 +76,11 @@ namespace HotelRestaurantAPI.Utility
             ///////////////////////////////////////////////////////////////////////////////////////
             string X509Cert = Convert.ToBase64String(Encoding.ASCII.GetBytes("it is really a secure thi"));
             //System.Security.Cryptography.X509Certificates.X509Certificate2 DefaultCert_Public_2048 =
-                //new System.Security.Cryptography.X509Certificates.X509Certificate2(Convert.FromBase64String(X509Cert.Replace(' ', '+')));
+            //new System.Security.Cryptography.X509Certificates.X509Certificate2(Convert.FromBase64String(X509Cert.Replace(' ', '+')));
             //Microsoft.IdentityModel.Tokens.X509SecurityKey DefaultX509Key_Public_2048 =
-                //new Microsoft.IdentityModel.Tokens.X509SecurityKey(DefaultCert_Public_2048);
+            //new Microsoft.IdentityModel.Tokens.X509SecurityKey(DefaultCert_Public_2048);
             //Microsoft.IdentityModel.Tokens.SigningCredentials DefaultX509SigningCreds_Public_2048_RsaSha2_Sha2 =
-                //new Microsoft.IdentityModel.Tokens.SigningCredentials(DefaultX509Key_Public_2048, SecurityAlgorithms.RsaSha256Signature);
+            //new Microsoft.IdentityModel.Tokens.SigningCredentials(DefaultX509Key_Public_2048, SecurityAlgorithms.RsaSha256Signature);
 
             Microsoft.IdentityModel.Tokens.TokenValidationParameters validationParameters =
                     new Microsoft.IdentityModel.Tokens.TokenValidationParameters();
@@ -158,50 +158,52 @@ namespace HotelRestaurantAPI.Utility
             var payload = new Dictionary<string, object>
             {
                 {"username", user.UserName},
+                //{"admin", true },
+                //{"roles", ("Admin1","Admin") },
                 //{"nbf", notBefore},
-                {"iat", issuedAt},
-                {"exp", expiry}
-            };
+                { "iat", issuedAt},
+                { "exp", expiry}
+        };
 
-            //var secret = ConfigurationManager.AppSettings.Get("jwtKey");
-            const string apikey = "secretKey";
+        //var secret = ConfigurationManager.AppSettings.Get("jwtKey");
+        const string apikey = "secretKey";
 
 
-            IJwtAlgorithm algorithm = new HMACSHA256Algorithm();
-            IJsonSerializer serializer = new JsonNetSerializer();
-            IBase64UrlEncoder urlEncoder = new JwtBase64UrlEncoder();
-            IJwtEncoder encoder = new JwtEncoder(algorithm, serializer, urlEncoder);
+        IJwtAlgorithm algorithm = new HMACSHA256Algorithm();
+        IJsonSerializer serializer = new JsonNetSerializer();
+        IBase64UrlEncoder urlEncoder = new JwtBase64UrlEncoder();
+        IJwtEncoder encoder = new JwtEncoder(algorithm, serializer, urlEncoder);
 
-            var token = encoder.Encode(payload, apikey);
+        var token = encoder.Encode(payload, apikey);
 
             //var token = JsonWebToken.Encode(payload, apikey, JwtHashAlgorithm.HS256);
 
             return token;
         }
 
-        private static bool ValidateToken(string token, out string username)
-        {
-            username = null;
-            Microsoft.IdentityModel.Tokens.JsonWebKey asd = new Microsoft.IdentityModel.Tokens.JsonWebKey();
+    private static bool ValidateToken(string token, out string username)
+    {
+        username = null;
+        Microsoft.IdentityModel.Tokens.JsonWebKey asd = new Microsoft.IdentityModel.Tokens.JsonWebKey();
 
-            //var simplePrinciple = Microsoft.IdentityModel.Tokens.JsonWebKey JwtManager.GetPrincipal(token);
-            //var identity = simplePrinciple.Identity as ClaimsIdentity;
+        //var simplePrinciple = Microsoft.IdentityModel.Tokens.JsonWebKey JwtManager.GetPrincipal(token);
+        //var identity = simplePrinciple.Identity as ClaimsIdentity;
 
-            //if (identity == null)
-            //    return false;
+        //if (identity == null)
+        //    return false;
 
-            //if (!identity.IsAuthenticated)
-            //    return false;
+        //if (!identity.IsAuthenticated)
+        //    return false;
 
-            //var usernameClaim = identity.FindFirst(ClaimTypes.Name);
-            //username = usernameClaim?.Value;
+        //var usernameClaim = identity.FindFirst(ClaimTypes.Name);
+        //username = usernameClaim?.Value;
 
-            if (string.IsNullOrEmpty(username))
-                return false;
+        if (string.IsNullOrEmpty(username))
+            return false;
 
-            // More validate to check whether username exists in system
+        // More validate to check whether username exists in system
 
-            return true;
-        }
+        return true;
     }
+}
 }
